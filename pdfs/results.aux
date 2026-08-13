@@ -1,0 +1,78 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\providecommand\HyField@AuxAddToFields[1]{}
+\providecommand\HyField@AuxAddToCoFields[2]{}
+\@writefile{toc}{\contentsline {section}{\numberline {1}Method}{1}{section.1}\protected@file@percent }
+\newlabel{sec:method}{{1}{1}{Method}{section.1}{}}
+\newlabel{eq:mixture}{{3}{1}{Method}{equation.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Relation to discriminator guidance.}{1}{section*.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Sampling the mixture.}{1}{section*.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {2}Setup}{2}{section.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Metric conventions.}{2}{section*.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {3}Which mixture-sampling variant to use}{2}{section.3}\protected@file@percent }
+\newlabel{sec:modes}{{3}{2}{Which mixture-sampling variant to use}{section.3}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Mixture-sampling variants, QED reward, $N=10$, 512 samples.}}{2}{table.1}\protected@file@percent }
+\newlabel{tab:modes}{{1}{2}{Mixture-sampling variants, QED reward, $N=10$, 512 samples}{table.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Exploratory $\lambda $ sweeps}{3}{section.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces $\lambda $ sweeps, \textbf  {exact} variant, $N=10$, 128 samples each. Underpowered; superseded by the runs in Table~\ref {tab:modes} and the sweep described in Section~\ref {sec:pending}.}}{3}{table.2}\protected@file@percent }
+\newlabel{tab:lambda}{{2}{3}{$\lambda $ sweeps, \textbf {exact} variant, $N=10$, 128 samples each. Underpowered; superseded by the runs in Table~\ref {tab:modes} and the sweep described in Section~\ref {sec:pending}}{table.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}The $(N, \lambda )$ grid}{3}{section.5}\protected@file@percent }
+\newlabel{sec:grid}{{5}{3}{The $(N, \lambda )$ grid}{section.5}{}}
+\@writefile{toc}{\contentsline {paragraph}{Both $N$ and $\lambda $ matter, and $N$ is the harder constraint.}{3}{section*.4}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces $(N, \lambda )$ grid, \texttt  {aggregate\_x0}, 128 samples per cell. Novel QED is the metric comparable to Table 5 of the paper. The reference rows are the QM9 training set and our unguided sampler at 1024 samples.}}{4}{table.3}\protected@file@percent }
+\newlabel{tab:grid}{{3}{4}{$(N, \lambda )$ grid, \texttt {aggregate\_x0}, 128 samples per cell. Novel QED is the metric comparable to Table 5 of the paper. The reference rows are the QM9 training set and our unguided sampler at 1024 samples}{table.3}{}}
+\@writefile{toc}{\contentsline {paragraph}{Validity is preserved.}{4}{section*.5}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{We are still short of the published baseline.}{4}{section*.6}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Caveat on precision.}{4}{section*.7}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {6}Head-to-head against D-CBG}{4}{section.6}\protected@file@percent }
+\newlabel{sec:headline}{{6}{4}{Head-to-head against D-CBG}{section.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{The marginal variant beats aggregate\_x0 at every matched setting.}{4}{section*.8}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Same base model, same budget, 1024 samples. \emph  {Novel QED} is the paper's \texttt  {Mean} column (property over novel sequences only). Counts are out of 1024. The \emph  {Ours} block uses \texttt  {aggregate\_x0}; the \emph  {Ours (marginal)} and \emph  {Ours (exact)} blocks repeat the same four settings with \texttt  {mixture\_sampling=marginal} and \texttt  {=exact}. All three blocks share the identical budget, so the blocks differ only in how the $N$ weighted candidates are turned into a reverse step.}}{5}{table.4}\protected@file@percent }
+\newlabel{tab:headline}{{4}{5}{Same base model, same budget, 1024 samples. \emph {Novel QED} is the paper's \texttt {Mean} column (property over novel sequences only). Counts are out of 1024. The \emph {Ours} block uses \texttt {aggregate\_x0}; the \emph {Ours (marginal)} and \emph {Ours (exact)} blocks repeat the same four settings with \texttt {mixture\_sampling=marginal} and \texttt {=exact}. All three blocks share the identical budget, so the blocks differ only in how the $N$ weighted candidates are turned into a reverse step}{table.4}{}}
+\@writefile{toc}{\contentsline {paragraph}{Neither block in Table~\ref {tab:headline} samples Eq.~\eqref  {eq:mixture}.}{5}{section*.9}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Fidelity to Eq.~\eqref  {eq:mixture} tracks novel QED, but not validity.}{6}{section*.10}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{What the $\lambda = 0$ control measures.}{6}{section*.11}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The tilt repairs the validity the exact sampler costs.}{7}{section*.12}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Relation to EDLM.}{7}{section*.13}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{D-CBG wins on the property; we win on novel throughput.}{7}{section*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{Caveat on the published number.}{8}{section*.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.1}Past the mean: the QED distribution behind Table~\ref {tab:headline}}{8}{subsection.6.1}\protected@file@percent }
+\newlabel{sec:dist}{{6.1}{8}{Past the mean: the QED distribution behind Table~\ref {tab:headline}}{subsection.6.1}{}}
+\@writefile{toc}{\contentsline {paragraph}{D-CBG's mean advantage is a lower-tail effect.}{8}{section*.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{At the top of the distribution the ordering reverses.}{8}{section*.17}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces QED distribution over the novel set, same runs as Table~\ref {tab:headline}. \emph  {Novel} and $>0.6$ are counts out of 1024 generated samples; \emph  {Top-20} is the mean of the 20 best novel molecules, so it is matched on generation budget rather than on novel count. \emph  {Max}$_{78}$ is the mean maximum of a random 78-molecule subsample (4000 draws, 78 = the smallest novel count in the table), which is the max column made comparable across rows --- the raw \emph  {Max} is not, since it grows with the novel count and the rows differ by $4.7\times $ in it. Bold marks the best value in each column at printed precision.}}{9}{table.5}\protected@file@percent }
+\newlabel{tab:headline-dist}{{5}{9}{QED distribution over the novel set, same runs as Table~\ref {tab:headline}. \emph {Novel} and $>0.6$ are counts out of 1024 generated samples; \emph {Top-20} is the mean of the 20 best novel molecules, so it is matched on generation budget rather than on novel count. \emph {Max}$_{78}$ is the mean maximum of a random 78-molecule subsample (4000 draws, 78 = the smallest novel count in the table), which is the max column made comparable across rows --- the raw \emph {Max} is not, since it grows with the novel count and the rows differ by $4.7\times $ in it. Bold marks the best value in each column at printed precision}{table.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Mean novel QED within each quartile bin, and the gap between the top and bottom bins (\emph  {Spread}). Guidance strength buys D-CBG its mean by shrinking the spread; ours preserves it.}}{10}{table.6}\protected@file@percent }
+\newlabel{tab:headline-quartiles}{{6}{10}{Mean novel QED within each quartile bin, and the gap between the top and bottom bins (\emph {Spread}). Guidance strength buys D-CBG its mean by shrinking the spread; ours preserves it}{table.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{What this does and does not change.}{10}{section*.18}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Quality against novelty, all 19 configurations of Table~\ref {tab:headline}. Panel (a) uses the mean novel QED of that table: the front holds three points --- D-CBG exact $\gamma = 5$ and $\gamma = 2$, and our \textbf  {exact} $N{=}500$ --- so on the mean neither method dominates and the choice is a genuine trade-off; note that D-CBG exact $\gamma = 1$ and the whole approximate branch are dominated by our rows. Panel (b) replaces the mean with the budget-matched top-20 mean and the picture changes: the front is entirely ours, every D-CBG configuration is strictly dominated, and $10$ of our $12$ configurations beat $\gamma = 5$ on \emph  {both} axes at once (the remaining two match its top-20 to within $0.003$ with $3.2$--$3.5\times $ the novel count).}}{11}{figure.1}\protected@file@percent }
+\newlabel{fig:pareto}{{1}{11}{Quality against novelty, all 19 configurations of Table~\ref {tab:headline}. Panel (a) uses the mean novel QED of that table: the front holds three points --- D-CBG exact $\gamma = 5$ and $\gamma = 2$, and our \textbf {exact} $N{=}500$ --- so on the mean neither method dominates and the choice is a genuine trade-off; note that D-CBG exact $\gamma = 1$ and the whole approximate branch are dominated by our rows. Panel (b) replaces the mean with the budget-matched top-20 mean and the picture changes: the front is entirely ours, every D-CBG configuration is strictly dominated, and $10$ of our $12$ configurations beat $\gamma = 5$ on \emph {both} axes at once (the remaining two match its top-20 to within $0.003$ with $3.2$--$3.5\times $ the novel count)}{figure.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7}Denoising steps: 32 against 150}{11}{section.7}\protected@file@percent }
+\newlabel{sec:steps}{{7}{11}{Denoising steps: 32 against 150}{section.7}{}}
+\@writefile{toc}{\contentsline {paragraph}{More steps buy validity we did not need and give up the throughput advantage.}{11}{section*.19}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Novel QED distributions behind the two means, exact variants only, one dot per novel molecule. Increasing $\gamma $ (orange) concentrates the distribution into a band below $0.6$ and shrinks the novel count; increasing $N$ (blue) shifts the distribution up while keeping its spread, so the count above $0.6$ grows from 42 to 81 even though the mean stays lower.}}{12}{figure.2}\protected@file@percent }
+\newlabel{fig:dist}{{2}{12}{Novel QED distributions behind the two means, exact variants only, one dot per novel molecule. Increasing $\gamma $ (orange) concentrates the distribution into a band below $0.6$ and shrinks the novel count; increasing $N$ (blue) shifts the distribution up while keeping its spread, so the count above $0.6$ grows from 42 to 81 even though the mean stays lower}{figure.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{The effect is specific to the guided sampler.}{12}{section*.20}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The exact-versus-marginal ordering washes out.}{12}{section*.21}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{The $\lambda $ curve saturates far earlier at 150 steps.}{12}{section*.22}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces 150 denoising steps, 1024 samples, seed 1, same UDLM-QM9 base model. $\Delta $ columns are the change from the matched 32-step row of Table~\ref {tab:headline}; a dash means Table~\ref {tab:headline} has no such row. All settings use $\lambda = 5000$ over all $t$ except the last row of each block.}}{13}{table.7}\protected@file@percent }
+\newlabel{tab:steps150}{{7}{13}{150 denoising steps, 1024 samples, seed 1, same UDLM-QM9 base model. $\Delta $ columns are the change from the matched 32-step row of Table~\ref {tab:headline}; a dash means Table~\ref {tab:headline} has no such row. All settings use $\lambda = 5000$ over all $t$ except the last row of each block}{table.7}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces $\lambda $ at 150 steps, \textbf  {exact}, $N = 100$, 1024 samples. The 32-step column is the \texttt  {aggregate\_x0} grid at the same $N$ (Table \ref {tab:grid}), which is the only $\lambda $ series available at 32 steps.}}{13}{table.8}\protected@file@percent }
+\newlabel{tab:lambda150}{{8}{13}{$\lambda $ at 150 steps, \textbf {exact}, $N = 100$, 1024 samples. The 32-step column is the \texttt {aggregate\_x0} grid at the same $N$ (Table \ref {tab:grid}), which is the only $\lambda $ series available at 32 steps}{table.8}{}}
+\@writefile{toc}{\contentsline {paragraph}{What this axis does not settle.}{13}{section*.23}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {8}Why the novel mean is the metric that matters}{14}{section.8}\protected@file@percent }
+\newlabel{sec:novel}{{8}{14}{Why the novel mean is the metric that matters}{section.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {9}{\ignorespaces QED decomposed over the valid set. \emph  {Memorized} are valid samples already in QM9; \emph  {novel} are the rest. 1024 samples each. The gap between the two columns is what separates recall from generalization.}}{14}{table.9}\protected@file@percent }
+\newlabel{tab:novel}{{9}{14}{QED decomposed over the valid set. \emph {Memorized} are valid samples already in QM9; \emph {novel} are the rest. 1024 samples each. The gap between the two columns is what separates recall from generalization}{table.9}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {9}The guidance time window}{15}{section.9}\protected@file@percent }
+\newlabel{sec:window}{{9}{15}{The guidance time window}{section.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {10}{\ignorespaces Guidance time window, $\lambda = 1000$, 1024 samples. $t \le 0.75$ means guidance is off for the 8 noisiest steps of 32; $t \ge 0.5$ means it is active \emph  {only} for those early steps.}}{15}{table.10}\protected@file@percent }
+\newlabel{tab:window}{{10}{15}{Guidance time window, $\lambda = 1000$, 1024 samples. $t \le 0.75$ means guidance is off for the 8 noisiest steps of 32; $t \ge 0.5$ means it is active \emph {only} for those early steps}{table.10}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {10}The atomic-measure limitation}{15}{section.10}\protected@file@percent }
+\newlabel{sec:support}{{10}{15}{The atomic-measure limitation}{section.10}{}}
+\@writefile{toc}{\contentsline {paragraph}{The fix makes things worse.}{16}{section*.24}\protected@file@percent }
+\@writefile{toc}{\contentsline {paragraph}{A note on combining with D-CBG.}{16}{section*.25}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {11}Pending runs}{16}{section.11}\protected@file@percent }
+\newlabel{sec:pending}{{11}{16}{Pending runs}{section.11}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {12}Reproducing}{17}{section.12}\protected@file@percent }
+\gdef \@abspage@last{17}

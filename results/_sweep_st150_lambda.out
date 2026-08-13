@@ -1,0 +1,21 @@
+######## lambda curve: exact, N=100, 150 steps ########
+=============== s1024_st150_ours_exact_N100_lam100_win0.0-1.0 ===============
+	Valid: 1,011 / 1,024 (98.73%)  Unique (of valid): 995 / 1,011 (98.42%)  Novel (of valid): 211 / 1,011 (20.87%)
+	QED Mean: 0.535, Median: 0.540
+	Novel QED Mean: 0.524, Median: 0.523
+  last ESS: ESS=24.1 | 248s
+=============== s1024_st150_ours_exact_N100_lam500_win0.0-1.0 ===============
+	Valid: 998 / 1,024 (97.46%)  Unique (of valid): 963 / 998 (96.49%)  Novel (of valid): 193 / 998 (19.34%)
+	QED Mean: 0.540, Median: 0.549
+	Novel QED Mean: 0.531, Median: 0.528
+  last ESS: ESS=18.6 | 249s
+=============== s1024_st150_ours_exact_N100_lam1000_win0.0-1.0 ===============
+	Valid: 998 / 1,024 (97.46%)  Unique (of valid): 956 / 998 (95.79%)  Novel (of valid): 190 / 998 (19.04%)
+	QED Mean: 0.542, Median: 0.549
+	Novel QED Mean: 0.531, Median: 0.523
+  last ESS: ESS=17 | 250s
+######## Done ########
+/home/aailab/wp03052/Synthetic-Data/DLRT/results/s1024_st150_ours_exact_N100_lam1000_win0.0-1.0.csv
+/home/aailab/wp03052/Synthetic-Data/DLRT/results/s1024_st150_ours_exact_N100_lam100_win0.0-1.0.csv
+/home/aailab/wp03052/Synthetic-Data/DLRT/results/s1024_st150_ours_exact_N100_lam5000_win0.0-1.0.csv
+/home/aailab/wp03052/Synthetic-Data/DLRT/results/s1024_st150_ours_exact_N100_lam500_win0.0-1.0.csv

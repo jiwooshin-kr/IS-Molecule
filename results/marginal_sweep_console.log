@@ -1,0 +1,25 @@
+=============== s1024_ours_marginal_N100_lam5000_win0.0-1.0 ===============
+	Valid: 932 / 1,024 (91.02%)  Unique (of valid): 905 / 932 (97.10%)  Novel (of valid): 287 / 932 (30.79%)
+	QED Mean: 0.536, Median: 0.541
+	Novel QED Mean: 0.527, Median: 0.528
+  last ESS: ESS=15.8 | 61s
+=============== s1024_ours_marginal_N300_lam5000_win0.0-1.0 ===============
+	Valid: 923 / 1,024 (90.14%)  Unique (of valid): 888 / 923 (96.21%)  Novel (of valid): 307 / 923 (33.26%)
+	QED Mean: 0.541, Median: 0.545
+	Novel QED Mean: 0.534, Median: 0.529
+  last ESS: ESS=51.8 | 111s
+=============== s1024_ours_marginal_N500_lam5000_win0.0-1.0 ===============
+	Valid: 915 / 1,024 (89.36%)  Unique (of valid): 882 / 915 (96.39%)  Novel (of valid): 334 / 915 (36.50%)
+	QED Mean: 0.548, Median: 0.553
+	Novel QED Mean: 0.541, Median: 0.545
+  last ESS: ESS=98.1 | 161s
+=============== s1024_ours_marginal_N500_lam1000_win0.0-0.75 ===============
+	Valid: 928 / 1,024 (90.62%)  Unique (of valid): 904 / 928 (97.41%)  Novel (of valid): 303 / 928 (32.65%)
+	QED Mean: 0.545, Median: 0.549
+	Novel QED Mean: 0.544, Median: 0.548
+  last ESS: ESS=84.2 | 124s
+######## Done ########
+/home/aailab/wp03052/Synthetic-Data/DLRT/results/s1024_ours_marginal_N100_lam5000_win0.0-1.0.csv
+/home/aailab/wp03052/Synthetic-Data/DLRT/results/s1024_ours_marginal_N300_lam5000_win0.0-1.0.csv
+/home/aailab/wp03052/Synthetic-Data/DLRT/results/s1024_ours_marginal_N500_lam1000_win0.0-0.75.csv
+/home/aailab/wp03052/Synthetic-Data/DLRT/results/s1024_ours_marginal_N500_lam5000_win0.0-1.0.csv

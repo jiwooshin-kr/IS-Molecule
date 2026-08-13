@@ -1,0 +1,423 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage[colorlinks=true,urlcolor=blue]{hyperref}
+
+\newcommand{\x}{\mathbf{x}}
+\newcommand{\onehot}{\mathrm{onehot}}
+
+\title{Unifying reward-tilted posterior guidance with D-CBG\\
+\large What proposal does D-CBG induce over $\x_0$?}
+\author{}
+\date{2026-08-01}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+D-CBG and our reward-tilted posterior guidance are usually described as
+competing classifier-based mechanisms, but they act at different levels of the
+generative process: D-CBG tilts the one-step posterior over $\x_{t-1}$, while
+our method tilts the denoiser's distribution over the clean sequence $\x_0$.
+This note reads off exactly what D-CBG computes from the implementation, lifts
+its classifier factor to an $\x_0$-level proposal, and shows that the resulting
+importance weights collapse to a single clean expression in which the
+classifier's normalizer cancels. The combined estimator uses the classifier to
+decide \emph{where the $N$ atoms land} and the exact reward to decide
+\emph{what they are worth}, and remains consistent for the reward-tilted target
+regardless of how bad the classifier is.
+\end{abstract}
+
+\section{Notation}
+
+Let $L$ be the sequence length, $V$ the vocabulary, $c$ the target class (in
+our experiments, ``QED above the 90th percentile of QM9''), and
+$p_\phi(c \mid \x, t)$ the \emph{noisy} classifier D-CBG trains on diffusion
+latents. Write $\x_t^{l \leftarrow k}$ for the sequence $\x_t$ with position $l$
+overwritten by token $k$. Throughout, define the \textbf{substitution score}
+\begin{equation}
+s_l(k) \;:=\; \log p_\phi\!\left(c \;\middle|\; \x_t^{l \leftarrow k},\, t\right)
+\in (-\infty, 0].
+\label{eq:score}
+\end{equation}
+This is exactly the tensor called \texttt{classifier\_log\_prob} in
+\texttt{diffusion.py}, of shape $(B, L, V)$.
+
+\section{What D-CBG actually computes}
+
+Reading \texttt{Diffusion.\_cbg\_denoise} (\texttt{diffusion.py:1344--1456}),
+D-CBG performs a \emph{per-position} tilt of the unguided reverse posterior:
+\begin{equation}
+\boxed{\;
+q_{\text{CBG}}\!\left(\x_{t-1}^l = k \mid \x_t\right)
+  \;\propto\; q\!\left(\x_{t-1}^l = k \mid \x_t\right)\,
+              \exp\!\left(\gamma\, s_l(k)\right)
+\;}
+\label{eq:dcbg}
+\end{equation}
+implemented as
+\texttt{guided\_log\_probs = gamma * classifier\_log\_prob + diffusion\_log\_probs}
+followed by a softmax over the vocabulary axis, with the positions then sampled
+independently. For absorbing-state diffusion the unmasked positions are forced
+to copy $\x_t$, so \eqref{eq:dcbg} is only active on masked positions.
+
+The two \texttt{use\_approx} branches differ only in how $s_l(k)$ is obtained:
+\begin{itemize}
+  \item \textbf{Exact} (\texttt{use\_approx=False}): materialize all $L \cdot V$
+        single-token substitutions $\x_t^{l \leftarrow k}$ and run the
+        classifier on each. Cost $L \cdot V$ classifier forwards per step ---
+        this is the variant that ran out of memory at batch size 64.
+  \item \textbf{Approximate} (\texttt{use\_approx=True}): a first-order Taylor
+        expansion in the one-hot input,
+        \begin{equation}
+        s_l(k) \approx \log p_\phi(c \mid \x_t, t)
+          + \frac{\partial \log p_\phi(c \mid \x, t)}{\partial x_{l,k}}
+            \bigg|_{\x = \x_t}
+          - \frac{\partial \log p_\phi(c \mid \x, t)}{\partial x_{l, \x_t^l}}
+            \bigg|_{\x = \x_t},
+        \end{equation}
+        the last term centering the score at the token currently occupying
+        position $l$. Cost: one forward and one backward per step.
+\end{itemize}
+
+\paragraph{Three properties worth naming.}
+First, D-CBG's tilt lives at the level of $\x_{t-1}$, not $\x_0$. Second, the
+tilt is \emph{factorized}: it is a product of per-position factors, so it can
+never express a preference that couples positions. Third, D-CBG applies the
+tilt and stops --- there is no correction step, so the sampler targets
+\eqref{eq:dcbg} rather than any exactly-specified distribution over $\x_0$. The
+approximation error of $p_\phi$ (and of the Taylor expansion) propagates
+straight into the samples.
+
+\section{What our method computes}
+
+Our estimator tilts at the level of the clean sequence. With
+$\x_0^{(n)} \sim p_\theta(\x_0 \mid \x_t)$ drawn i.i.d.\ from the denoiser,
+\begin{equation}
+w_n = \frac{\exp(\lambda\, r(\x_0^{(n)}))}
+           {\sum_{m} \exp(\lambda\, r(\x_0^{(m)}))},
+\qquad
+\bar{\x}_0 = \sum_{n=1}^{N} w_n \, \onehot(\x_0^{(n)}),
+\end{equation}
+and $\x_{t-1}$ is drawn from the posterior with $\bar{\x}_0$ substituted for
+$\x_0$. This is self-normalized importance sampling for the target
+$q(\x_0) \propto p_\theta(\x_0)\exp(\lambda r(\x_0))$, so unlike \eqref{eq:dcbg}
+it is \emph{consistent}: as $N \to \infty$ it recovers the exact reward-tilted
+distribution. The reward $r$ sees clean $\x_0$, so it may couple positions
+arbitrarily --- QED is a whole-molecule functional --- and needs no training.
+
+The price is the atomic support discussed in the companion note: only the $N$
+sampled candidates carry mass, and they are sampled from the \emph{untilted}
+denoiser, so the atoms land wherever the base model happens to look rather than
+where the reward is high.
+
+\section{The unification}
+
+The two mechanisms are complementary precisely because of the above:
+D-CBG has a cheap factorized signal that can move probability mass but cannot
+be corrected, and we have an exact uncorrectable-by-nature signal that can only
+reweight mass that is already there. The combination is to use the first as the
+\textbf{proposal} and the second as the \textbf{weight}.
+
+\subsection{What the optimal factorized proposal is}
+\label{sec:optimal}
+
+The obstacle is that \eqref{eq:dcbg} tilts $\x_{t-1}$, whereas importance
+sampling needs a distribution over $\x_0$. Before borrowing anything from
+D-CBG, it is worth deriving what we \emph{should} be looking for, because that
+derivation is what tells us the classifier is the right object rather than a
+convenient one.
+
+Two facts frame the search.
+
+\paragraph{(i) Any factorized proposal is legal.} Self-normalized importance
+sampling is consistent for the target
+$q(\x_0 \mid \x_t) \propto p_\theta(\x_0 \mid \x_t) e^{\lambda r(\x_0)}$ for
+\emph{any} proposal $\tilde{p}$ with
+$\mathrm{supp}(\tilde{p}) \supseteq \mathrm{supp}(q)$, provided the weights
+carry the ratio $q/\tilde{p}$. So the choice of proposal is not a correctness
+question at all --- it cannot make the estimator wrong, only slow. What it
+controls is the effective sample size, i.e.\ how many of the $N$ atoms actually
+count. We restrict to \emph{factorized} $\tilde{p}$ purely for tractability: a
+factorized distribution is the only kind we can draw $N$ i.i.d.\ samples from at
+the cost of one categorical draw.
+
+\paragraph{(ii) The best factorized proposal is the target's marginals.} Among
+factorized distributions $\tilde{p}(\x_0) = \prod_l \tilde{p}_l(\x_0^l)$, the
+one minimizing $\mathrm{KL}(q \,\|\, \tilde{p})$ is obtained by matching
+marginals. Writing it out,
+\begin{equation}
+\mathrm{KL}(q \,\|\, \textstyle\prod_l \tilde{p}_l)
+ = -H(q) - \sum_{l}\sum_{k} q_l(k) \log \tilde{p}_l(k),
+\end{equation}
+which is maximized term by term at $\tilde{p}_l = q_l$, the per-position
+marginal of the target. So the object we want is
+\begin{equation}
+q_l(k) \;=\; \sum_{\x_0 : \, \x_0^l = k} q(\x_0 \mid \x_t)
+      \;\propto\; p_\theta\!\left(\x_0^l = k \mid \x_t\right)
+       \cdot \underbrace{\mathbb{E}_{\x_0^{-l} \sim p_\theta(\cdot \mid \x_t)}
+         \!\left[\, e^{\lambda r(\x_0^{-l},\, k)} \,\right]}_{
+         \textstyle =:\; g_l(k)},
+\label{eq:ideal}
+\end{equation}
+where the factorization of $p_\theta$ was used to drop the conditioning inside
+the expectation. Equation~\eqref{eq:ideal} is the derivation that was missing:
+\textbf{the exact per-position multiplier is not an arbitrary
+$\exp(\cdot)$ --- it is the expected exponentiated reward obtained by pinning
+position $l$ to token $k$ and letting the model fill in the rest.}
+
+$g_l(k)$ is intractable: evaluating it by Monte Carlo needs $L \cdot V$ reward
+calls per sample, and $r$ is a black box, so there is no closed form. Any usable
+method must replace $g_l$ with an estimate.
+
+\subsection{The classifier is an amortized estimate of \texorpdfstring{$g_l$}{g\_l}}
+
+Now the reason D-CBG's score belongs here. Take the tilt in its
+class-conditional form, $q(\x_0) \propto p_\theta(\x_0)\, p(c \mid \x_0)^\gamma$,
+which is what D-CBG's classifier is trained for ($c$ = ``QED above the 90th
+percentile''). Substituting into \eqref{eq:ideal} with $\gamma = 1$,
+\begin{equation}
+g_l(k)
+ = \mathbb{E}_{\x_0^{-l} \sim p_\theta(\cdot \mid \x_t)}
+   \!\left[\, p\!\left(c \mid \x_0^{-l}, k\right) \right]
+ = \Pr\!\left(c \;\middle|\; \x_t,\; \x_0^l = k\right).
+\label{eq:gl-as-prob}
+\end{equation}
+That is exactly the quantity a noisy classifier is trained to produce: the
+probability of the target class given the current latent, with one position
+pinned. D-CBG's score $s_l(k) = \log p_\phi(c \mid \x_t^{l \leftarrow k}, t)$ is
+a \emph{learned amortization of \eqref{eq:gl-as-prob}} --- it replaces an
+$L \cdot V$-fold Monte Carlo integral over the model's own completions with one
+network evaluation. That, and not analogy with \eqref{eq:dcbg}, is why
+multiplying the denoiser by $e^{\gamma s_l(k)}$ is the natural move: it is the
+plug-in estimator of the optimal factorized proposal \eqref{eq:ideal}.
+
+Accordingly, define
+\begin{equation}
+\tilde{p}_\theta\!\left(\x_0^l = k \mid \x_t\right)
+  \;=\; \frac{1}{Z_l}\,
+        p_\theta\!\left(\x_0^l = k \mid \x_t\right)\,
+        \exp\!\left(\gamma\, s_l(k)\right),
+\qquad
+Z_l = \sum_{k'} p_\theta\!\left(\x_0^l = k' \mid \x_t\right)
+      e^{\gamma s_l(k')} .
+\label{eq:proposal}
+\end{equation}
+It is normalizable in closed form, factorized (so drawing $N$ candidates still
+costs one categorical sample), and costs one classifier evaluation per step
+shared across all $N$ candidates.
+
+\paragraph{Where the plug-in is inexact, and why that is tolerable.}
+Three gaps separate $e^{\gamma s_l(k)}$ from $g_l(k)$:
+\begin{enumerate}
+  \item \textbf{Substitution versus conditioning.} $p_\phi$ is evaluated at
+        $\x_t^{l \leftarrow k}$ --- token $k$ written into the \emph{noisy}
+        latent --- whereas \eqref{eq:gl-as-prob} conditions on
+        $\x_0^l = k$ in the \emph{clean} sequence. These coincide only in the
+        low-noise limit.
+  \item \textbf{Binary class versus continuous reward.} $p_\phi$ predicts a
+        thresholded indicator, while our target uses $e^{\lambda r}$ with $r$
+        continuous. The exponent $\gamma$ is a free parameter that partially
+        absorbs this mismatch, which is another reason it must be retuned
+        rather than copied from D-CBG.
+  \item \textbf{Estimation error} in $p_\phi$ itself.
+\end{enumerate}
+By fact (i) none of these threaten correctness: the weights in
+\eqref{eq:final} divide the entire factor back out, so a wrong $g_l$ estimate
+costs effective sample size and nothing else. This is the whole reason the
+combination is worth doing --- it lets us use a crude, cheap, possibly
+misspecified estimate of an intractable quantity without inheriting its bias.
+
+\paragraph{Even a perfect $g_l$ leaves work for the weights.} Note that
+matching the marginals exactly would \emph{not} make the weights uniform. The
+target $q$ does not factorize --- $r$ is a whole-molecule functional, and that
+coupling is precisely the part a per-position proposal cannot represent. What
+remains in the weights after an ideal proposal is exactly the position-coupling
+information, which is the part only the exact reward can supply. The division of
+labour is therefore not merely convenient but structural: the classifier can in
+principle supply all of the factorizable signal and none of the rest.
+
+\paragraph{A classifier-free alternative.} Equation~\eqref{eq:ideal} also
+suggests a variant needing no classifier at all: estimate $g_l(k)$ from the
+candidates we already draw, by taking the $M \ll N$ highest-reward candidates
+and re-scoring single-position substitutions on them. This costs $M \cdot L
+\cdot V$ reward calls per step, which the optimized reward path makes borderline
+affordable, and it removes the $t$-mismatch of item 1 entirely because the
+reward is evaluated on clean sequences. Recorded as an option; the classifier
+route is far cheaper.
+
+\subsection{The importance weights}
+
+Sampling from $\tilde{p}_\theta$ instead of $p_\theta$ requires the weights to
+carry the likelihood ratio. For the target
+$q(\x_0) \propto p_\theta(\x_0)\exp(\lambda r(\x_0))$,
+\begin{align}
+w_n
+&\;\propto\; \exp\!\left(\lambda r(\x_0^{(n)})\right)
+   \frac{p_\theta(\x_0^{(n)} \mid \x_t)}{\tilde{p}_\theta(\x_0^{(n)} \mid \x_t)}
+\label{eq:w1}\\[2pt]
+&\;=\; \exp\!\left(\lambda r(\x_0^{(n)})\right)
+   \prod_{l=1}^{L} Z_l \,
+   \exp\!\left(-\gamma\, s_l\!\left(\x_0^{(n),l}\right)\right)
+\label{eq:w2}\\[2pt]
+&\;\propto\; \exp\!\left(
+   \lambda\, r(\x_0^{(n)})
+   \;-\; \gamma \sum_{l=1}^{L} s_l\!\left(\x_0^{(n),l}\right)
+ \right),
+\label{eq:w3}
+\end{align}
+where the last step drops $\prod_l Z_l$ because it does not depend on $n$ and
+therefore cancels in the self-normalization. So the whole combination reduces
+to a single extra term in the log-weight:
+\begin{equation}
+\boxed{\;
+\log w_n \;=\; \underbrace{\lambda\, r(\x_0^{(n)})}_{\text{exact reward}}
+  \;-\; \underbrace{\gamma \sum_{l} \log p_\phi\!\left(c \,\middle|\,
+        \x_t^{\,l \leftarrow \x_0^{(n),l}}\right)}_{\text{undo the proposal tilt}}
+  \;+\; \text{const},
+\;}
+\label{eq:final}
+\end{equation}
+followed by a softmax over $n$. Nothing else in the algorithm changes:
+$\bar{\x}_0$, the posterior substitution, and the time window all stay as they
+are.
+
+\subsection{Why this is the right object}
+
+Read \eqref{eq:proposal}--\eqref{eq:final} as a statement about roles.
+Section~\ref{sec:optimal} established that the best factorized proposal is the
+target's per-position marginals \eqref{eq:ideal}, and that D-CBG's classifier is
+an amortized estimate of exactly that object. In this framing,
+\begin{itemize}
+  \item \textbf{D-CBG alone} uses the surrogate and never corrects it, so it is
+        biased with respect to the true tilt by however wrong $p_\phi$ is;
+  \item \textbf{ours alone} uses the exact tilt but places its atoms with the
+        untilted denoiser, so it is consistent but support-limited;
+  \item \textbf{combined}, the surrogate places the atoms where the reward is
+        plausibly high and the exact reward corrects whatever the surrogate got
+        wrong.
+\end{itemize}
+Crucially the correction makes the combination \emph{robust to a bad
+classifier}: $p_\phi$ enters only through the proposal, and \eqref{eq:final}
+divides its influence back out. A poor classifier costs effective sample size,
+never correctness. That is a strictly better contract than D-CBG's, where
+classifier error is indistinguishable from signal.
+
+\paragraph{Limiting cases.} Both reduce correctly.
+\begin{itemize}
+  \item $\gamma \to 0$: the proposal becomes $p_\theta$ and the correction term
+        vanishes, recovering our current method exactly.
+  \item $\lambda \to 0$: the weights become
+        $w_n \propto \prod_l e^{-\gamma s_l(\x_0^{(n),l})}$, which exactly
+        undoes the proposal tilt, so $\bar{\x}_0 \to \x_\theta$ and sampling
+        reduces to the unguided base model. This is a useful implementation
+        check: with $\lambda = 0$ the combined sampler must reproduce unguided
+        statistics no matter what $\gamma$ is.
+\end{itemize}
+
+\subsection{A bias/variance knob}
+
+Equation \eqref{eq:final} fully removes the classifier tilt. Removing it only
+partially,
+\begin{equation}
+\log w_n = \lambda\, r(\x_0^{(n)})
+  - \beta\gamma \sum_l s_l\!\left(\x_0^{(n),l}\right),
+\qquad \beta \in [0, 1],
+\label{eq:beta}
+\end{equation}
+interpolates between two \emph{different targets} rather than merely trading
+variance:
+\begin{itemize}
+  \item $\beta = 1$ targets $q(\x_0) \propto p_\theta(\x_0) e^{\lambda r(\x_0)}$
+        --- the reward-tilted distribution, classifier used purely as a
+        proposal.
+  \item $\beta = 0$ targets the product of experts
+        $q(\x_0) \propto p_\theta(\x_0)\, e^{\lambda r(\x_0)}
+        \prod_l p_\phi(c \mid \x_t^{l \leftarrow \x_0^l})^{\gamma}$
+        --- the classifier's opinion is kept as an additional factor in the
+        objective.
+\end{itemize}
+Neither is obviously preferable: $\beta = 0$ is not a bug if one is willing to
+define the target that way, and it will have higher ESS because the weights no
+longer fight the proposal. $\beta = 1$ is the principled choice if the reward is
+the definition of what we want.
+
+\subsection{Scale warning}
+
+The two terms in \eqref{eq:final} are not on comparable scales, and reusing
+D-CBG's tuned $\gamma$ directly will not work. In D-CBG, $\gamma s_l(k)$
+competes against a \emph{per-position} log-posterior. In \eqref{eq:final} it
+appears as $\gamma \sum_l s_l$, a sum over all $L = 32$ positions, competing
+against the scalar $\lambda r$. Expect the useful $\gamma$ here to be smaller
+than D-CBG's by roughly a factor of $L$, and expect the correction term to
+dominate the reward unless $\gamma$ is retuned from scratch. Monitoring ESS
+during the sweep is the practical guard: a collapse to $\mathrm{ESS} \approx 1$
+means the correction term is swamping the reward.
+
+\section{Algorithm}
+
+\begin{algorithm}[H]
+\caption{One guided denoising step (combined)}
+\begin{algorithmic}[1]
+\State $\log \x_\theta \gets$ denoiser$(\x_t, \sigma_t)$
+       \Comment{1 network forward}
+\State $s_l(k) \gets \log p_\phi(c \mid \x_t^{l \leftarrow k}, t)$ for all $l, k$
+       \Comment{1 forward + backward (approx.), or $LV$ forwards (exact)}
+\State $\tilde{p}_\theta(\x_0^l{=}k \mid \x_t)
+        \propto \x_\theta[l, k]\, e^{\gamma s_l(k)}$
+       \Comment{normalize per position}
+\State $\x_0^{(n)} \sim \tilde{p}_\theta(\cdot \mid \x_t)$, $n = 1 \dots N$
+       \Comment{one categorical draw; free in $N$}
+\State $\log \tilde{w}_n \gets \lambda\, r(\x_0^{(n)})
+        - \beta\gamma \sum_l s_l(\x_0^{(n),l})$
+       \Comment{$N$ RDKit calls, deduplicated and pooled}
+\State $w \gets \mathrm{softmax}_n(\log \tilde{w})$;\quad
+       $\bar{\x}_0 \gets \sum_n w_n \onehot(\x_0^{(n)})$
+\State $\x_{t-1} \sim q(\x_{t-1} \mid \x_t, \bar{\x}_0)$
+\end{algorithmic}
+\end{algorithm}
+
+\paragraph{Cost.} One network forward plus one classifier forward/backward per
+step, independent of $N$; the reward calls scale with the number of
+\emph{distinct} candidates. Relative to our current sampler this adds only the
+classifier pass, so with \texttt{use\_approx=True} the combined method should
+cost roughly what D-CBG costs, while retaining our method's $N$-scaling. Use the
+approximate branch: the exact one needs $L \cdot V$ classifier forwards and
+already exhausted a 3090's memory at batch size 64.
+
+\section{Open issues}
+
+\begin{enumerate}
+  \item \textbf{How good an estimate of $g_l$ is $s_l$?} This is now a
+        well-posed empirical question rather than a vague worry:
+        \eqref{eq:gl-as-prob} says the target is
+        $\Pr(c \mid \x_t, \x_0^l = k)$, and it can be estimated directly, if
+        expensively, by Monte Carlo over model completions. Measuring the
+        agreement between $e^{\gamma s_l}$ and that estimate as a function of
+        $t$ would say exactly where the classifier route is worth using. The
+        time-window results predict poor agreement at large $t$, which argues
+        for switching the classifier tilt on only inside the same window where
+        the reward is informative.
+  \item \textbf{Weight blow-up.} The correction $e^{-\gamma \sum_l s_l}$ is
+        large exactly for candidates the classifier disliked. If the classifier
+        and the reward disagree, a single candidate can dominate. Clipping the
+        log-weights, or $\beta < 1$, are the obvious mitigations.
+  \item \textbf{Absorbing state.} On unmasked positions $\x_{t-1}$ is forced to
+        copy $\x_t$, so both the proposal tilt and the sum in \eqref{eq:final}
+        should run over masked positions only; including copied positions adds
+        a constant to every $\log w_n$, which cancels, but only if the same set
+        of positions is used for all $n$ --- which it is, since masking depends
+        on $\x_t$ alone.
+  \item \textbf{Does it actually help?} The empirical claim to test is that at
+        matched $N$ the combined method attains higher ESS and higher novel QED
+        than either component. The companion note's finding that our method's
+        gain generalizes to novel molecules while D-CBG's concentrates on
+        recall suggests the combination should be evaluated on novel QED
+        specifically, not on the all-valid mean.
+\end{enumerate}
+
+\end{document}
