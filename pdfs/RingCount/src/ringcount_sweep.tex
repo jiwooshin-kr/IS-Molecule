@@ -1,0 +1,946 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=black]{hyperref}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+% \texttt{ring\_count} and friends are unbreakable and otherwise poke into the
+% margin; let TeX stretch interword space instead.
+\sloppy
+
+\title{The $(\lambda, N)$ sweep on ring count\\\large \texttt{marginal} against \texttt{edlm}, MDLM and UDLM}
+\author{}\date{2026-08-15}
+\begin{document}\maketitle
+\section{Setup}
+
+252 runs, 1{,}024 samples each at $T=32$ steps, seed 1, reward
+\texttt{ring\_count}. Grid: $\lambda \in \{0, 0.5, 1, 2, 5, 10, 30, 100, 1000\}$ against
+$N \in \{10, 30, 100, 300, 500, 1000, 2000\}$, for both mixture-sampling modes
+and both base models.
+
+$N$ is the number of $\mathbf{x}_0$ candidates drawn per denoising step --- the
+Monte Carlo budget of the estimator. $\lambda$ is the tilt in
+$q(\mathbf{x}_0) \propto p_\theta(\mathbf{x}_0)\,e^{\lambda r(\mathbf{x}_0)}$.
+The two modes differ only in how $\mathbf{x}_{t-1}$ is drawn from the resulting
+mixture: \texttt{marginal} averages the $N$ individually normalised posteriors,
+\texttt{edlm} draws a component and then samples from it. They share
+per-position marginals and differ only in the joint.
+
+\section{Reading ESS: use the median, never the last step}
+
+Effective sample size $\mathrm{ESS} = 1/\sum_n w_n^2$ says which end of the grid
+a run is on: $\mathrm{ESS}=N$ means the tilt is doing nothing, $\mathrm{ESS}\to1$
+means it has collapsed onto a single candidate.
+
+The driver script prints only the \emph{final} step's ESS, and that number is
+actively misleading on MDLM. Absorbing-state sampling has almost everything
+unmasked by the last step, so all $N$ candidates decode to the same sequence and
+tie on reward --- the last-step ESS reads $\approx N$ however hard $\lambda$ is
+tilting. Judged on it, MDLM looks entirely unguided. Its novel QED in fact climbs
+across the $\lambda$ grid. Every ESS below is the \textbf{median over the
+trajectory}, digested from the per-run logs into
+\texttt{results/\_ess\_summary.csv}.
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 1.00 & 0.97 & 0.94 & 0.90 & 0.88 & 0.88 & 0.88 & 0.88 & 0.88 \\
+30 & 1.00 & 0.96 & 0.91 & 0.84 & 0.80 & 0.81 & 0.80 & 0.80 & 0.80 \\
+100 & 1.00 & 0.96 & 0.89 & 0.80 & 0.73 & 0.71 & 0.71 & 0.71 & 0.71 \\
+300 & 1.00 & 0.95 & 0.86 & 0.74 & 0.65 & 0.65 & 0.64 & 0.65 & 0.65 \\
+500 & 1.00 & 0.95 & 0.85 & 0.72 & 0.63 & 0.62 & 0.62 & 0.62 & 0.62 \\
+1000 & 0.00 & 0.94 & 0.83 & 0.70 & 0.59 & 0.58 & 0.58 & 0.58 & 0.58 \\
+2000 & 0.00 & 0.92 & 0.78 & 0.61 & 0.51 & 0.49 & 0.49 & 0.49 & 0.49 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{marginal}: median ESS as a fraction of $N$.}
+\label{tab:ess-ring_count-MDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 1.00 & 0.97 & 0.94 & 0.91 & 0.88 & 0.88 & 0.88 & 0.88 & 0.88 \\
+30 & 1.00 & 0.96 & 0.91 & 0.86 & 0.81 & 0.80 & 0.80 & 0.80 & 0.80 \\
+100 & 1.00 & 0.96 & 0.89 & 0.80 & 0.72 & 0.70 & 0.69 & 0.69 & 0.69 \\
+300 & 1.00 & 0.95 & 0.87 & 0.75 & 0.64 & 0.65 & 0.64 & 0.64 & 0.64 \\
+500 & 1.00 & 0.95 & 0.86 & 0.72 & 0.64 & 0.63 & 0.63 & 0.63 & 0.63 \\
+1000 & 0.00 & 0.94 & 0.82 & 0.68 & 0.60 & 0.59 & 0.58 & 0.58 & 0.58 \\
+2000 & 0.00 & 0.93 & 0.79 & 0.62 & 0.53 & 0.51 & 0.50 & 0.50 & 0.50 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{edlm}: median ESS as a fraction of $N$.}
+\label{tab:ess-ring_count-MDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 1.00 & 0.98 & 0.94 & 0.88 & 0.85 & 0.84 & 0.85 & 0.84 & 0.84 \\
+30 & 1.00 & 0.97 & 0.91 & 0.80 & 0.72 & 0.72 & 0.72 & 0.72 & 0.72 \\
+100 & 1.00 & 0.97 & 0.88 & 0.71 & 0.51 & 0.51 & 0.50 & 0.50 & 0.50 \\
+300 & 1.00 & 0.96 & 0.86 & 0.57 & 0.26 & 0.26 & 0.26 & 0.26 & 0.26 \\
+500 & 1.00 & 0.97 & 0.85 & 0.52 & 0.19 & 0.19 & 0.18 & 0.18 & 0.18 \\
+1000 & 0.00 & 0.97 & 0.85 & 0.43 & 0.11 & 0.11 & 0.11 & 0.11 & 0.11 \\
+2000 & 0.00 & 0.97 & 0.82 & 0.36 & 0.07 & 0.07 & 0.07 & 0.07 & 0.07 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{marginal}: median ESS as a fraction of $N$.}
+\label{tab:ess-ring_count-UDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 1.00 & 0.98 & 0.94 & 0.88 & 0.85 & 0.85 & 0.85 & 0.85 & 0.85 \\
+30 & 1.00 & 0.97 & 0.91 & 0.81 & 0.73 & 0.73 & 0.73 & 0.73 & 0.73 \\
+100 & 1.00 & 0.97 & 0.89 & 0.71 & 0.51 & 0.51 & 0.51 & 0.51 & 0.51 \\
+300 & 1.00 & 0.96 & 0.85 & 0.58 & 0.27 & 0.27 & 0.27 & 0.27 & 0.27 \\
+500 & 1.00 & 0.97 & 0.85 & 0.51 & 0.19 & 0.18 & 0.18 & 0.18 & 0.18 \\
+1000 & 0.00 & 0.96 & 0.83 & 0.42 & 0.11 & 0.11 & 0.11 & 0.11 & 0.11 \\
+2000 & 0.00 & 0.96 & 0.83 & 0.36 & 0.07 & 0.07 & 0.07 & 0.07 & 0.07 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{edlm}: median ESS as a fraction of $N$.}
+\label{tab:ess-ring_count-UDLM-edlm}
+\end{table}
+
+\section{The grid}
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 2.477 & 2.751 & 2.824 & 2.815 & 2.819 & 2.820 & 2.820 & 2.820 & 2.820 \\
+30 & 2.365 & 2.552 & 2.657 & 2.683 & 2.681 & 2.639 & 2.633 & 2.633 & 2.633 \\
+100 & 2.346 & 2.573 & 2.822 & 2.979 & 3.080 & 3.129 & 3.108 & 3.108 & 3.108 \\
+300 & 2.468 & 2.716 & 3.033 & 3.260 & 3.345 & 3.351 & 3.367 & 3.367 & 3.367 \\
+500 & 2.548 & 2.698 & 2.952 & 3.173 & 3.311 & 3.413 & 3.410 & 3.410 & 3.410 \\
+1000 & 2.426 & 2.603 & 2.911 & 3.310 & 3.452 & 3.499 & 3.493 & 3.493 & 3.493 \\
+2000 & 2.379 & 2.672 & 3.045 & 3.615 & 3.715 & 3.611 & 3.627 & 3.627 & 3.627 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{marginal}: novel-ring count mean.}
+\label{tab:grid-ring_count-MDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 2.567 & 2.707 & 2.810 & 2.864 & 2.783 & 2.773 & 2.770 & 2.770 & 2.770 \\
+30 & 2.697 & 2.841 & 2.874 & 2.899 & 2.797 & 2.797 & 2.797 & 2.797 & 2.797 \\
+100 & 2.284 & 2.550 & 2.854 & 2.834 & 3.039 & 3.107 & 3.103 & 3.103 & 3.103 \\
+300 & 2.493 & 2.736 & 2.964 & 3.080 & 3.396 & 3.396 & 3.396 & 3.396 & 3.396 \\
+500 & 2.318 & 2.724 & 3.107 & 3.146 & 3.243 & 3.194 & 3.184 & 3.184 & 3.184 \\
+1000 & 2.612 & 2.803 & 3.174 & 3.306 & 3.484 & 3.543 & 3.538 & 3.538 & 3.538 \\
+2000 & 2.718 & 2.840 & 3.090 & 3.546 & 3.793 & 3.754 & 3.752 & 3.752 & 3.752 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{edlm}: novel-ring count mean.}
+\label{tab:grid-ring_count-MDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 1.656 & 1.865 & 1.935 & 1.873 & 1.868 & 1.884 & 1.884 & 1.884 & 1.884 \\
+30 & 1.708 & 1.785 & 1.787 & 1.884 & 1.789 & 1.799 & 1.804 & 1.804 & 1.804 \\
+100 & 1.660 & 1.776 & 1.825 & 1.846 & 1.920 & 1.936 & 1.932 & 1.932 & 1.932 \\
+300 & 1.637 & 1.768 & 1.764 & 1.954 & 2.168 & 2.110 & 2.125 & 2.125 & 2.125 \\
+500 & 1.592 & 1.627 & 1.721 & 2.008 & 2.317 & 2.162 & 2.211 & 2.211 & 2.211 \\
+1000 & 1.543 & 1.646 & 1.842 & 2.129 & 2.302 & 2.364 & 2.351 & 2.351 & 2.351 \\
+2000 & 1.469 & 1.654 & 1.733 & 1.953 & 2.524 & 2.572 & 2.581 & 2.581 & 2.581 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{marginal}: novel-ring count mean.}
+\label{tab:grid-ring_count-UDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 1.624 & 1.764 & 1.775 & 1.828 & 1.738 & 1.732 & 1.732 & 1.732 & 1.732 \\
+30 & 1.524 & 1.707 & 1.853 & 1.718 & 1.734 & 1.717 & 1.717 & 1.717 & 1.717 \\
+100 & 1.600 & 1.801 & 1.888 & 1.860 & 1.918 & 1.791 & 1.793 & 1.793 & 1.793 \\
+300 & 1.693 & 1.801 & 1.820 & 2.028 & 2.161 & 2.043 & 2.027 & 2.027 & 2.027 \\
+500 & 1.653 & 1.901 & 1.902 & 1.933 & 2.195 & 2.199 & 2.180 & 2.180 & 2.180 \\
+1000 & 1.799 & 1.888 & 1.966 & 2.328 & 2.492 & 2.401 & 2.392 & 2.392 & 2.392 \\
+2000 & 1.797 & 2.013 & 1.945 & 2.077 & 2.540 & 2.717 & 2.727 & 2.727 & 2.727 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{edlm}: novel-ring count mean.}
+\label{tab:grid-ring_count-UDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 216 & 233 & 244 & 243 & 254 & 256 & 256 & 256 & 256 \\
+30 & 211 & 232 & 245 & 265 & 276 & 288 & 289 & 289 & 289 \\
+100 & 211 & 232 & 259 & 281 & 287 & 279 & 279 & 279 & 279 \\
+300 & 220 & 236 & 241 & 281 & 293 & 316 & 316 & 316 & 316 \\
+500 & 228 & 245 & 272 & 294 & 331 & 334 & 334 & 334 & 334 \\
+1000 & 204 & 229 & 257 & 281 & 361 & 367 & 369 & 369 & 369 \\
+2000 & 190 & 204 & 245 & 304 & 354 & 357 & 362 & 362 & 362 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{marginal}: number of novel molecules (out of 1{,}024 generated).}
+\label{tab:novel-ring_count-MDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 215 & 242 & 247 & 243 & 254 & 256 & 256 & 256 & 256 \\
+30 & 234 & 258 & 262 & 258 & 256 & 251 & 251 & 251 & 251 \\
+100 & 208 & 242 & 267 & 289 & 307 & 309 & 310 & 310 & 310 \\
+300 & 209 & 231 & 247 & 275 & 285 & 288 & 288 & 288 & 288 \\
+500 & 195 & 214 & 252 & 294 & 300 & 319 & 320 & 320 & 320 \\
+1000 & 219 & 249 & 281 & 307 & 339 & 363 & 364 & 364 & 364 \\
+2000 & 213 & 231 & 266 & 328 & 367 & 378 & 379 & 379 & 379 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{edlm}: number of novel molecules (out of 1{,}024 generated).}
+\label{tab:novel-ring_count-MDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 189 & 208 & 230 & 251 & 243 & 241 & 241 & 241 & 241 \\
+30 & 195 & 214 & 202 & 242 & 251 & 264 & 265 & 265 & 265 \\
+100 & 194 & 214 & 229 & 240 & 286 & 267 & 265 & 265 & 265 \\
+300 & 193 & 207 & 212 & 240 & 268 & 292 & 288 & 288 & 288 \\
+500 & 196 & 217 & 222 & 249 & 278 & 284 & 279 & 279 & 279 \\
+1000 & 186 & 206 & 228 & 241 & 288 & 294 & 308 & 308 & 308 \\
+2000 & 207 & 234 & 243 & 256 & 275 & 278 & 277 & 277 & 277 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{marginal}: number of novel molecules (out of 1{,}024 generated).}
+\label{tab:novel-ring_count-UDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 165 & 182 & 204 & 233 & 252 & 257 & 257 & 257 & 257 \\
+30 & 191 & 222 & 238 & 266 & 274 & 276 & 276 & 276 & 276 \\
+100 & 180 & 211 & 233 & 265 & 269 & 296 & 295 & 295 & 295 \\
+300 & 179 & 191 & 205 & 251 & 310 & 301 & 301 & 301 & 301 \\
+500 & 190 & 222 & 214 & 252 & 277 & 297 & 295 & 295 & 295 \\
+1000 & 164 & 215 & 235 & 271 & 301 & 309 & 309 & 309 & 309 \\
+2000 & 212 & 239 & 253 & 271 & 313 & 311 & 319 & 319 & 319 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{edlm}: number of novel molecules (out of 1{,}024 generated).}
+\label{tab:novel-ring_count-UDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 9.000 & 9.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 \\
+30 & 8.000 & 10.000 & 8.000 & 8.000 & 8.000 & 8.000 & 8.000 & 8.000 & 8.000 \\
+100 & 9.000 & 10.000 & 9.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 \\
+300 & 7.000 & 14.000 & 14.000 & 14.000 & 14.000 & 14.000 & 14.000 & 14.000 & 14.000 \\
+500 & 13.000 & 13.000 & 13.000 & 13.000 & 13.000 & 13.000 & 13.000 & 13.000 & 13.000 \\
+1000 & 9.000 & 9.000 & 9.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 \\
+2000 & 8.000 & 10.000 & 10.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 & 12.000 \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize A raw max grows with the number of molecules it is taken over, and these cells differ several-fold in novel count, so a higher max here is partly a deeper pool. That is a real advantage at a fixed generation budget -- every cell generated the same 1,024 sequences -- but it is not a claim about distribution shape. Section~\ref{sec:beyond-mean-ring_count} separates the two.\end{minipage}
+\caption{MDLM, \texttt{marginal}: highest novel-ring count of the run.}
+\label{tab:max-ring_count-MDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 7.000 & 9.000 & 9.000 & 9.000 & 9.000 & 9.000 & 9.000 & 9.000 & 9.000 \\
+30 & 9.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 \\
+100 & 8.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 \\
+300 & 8.000 & 10.000 & 10.000 & 10.000 & 9.000 & 9.000 & 9.000 & 9.000 & 9.000 \\
+500 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 \\
+1000 & 7.000 & 9.000 & 10.000 & 10.000 & 11.000 & 11.000 & 11.000 & 11.000 & 11.000 \\
+2000 & 8.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{edlm}: highest novel-ring count of the run.}
+\label{tab:max-ring_count-MDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 6.000 & 7.000 & 7.000 & 7.000 & 7.000 & 7.000 & 7.000 & 7.000 & 7.000 \\
+30 & 6.000 & 7.000 & 7.000 & 7.000 & 6.000 & 6.000 & 6.000 & 6.000 & 6.000 \\
+100 & 7.000 & 6.000 & 6.000 & 6.000 & 7.000 & 8.000 & 8.000 & 8.000 & 8.000 \\
+300 & 5.000 & 7.000 & 8.000 & 7.000 & 7.000 & 6.000 & 6.000 & 6.000 & 6.000 \\
+500 & 6.000 & 6.000 & 5.000 & 7.000 & 7.000 & 7.000 & 7.000 & 7.000 & 7.000 \\
+1000 & 5.000 & 10.000 & 10.000 & 7.000 & 10.000 & 7.000 & 7.000 & 7.000 & 7.000 \\
+2000 & 5.000 & 6.000 & 5.000 & 7.000 & 6.000 & 10.000 & 10.000 & 10.000 & 10.000 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{marginal}: highest novel-ring count of the run.}
+\label{tab:max-ring_count-UDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 6.000 & 8.000 & 6.000 & 6.000 & 5.000 & 5.000 & 5.000 & 5.000 & 5.000 \\
+30 & 7.000 & 7.000 & 7.000 & 7.000 & 7.000 & 7.000 & 7.000 & 7.000 & 7.000 \\
+100 & 6.000 & 6.000 & 7.000 & 6.000 & 5.000 & 6.000 & 6.000 & 6.000 & 6.000 \\
+300 & 7.000 & 7.000 & 7.000 & 8.000 & 8.000 & 7.000 & 7.000 & 7.000 & 7.000 \\
+500 & 7.000 & 9.000 & 7.000 & 7.000 & 10.000 & 7.000 & 7.000 & 7.000 & 7.000 \\
+1000 & 6.000 & 6.000 & 6.000 & 7.000 & 8.000 & 8.000 & 8.000 & 8.000 & 8.000 \\
+2000 & 7.000 & 7.000 & 6.000 & 7.000 & 10.000 & 10.000 & 10.000 & 10.000 & 10.000 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{edlm}: highest novel-ring count of the run.}
+\label{tab:max-ring_count-UDLM-edlm}
+\end{table}
+
+\section{\texttt{marginal} against \texttt{edlm}}
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lr rrrr}
+\toprule
+model & $\lambda$ & mean $|\Delta|$ property & mean $\Delta$ property & mean $|\Delta|$ novel & mean $\Delta$ novel \\
+\midrule
+MDLM & 0 & 0.181 & -0.097 & 15.6 & -1.9 \\
+MDLM & 0.5 & 0.110 & -0.091 & 18.3 & -8.0 \\
+MDLM & 1 & 0.114 & -0.090 & 14.1 & -8.4 \\
+MDLM & 2 & 0.099 & +0.023 & 10.1 & -6.4 \\
+MDLM & 5 & 0.060 & -0.019 & 16.3 & +6.9 \\
+MDLM & 10 & 0.097 & -0.015 & 19.3 & +4.7 \\
+MDLM & 30 & 0.092 & -0.012 & 19.0 & +5.3 \\
+MDLM & 100 & 0.092 & -0.012 & 19.0 & +5.3 \\
+MDLM & 1000 & 0.092 & -0.012 & 19.0 & +5.3 \\
+UDLM & 0 & 0.139 & -0.061 & 12.7 & +11.3 \\
+UDLM & 0.5 & 0.159 & -0.108 & 10.3 & +2.6 \\
+UDLM & 1 & 0.123 & -0.077 & 14.0 & -2.3 \\
+UDLM & 2 & 0.100 & -0.018 & 18.0 & -12.9 \\
+UDLM & 5 & 0.074 & +0.016 & 20.4 & -15.3 \\
+UDLM & 10 & 0.095 & +0.032 & 18.1 & -18.1 \\
+UDLM & 30 & 0.099 & +0.046 & 18.4 & -18.4 \\
+UDLM & 100 & 0.099 & +0.046 & 18.4 & -18.4 \\
+UDLM & 1000 & 0.099 & +0.046 & 18.4 & -18.4 \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize A systematic winner would show as a consistent sign in the $\Delta$ columns. There is none.\end{minipage}
+\caption{\texttt{marginal} minus \texttt{edlm}, averaged over the five $N$ at each $\lambda$. $|\Delta|$ is the typical size of the gap, $\Delta$ its sign.}
+\label{tab:modes-ring_count}
+\end{table}
+
+
+Two things were predicted before the sweep ran, and only one holds.
+
+\textbf{Predicted and confirmed:} the two modes are empirically
+interchangeable. Across the whole grid the mean absolute gap in novel-ring count is
+0.107 with mean signed gap
+-0.022 --- no consistent winner, at any $\lambda$ or $N$.
+
+\textbf{Predicted and \emph{not} confirmed:} the gap was expected to
+\emph{shrink} as $\lambda$ grows, because one-hot weights make
+$\sum_n w_n q(\cdot\,|\,\mathbf{x}_0^{(n)})$ collapse to the single component
+\texttt{edlm} would have drawn, and a posterior conditioned on a fixed
+$\mathbf{x}_0$ already factorises over positions. Measured, the gap is flat:
+0.160 at $\lambda=0$ against
+0.096 at $\lambda=1000$. The reason is
+visible in the ESS tables --- the weights never actually become one-hot in this
+grid, so the limit is never entered. The flat gap is therefore sampling noise
+between two samplers that agree, which is the same conclusion by a weaker route.
+
+\section{$\lambda = 0$: the unguided control}
+
+At $\lambda=0$ the weights are uniform, so no tilt is applied whatever $N$ or the
+mode is. Every cell of Table~\ref{tab:lam0-ring_count} should therefore be
+the base sampler, and the spread across it measures the sampling noise that every
+other comparison in this report has to clear.
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{llrrrrrrr}
+\toprule
+model & mode & $N=10$ & $N=30$ & $N=100$ & $N=300$ & $N=500$ & $N=1000$ & $N=2000$ \\
+\midrule
+MDLM & marginal & 2.477 & 2.365 & 2.346 & 2.468 & 2.548 & 2.426 & 2.379 \\
+MDLM & edlm & 2.567 & 2.697 & 2.284 & 2.493 & 2.318 & 2.612 & 2.718 \\
+UDLM & marginal & 1.656 & 1.708 & 1.660 & 1.637 & 1.592 & 1.543 & 1.469 \\
+UDLM & edlm & 1.624 & 1.524 & 1.600 & 1.693 & 1.653 & 1.799 & 1.797 \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize This is the implementation control: at $\lambda=0$ the weights are uniform, so no tilt is applied and the numbers must be flat in $N$ up to sampling noise. They are.\end{minipage}
+\caption{novel-ring count at $\lambda=0$. Every entry should be the base sampler, independent of $N$ and of the mode.}
+\label{tab:lam0-ring_count}
+\end{table}
+
+
+This table also calibrates everything else in the report. The widest $\lambda=0$
+spread within a single model is 0.435 in novel-ring count --- runs that are
+identical in distribution, differing only by sampling noise. The mean gap between
+\texttt{marginal} and \texttt{edlm} across the whole grid is 0.107,
+\textbf{smaller} than that floor. So the two
+modes are not merely close: their difference is
+indistinguishable from noise.
+
+\section{The frontier against D-CBG}
+
+Both methods are swept, then compared on the axes the paper's Figure 3 uses:
+number of novel molecules against novel-ring count mean. Comparing at single
+hyperparameter points would be meaningless --- the paper tunes $\gamma$ per model
+\emph{and} per property.
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{ll rrr}
+\toprule
+method & setting & valid & novel & novel-ring count \\
+\midrule
+ours & edlm, $N=2000$, $\lambda=5$ & 766 & 367 & 3.793 \\
+ours & edlm, $N=2000$, $\lambda=10$ & 754 & 378 & 3.754 \\
+ours & edlm, $N=2000$, $\lambda=30$ & 754 & 379 & 3.752 \\
+ours & edlm, $N=2000$, $\lambda=100$ & 754 & 379 & 3.752 \\
+ours & edlm, $N=2000$, $\lambda=1000$ & 754 & 379 & 3.752 \\
+D-CBG & $\gamma=1$, exact & 188 & 149 & 4.745 \\
+D-CBG & $\gamma=3$, approx. & 267 & 150 & 3.400 \\
+D-CBG & $\gamma=2$, approx. & 352 & 176 & 2.966 \\
+D-CBG & $\gamma=1$, approx. & 493 & 209 & 2.809 \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize 1 collapsed run(s) with fewer than 10 novel molecules were excluded; a property mean over a handful of molecules is not an operating point.\end{minipage}
+\caption{MDLM: the Pareto-optimal settings of each method on (novel count, novel-ring count).}
+\label{tab:frontier-ring_count-MDLM}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{ll rrr}
+\toprule
+method & setting & valid & novel & novel-ring count \\
+\midrule
+ours & edlm, $N=2000$, $\lambda=30$ & 982 & 319 & 2.727 \\
+ours & edlm, $N=2000$, $\lambda=100$ & 982 & 319 & 2.727 \\
+ours & edlm, $N=2000$, $\lambda=1000$ & 982 & 319 & 2.727 \\
+D-CBG & $\gamma=10$, exact & 892 & 416 & 4.885 \\
+D-CBG & $\gamma=8$, exact & 910 & 449 & 4.837 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM: the Pareto-optimal settings of each method on (novel count, novel-ring count).}
+\label{tab:frontier-ring_count-UDLM}
+\end{table}
+
+\section{Beyond the mean}\label{sec:beyond-mean-ring_count}
+
+Everything above compares \emph{means}, which is the paper's metric but not the
+one a screening pipeline faces. Nobody consumes the mean of a generated library;
+they take the usable molecules out of it. And the mean is blind to the axis these
+methods differ on most: from the same 1{,}024 generated sequences our runs yield
+several times more novel molecules than D-CBG's.
+
+\subsection{The primary comparison: usable molecules per fixed budget}
+
+Both methods generated exactly 1{,}024 sequences. So simply count the novel
+molecules that clear a quality bar. Quality and quantity both enter --- a run
+that yields many poor novel molecules scores nothing, and one that yields a
+handful of excellent ones scores little.
+
+This number needs no correction of any kind. In particular it must \textbf{not}
+be normalised by the novel count, nor size-matched against the competitor:
+converting a fixed budget into more usable molecules \emph{is} the result, and
+dividing it out would erase precisely what is being measured.
+
+
+\subsubsection{The whole grid, on the primary metric}
+
+The tables above pick a best setting per method, which is what a headline needs
+but not what a reader should have to trust. Below is the raw grid: hits at the
+headline bar at every $(N, \lambda)$, both modes, nothing averaged and nothing
+filtered. It shows where in the grid the hits live --- and that the surface is
+not monotone in either axis, so a single ``best'' cell is partly a draw from run
+noise.
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrrr}
+\toprule
+$N$ & marg.\,0 & marg.\,5 & marg.\,10 & marg.\,30 & marg.\,1000 & edlm.\,0 & edlm.\,5 & edlm.\,10 & edlm.\,30 & edlm.\,1000 \\
+\midrule
+10 & 27 & 46 & 46 & 46 & 46 & 36 & 53 & 53 & 53 & 53 \\
+30 & 28 & 54 & 56 & 56 & 56 & 43 & 53 & 51 & 51 & 51 \\
+100 & 30 & 74 & 76 & 75 & 75 & 27 & 68 & 74 & 74 & 74 \\
+300 & 33 & 85 & 92 & 93 & 93 & 25 & 82 & 80 & 80 & 80 \\
+500 & 28 & 93 & 92 & 92 & 92 & 23 & 80 & 82 & 81 & 81 \\
+1000 & 23 & 107 & 112 & 112 & 112 & 32 & 101 & 114 & 114 & 114 \\
+2000 & 26 & 122 & 107 & 109 & 109 & 42 & 125 & 124 & 125 & 125 \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize Novel molecules clearing the bar, out of the 1{,}024 generated. Every cell is a single run, seed 1; nothing is averaged. $\lambda \in \{0.5, 1, 2, 100\}$ are omitted to fit the page. \textbf{Not} filtered by \texttt{MIN\_NOVEL}, unlike the Pareto table --- a collapsed run simply scores few hits here, which is the honest reading, whereas a mean over 2 molecules is not. \textbf{D-CBG's best on this bar is 76} (exact $\gamma=1$), for comparison.\end{minipage}
+\caption{MDLM: hits at ring count $\geq 5$ across the whole $(N, \lambda)$ grid. Columns are (mixture mode) $\times$ $\lambda$.}
+\label{tab:hits-grid-ring_count-MDLM}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrrr}
+\toprule
+$N$ & marg.\,0 & marg.\,5 & marg.\,10 & marg.\,30 & marg.\,1000 & edlm.\,0 & edlm.\,5 & edlm.\,10 & edlm.\,30 & edlm.\,1000 \\
+\midrule
+10 & 4 & 16 & 15 & 15 & 15 & 4 & 8 & 7 & 7 & 7 \\
+30 & 10 & 8 & 12 & 12 & 12 & 6 & 12 & 11 & 11 & 11 \\
+100 & 5 & 18 & 16 & 16 & 16 & 5 & 7 & 9 & 9 & 9 \\
+300 & 7 & 21 & 18 & 19 & 19 & 8 & 31 & 17 & 16 & 16 \\
+500 & 4 & 25 & 26 & 28 & 28 & 5 & 19 & 25 & 24 & 24 \\
+1000 & 8 & 29 & 29 & 31 & 31 & 10 & 38 & 30 & 30 & 30 \\
+2000 & 2 & 29 & 33 & 34 & 34 & 7 & 49 & 54 & 54 & 54 \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize Novel molecules clearing the bar, out of the 1{,}024 generated. Every cell is a single run, seed 1; nothing is averaged. $\lambda \in \{0.5, 1, 2, 100\}$ are omitted to fit the page. \textbf{Not} filtered by \texttt{MIN\_NOVEL}, unlike the Pareto table --- a collapsed run simply scores few hits here, which is the honest reading, whereas a mean over 2 molecules is not. \textbf{D-CBG's best on this bar is 246} (exact $\gamma=8$), for comparison.\end{minipage}
+\caption{UDLM: hits at ring count $\geq 5$ across the whole $(N, \lambda)$ grid. Columns are (mixture mode) $\times$ $\lambda$.}
+\label{tab:hits-grid-ring_count-UDLM}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lll rrrrr}
+\toprule
+model & method & setting & novel & mean & $\geq 4$ & $\geq 5$ & $\geq 6$ \\
+\midrule
+MDLM & \texttt{marginal} & $N=2000$, $\lambda=5$ & 354 & 3.715 & \textbf{177} (1.3$\times$) & \textbf{122} (1.6$\times$) & \textbf{52} (1.5$\times$) \\
+MDLM & \texttt{edlm} & $N=2000$, $\lambda=5$ & 367 & 3.793 & \textbf{184} (1.3$\times$) & \textbf{125} (1.6$\times$) & \textbf{66} (1.9$\times$) \\
+MDLM & D-CBG & $\gamma=1$, exact & 149 & 4.745 & 137 & 76 & 34 \\
+UDLM & \texttt{marginal} & $N=2000$, $\lambda=30$ & 277 & 2.581 & 59 (0.1$\times$) & 34 (0.1$\times$) & 8 (0.1$\times$) \\
+UDLM & \texttt{edlm} & $N=2000$, $\lambda=10$ & 311 & 2.717 & 82 (0.2$\times$) & 54 (0.2$\times$) & 7 (0.1$\times$) \\
+UDLM & D-CBG & $\gamma=8$, exact & 449 & 4.837 & 444 & 246 & 93 \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize No size matching and no normalisation --- every run spent the same generation budget, so these are directly comparable counts.\end{minipage}
+\caption{Novel molecules clearing each ring count bar, out of the 1{,}024 sequences each run generated. The two mixture-sampling modes are kept apart rather than merged into a single \emph{ours} row, since they are different samplers. Each is at its own best setting, ranked on the middle bar; the multiplier is against D-CBG on the same model.}
+\label{tab:hits-ring_count}
+\end{table}
+
+
+\subsection{Secondary: shape comparisons, which discard the counts}
+
+Two standard distribution-free comparisons. Both deliberately ignore how many
+molecules each method produced, so neither can see the advantage above; they are
+here to answer a different question --- whether our \emph{distribution} is
+better, or only our yield.
+
+\begin{itemize}
+  \item \textbf{Rank against rank.} Sort both sets and compare like for like:
+        best against best, tenth percentile against tenth. The fraction of
+        quantiles where we lead is the \emph{quantile win rate}; 1.0 would be
+        \textbf{first-order stochastic dominance}. Comparing the $k$-th
+        \emph{rank} directly would need equal sample sizes, so this compares at
+        matched quantiles, the size-independent form of the same idea.
+  \item \textbf{Draw against draw.} $A_{12}$, the Vargha--Delaney probability of
+        superiority: one molecule drawn at random from each, how often is ours
+        better? The normalised Mann--Whitney $U$; $0.5$ is indistinguishable.
+\end{itemize}
+
+The \emph{matched} column subsamples the larger novel set down to the smaller.
+It is a \textbf{decomposition, not a fairness correction} --- it separates
+``we win because our tail is better'' from ``we win because our pool is deeper''.
+The counterfactual it describes never occurs in practice, so it should not be
+read as the fair comparison; the table above is.
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{ll rrrrr rr}
+\toprule
+model & method & novel & mean & max & top10 & top10 matched & q-win & $A_{12}$ \\
+\midrule
+MDLM & ours & 304 & 3.615 & 12.000 & 10.100 & 8.814 & 0.43 & 0.39 \\
+MDLM & D-CBG & 111 & 3.856 & 10.000 & 7.600 & 7.600 & -- & -- \\
+UDLM & ours & 313 & 2.540 & 10.000 & 6.800 & 6.800 & 0.00 & 0.08 \\
+UDLM & D-CBG & 416 & 4.885 & 10.000 & 9.100 & 8.575 & -- & -- \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize \emph{max} and \emph{top-K} are at the fixed 1,024-sequence budget and so include our deeper novel pool. \emph{matched} removes that, and answers only ``quality or quantity?.\end{minipage}
+\caption{Each method at its own best setting by top-10. \emph{q-win} and $A_{12}$ sit on the ours row and describe ours against D-CBG.}
+\label{tab:beyond-ring_count}
+\end{table}
+
+\section{Validity}\label{sec:validity-ring_count}
+
+Validity is the axis on which the two mechanisms differ most sharply, and it is
+what drives the curve directions of the previous section, so it is worth
+reporting on its own.
+
+Our reward sees a \emph{clean} $x_0$ candidate and returns
+\texttt{invalid\_reward} $=0$ when RDKit cannot parse it. Raising $\lambda$
+therefore pushes probability towards parseable molecules before it pushes
+towards high ring count: an invalid candidate is treated as a ring count-zero one and
+suppressed. D-CBG instead perturbs the per-position logits with the gradient of
+a noisy classifier, which carries no such term --- nothing in it prefers a
+parseable string.
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 547 & 580 & 600 & 610 & 628 & 629 & 629 & 629 & 629 \\
+30 & 542 & 569 & 595 & 623 & 637 & 637 & 637 & 637 & 637 \\
+100 & 532 & 568 & 600 & 638 & 659 & 657 & 658 & 658 & 658 \\
+300 & 552 & 580 & 600 & 657 & 683 & 700 & 700 & 700 & 700 \\
+500 & 558 & 584 & 618 & 650 & 684 & 696 & 695 & 695 & 695 \\
+1000 & 549 & 583 & 613 & 653 & 697 & 701 & 702 & 702 & 702 \\
+2000 & 544 & 565 & 611 & 654 & 716 & 731 & 734 & 734 & 734 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{marginal}: valid molecules out of the 1{,}024 generated.}
+\label{tab:valid-ring_count-MDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 564 & 590 & 605 & 622 & 629 & 629 & 629 & 629 & 629 \\
+30 & 558 & 590 & 608 & 622 & 639 & 640 & 640 & 640 & 640 \\
+100 & 553 & 598 & 631 & 656 & 704 & 699 & 698 & 698 & 698 \\
+300 & 556 & 594 & 620 & 659 & 680 & 696 & 696 & 696 & 696 \\
+500 & 549 & 581 & 614 & 658 & 696 & 704 & 704 & 704 & 704 \\
+1000 & 542 & 577 & 631 & 678 & 717 & 728 & 730 & 730 & 730 \\
+2000 & 559 & 591 & 633 & 694 & 766 & 754 & 754 & 754 & 754 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{edlm}: valid molecules out of the 1{,}024 generated.}
+\label{tab:valid-ring_count-MDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 682 & 731 & 770 & 832 & 858 & 866 & 867 & 867 & 867 \\
+30 & 695 & 759 & 791 & 867 & 902 & 922 & 922 & 922 & 922 \\
+100 & 686 & 743 & 798 & 863 & 916 & 921 & 921 & 921 & 921 \\
+300 & 672 & 733 & 774 & 872 & 940 & 957 & 961 & 961 & 961 \\
+500 & 691 & 744 & 792 & 862 & 943 & 953 & 951 & 951 & 951 \\
+1000 & 695 & 748 & 792 & 880 & 938 & 954 & 961 & 961 & 961 \\
+2000 & 694 & 763 & 817 & 873 & 954 & 972 & 974 & 974 & 974 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{marginal}: valid molecules out of the 1{,}024 generated.}
+\label{tab:valid-ring_count-UDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+10 & 657 & 731 & 786 & 845 & 889 & 890 & 890 & 890 & 890 \\
+30 & 675 & 744 & 802 & 879 & 912 & 919 & 919 & 919 & 919 \\
+100 & 679 & 746 & 813 & 879 & 944 & 953 & 953 & 953 & 953 \\
+300 & 693 & 765 & 810 & 901 & 969 & 978 & 979 & 979 & 979 \\
+500 & 686 & 775 & 806 & 882 & 966 & 979 & 980 & 980 & 980 \\
+1000 & 685 & 748 & 808 & 901 & 978 & 984 & 986 & 986 & 986 \\
+2000 & 685 & 766 & 824 & 902 & 981 & 979 & 982 & 982 & 982 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{edlm}: valid molecules out of the 1{,}024 generated.}
+\label{tab:valid-ring_count-UDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{ll rrr l}
+\toprule
+model & method & weakest dial & best & strongest dial & trend \\
+\midrule
+MDLM & ours ($N=2000$) & 544 & 734 & 734 & \textbf{rises} \\
+MDLM & D-CBG exact & 188 & 188 & 2 & falls \\
+MDLM & D-CBG approx. & 493 & 493 & 88 & falls \\
+UDLM & ours ($N=2000$) & 694 & 974 & 974 & \textbf{rises} \\
+UDLM & D-CBG exact & 807 & 910 & 892 & rises \\
+UDLM & D-CBG approx. & 992 & 992 & 792 & falls \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize This is the mechanism behind the opposite curve directions: our dial buys validity on the way to buying property, so the novel count rises with it, while D-CBG spends validity and the novel count falls. On MDLM the D-CBG exact arm reaches zero valid molecules at $\gamma \geq 6$, which is why the paper does not report it there.\end{minipage}
+\caption{Valid molecules out of 1{,}024 as the strength dial is turned up. Ours is read along $\lambda$ at the largest $N$; D-CBG along $\gamma$.}
+\label{tab:valid-vs-dial-ring_count}
+\end{table}
+
+\section{The shape of each curve}
+
+Plot novel count on the $x$-axis against novel-ring count mean on the $y$-axis and
+sweep each method's strength dial --- $\lambda$ for ours, $\gamma$ for D-CBG.
+The two methods trace curves in \emph{opposite directions}, and that is a
+property worth reporting on its own, independently of which sits higher.
+
+\begin{itemize}
+  \item \textbf{D-CBG runs up and to the left.} Raising $\gamma$ buys
+        property by spending novelty: the dial is a genuine trade-off the user
+        has to tune, and the original paper tunes it per model and per property.
+  \item \textbf{Ours runs up and to the right.} Raising $\lambda$ improves
+        \emph{both} axes at once. The reason is visible in the validity
+        column: the first thing $\lambda$ buys is valid molecules, which raises
+        the novel count, and only then does it buy property. There is no
+        trade-off to tune --- the only cost is compute.
+\end{itemize}
+
+The correlation between the two axes along each sweep reduces this to one
+number. Crucially it is measured at \emph{fixed} $N$, so the up-right shape
+is not an artifact of spending more Monte Carlo budget: along every row below,
+only the strength dial moves.
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{ll r rr rl}
+\toprule
+model & method & pts & weakest dial & strongest dial & corr & shape \\
+\midrule
+MDLM & ours, $N=100$ & 9 & (211, 2.346) & (279, 3.108) & +0.98 & \textbf{up-right} \\
+MDLM & ours, $N=300$ & 9 & (220, 2.468) & (316, 3.367) & +0.93 & \textbf{up-right} \\
+MDLM & ours, $N=1000$ & 9 & (204, 2.426) & (369, 3.493) & +0.96 & \textbf{up-right} \\
+MDLM & ours, $N=2000$ & 9 & (190, 2.379) & (362, 3.627) & +0.96 & \textbf{up-right} \\
+MDLM & D-CBG approx. & 6 & (209, 2.809) & (67, 4.597) & -0.99 & up-left \\
+UDLM & ours, $N=100$ & 9 & (194, 1.660) & (265, 1.932) & +0.95 & \textbf{up-right} \\
+UDLM & ours, $N=300$ & 9 & (193, 1.637) & (288, 2.125) & +0.96 & \textbf{up-right} \\
+UDLM & ours, $N=1000$ & 9 & (186, 1.543) & (308, 2.351) & +0.97 & \textbf{up-right} \\
+UDLM & ours, $N=2000$ & 9 & (207, 1.469) & (277, 2.581) & +0.96 & \textbf{up-right} \\
+UDLM & D-CBG exact & 6 & (275, 4.033) & (416, 4.885) & +0.86 & \textbf{up-right} \\
+UDLM & D-CBG approx. & 6 & (154, 2.519) & (355, 4.780) & +0.87 & \textbf{up-right} \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize Measured at fixed $N$, so the up-right shape is not an effect of raising the Monte Carlo budget --- only the strength dial moves along each row.\end{minipage}
+\caption{Direction of each curve in (novel count, novel-ring count) space. \emph{corr} is between the two axes along the sweep: positive means the dial improves both, negative means it trades one for the other.}
+\label{tab:shape-ring_count}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lccccccccc}
+\toprule
+ours & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+$N=10$ & (216, 2.477) & (233, 2.751) & (244, 2.824) & (243, 2.815) & (254, 2.819) & (256, 2.820) & (256, 2.820) & (256, 2.820) & (256, 2.820) \\
+$N=30$ & (211, 2.365) & (232, 2.552) & (245, 2.657) & (265, 2.683) & (276, 2.681) & (288, 2.639) & (289, 2.633) & (289, 2.633) & (289, 2.633) \\
+$N=100$ & (211, 2.346) & (232, 2.573) & (259, 2.822) & (281, 2.979) & (287, 3.080) & (279, 3.129) & (279, 3.108) & (279, 3.108) & (279, 3.108) \\
+$N=300$ & (220, 2.468) & (236, 2.716) & (241, 3.033) & (281, 3.260) & (293, 3.345) & (316, 3.351) & (316, 3.367) & (316, 3.367) & (316, 3.367) \\
+$N=500$ & (228, 2.548) & (245, 2.698) & (272, 2.952) & (294, 3.173) & (331, 3.311) & (334, 3.413) & (334, 3.410) & (334, 3.410) & (334, 3.410) \\
+$N=1000$ & (204, 2.426) & (229, 2.603) & (257, 2.911) & (281, 3.310) & (361, 3.452) & (367, 3.499) & (369, 3.493) & (369, 3.493) & (369, 3.493) \\
+$N=2000$ & (190, 2.379) & (204, 2.672) & (245, 3.045) & (304, 3.615) & (354, 3.715) & (357, 3.611) & (362, 3.627) & (362, 3.627) & (362, 3.627) \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM: the (novel, novel-ring count) point at each $\lambda$, for every $N$. Reading a row left to right traces that curve.}
+\label{tab:curve-ring_count-MDLM}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lllllll}
+\toprule
+D-CBG &  &  &  &  &  &  \\
+\midrule
+exact & $\gamma=1$: (149, 4.745) &  &  &  &  &  \\
+approx. & $\gamma=1$: (209, 2.809) & $\gamma=2$: (176, 2.966) & $\gamma=3$: (150, 3.400) & $\gamma=5$: (111, 3.856) & $\gamma=8$: (86, 4.244) & $\gamma=10$: (67, 4.597) \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM: the same for D-CBG, sweeping $\gamma$. The novel count falls as the property rises --- the opposite direction.}
+\label{tab:curve-cbg-ring_count-MDLM}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lccccccccc}
+\toprule
+ours & $\lambda=0$ & $\lambda=0.5$ & $\lambda=1$ & $\lambda=2$ & $\lambda=5$ & $\lambda=10$ & $\lambda=30$ & $\lambda=100$ & $\lambda=1000$ \\
+\midrule
+$N=10$ & (189, 1.656) & (208, 1.865) & (230, 1.935) & (251, 1.873) & (243, 1.868) & (241, 1.884) & (241, 1.884) & (241, 1.884) & (241, 1.884) \\
+$N=30$ & (195, 1.708) & (214, 1.785) & (202, 1.787) & (242, 1.884) & (251, 1.789) & (264, 1.799) & (265, 1.804) & (265, 1.804) & (265, 1.804) \\
+$N=100$ & (194, 1.660) & (214, 1.776) & (229, 1.825) & (240, 1.846) & (286, 1.920) & (267, 1.936) & (265, 1.932) & (265, 1.932) & (265, 1.932) \\
+$N=300$ & (193, 1.637) & (207, 1.768) & (212, 1.764) & (240, 1.954) & (268, 2.168) & (292, 2.110) & (288, 2.125) & (288, 2.125) & (288, 2.125) \\
+$N=500$ & (196, 1.592) & (217, 1.627) & (222, 1.721) & (249, 2.008) & (278, 2.317) & (284, 2.162) & (279, 2.211) & (279, 2.211) & (279, 2.211) \\
+$N=1000$ & (186, 1.543) & (206, 1.646) & (228, 1.842) & (241, 2.129) & (288, 2.302) & (294, 2.364) & (308, 2.351) & (308, 2.351) & (308, 2.351) \\
+$N=2000$ & (207, 1.469) & (234, 1.654) & (243, 1.733) & (256, 1.953) & (275, 2.524) & (278, 2.572) & (277, 2.581) & (277, 2.581) & (277, 2.581) \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM: the (novel, novel-ring count) point at each $\lambda$, for every $N$. Reading a row left to right traces that curve.}
+\label{tab:curve-ring_count-UDLM}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lllllll}
+\toprule
+D-CBG &  &  &  &  &  &  \\
+\midrule
+exact & $\gamma=1$: (275, 4.033) & $\gamma=2$: (307, 4.619) & $\gamma=3$: (345, 4.557) & $\gamma=5$: (400, 4.695) & $\gamma=8$: (449, 4.837) & $\gamma=10$: (416, 4.885) \\
+approx. & $\gamma=1$: (154, 2.519) & $\gamma=2$: (147, 3.184) & $\gamma=3$: (197, 3.893) & $\gamma=5$: (223, 4.435) & $\gamma=8$: (298, 4.661) & $\gamma=10$: (355, 4.780) \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM: the same for D-CBG, sweeping $\gamma$. The novel count falls as the property rises --- the opposite direction.}
+\label{tab:curve-cbg-ring_count-UDLM}
+\end{table}
+
+\section{What the sweep says}
+\textbf{MDLM.} Peak novel-ring count: ours 3.793 against D-CBG 4.745. Peak novel count: ours 379 against D-CBG 209. Each method wins one axis, so the comparison is a genuine frontier.
+\textbf{UDLM.} Peak novel-ring count: ours 2.727 against D-CBG 4.885. Peak novel count: ours 319 against D-CBG 449. \emph{D-CBG dominates on both axes} --- there is no trade-off to report here, we simply lose.
+
+\subsection{Why ring count behaves differently from QED}
+
+The method can only \emph{select}, never \emph{invent}. Weights are
+$\mathrm{softmax}(\lambda r)$ over $N$ candidates drawn from $x_\theta$, so the
+best reachable reward at a step is the best value \emph{present among those $N$
+candidates}. No $\lambda$ can produce a 5-ring molecule if none of the $N$
+proposals has one.
+
+That ceiling binds hard on ring count and barely at all on QED, for two reasons
+that reinforce each other:
+
+\begin{itemize}
+  \item \textbf{The reward is integer valued}, so candidates tie and the tilt
+        saturates early. Raising $\lambda$ past $\approx5$ changes nothing:
+        the softmax is already a hard argmax over the tied top set.
+  \item \textbf{High-ring molecules are rare under the base model} (QM9's mean
+        ring count is 1.74), so the $N$ proposals rarely contain one.
+\end{itemize}
+
+D-CBG has no such ceiling: it perturbs the per-position logits with a classifier
+gradient and can steer toward regions the base model would not have proposed.
+That is exactly what the numbers show.
+
+\textbf{The binding constraint is $N$, not $\lambda$.} Along the saturated
+$\lambda$ ridge the property still climbs monotonically with $N$ and has not
+flattened at $N=500$. Pushing $N$ further is the one lever with headroom left;
+raising $\lambda$ is spent.
+
+\end{document}

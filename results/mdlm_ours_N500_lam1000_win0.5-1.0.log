@@ -1,869 +1,0 @@
-Seed set to 1
-Gen. batches:   0%|          | 0/16 [00:00<?, ?it/s]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:02<?, ?it/s, ESS=484, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:02<01:17,  2.49s/it, ESS=484, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:02<01:17,  2.49s/it, ESS=306, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:02<00:35,  1.17s/it, ESS=306, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:02<00:35,  1.17s/it, ESS=198, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:02<00:21,  1.35it/s, ESS=198, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:03<00:21,  1.35it/s, ESS=181, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:03<00:15,  1.85it/s, ESS=181, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:03<00:15,  1.85it/s, ESS=158, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:03<00:14,  1.88it/s, ESS=158, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:03<00:14,  1.88it/s, ESS=147, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:03<00:11,  2.30it/s, ESS=147, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:04<00:11,  2.30it/s, ESS=136, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:04<00:09,  2.72it/s, ESS=136, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:04<00:09,  2.72it/s, ESS=133, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:04<00:07,  3.08it/s, ESS=133, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:04<00:07,  3.08it/s, ESS=135, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:04<00:06,  3.38it/s, ESS=135, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:05<00:06,  3.38it/s, ESS=136, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:05<00:07,  2.96it/s, ESS=136, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:05<00:07,  2.96it/s, ESS=129, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:05<00:06,  3.28it/s, ESS=129, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:05<00:06,  3.28it/s, ESS=130, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:05<00:05,  3.56it/s, ESS=130, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:05<00:05,  3.56it/s, ESS=137, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:05<00:04,  3.83it/s, ESS=137, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:05<00:04,  3.83it/s, ESS=162, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:05<00:04,  4.03it/s, ESS=162, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:06<00:04,  4.03it/s, ESS=168, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:06<00:05,  3.38it/s, ESS=168, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:06<00:05,  3.38it/s, ESS=171, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:06<00:04,  3.75it/s, ESS=171, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:06<00:04,  3.75it/s, ESS=180, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:06<00:03,  3.98it/s, ESS=180, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:06<00:03,  3.98it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:06<00:03,  3.98it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:06<00:03,  3.98it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:06<00:03,  3.98it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:06<00:03,  3.98it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:06<00:00, 10.43it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:06<00:00, 10.43it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:06<00:00, 10.43it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:06<00:00, 10.43it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:07<00:00, 10.43it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:07<00:00, 10.43it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:07<00:00, 16.65it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:07<00:00, 16.65it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:07<00:00, 16.65it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:07<00:00, 16.65it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:07<00:00, 16.65it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:07<00:00, 16.65it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-Sampling (ours): 100%|██████████| 32/32 [00:07<00:00, 22.31it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches:   6%|▋         | 1/16 [00:07<01:47,  7.18s/it]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s, ESS=484, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  5.02it/s, ESS=484, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  5.02it/s, ESS=322, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.77it/s, ESS=322, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.77it/s, ESS=205, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:08,  3.30it/s, ESS=205, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:01<00:08,  3.30it/s, ESS=189, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.70it/s, ESS=189, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.70it/s, ESS=142, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:06,  3.95it/s, ESS=142, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:06,  3.95it/s, ESS=120, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:06,  4.09it/s, ESS=120, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:06,  4.09it/s, ESS=87.4, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:01<00:06,  4.14it/s, ESS=87.4, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:06,  4.14it/s, ESS=105, NFEs=8, nan_check=0, prob_check=1] [A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:07,  3.24it/s, ESS=105, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:07,  3.24it/s, ESS=113, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.53it/s, ESS=113, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.53it/s, ESS=102, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.73it/s, ESS=102, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.73it/s, ESS=99.2, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:02<00:05,  3.91it/s, ESS=99.2, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:05,  3.91it/s, ESS=111, NFEs=12, nan_check=0, prob_check=1] [A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:04,  4.06it/s, ESS=111, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:04,  4.06it/s, ESS=109, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.39it/s, ESS=109, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.39it/s, ESS=134, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  3.72it/s, ESS=134, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  3.72it/s, ESS=130, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:03<00:04,  3.99it/s, ESS=130, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:04,  3.99it/s, ESS=173, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.18it/s, ESS=173, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.18it/s, ESS=182, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.50it/s, ESS=182, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.50it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.50it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.50it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.50it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.50it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.35it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.35it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.35it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.35it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.35it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.35it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.23it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.23it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.23it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.23it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.23it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.23it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-Sampling (ours): 100%|██████████| 32/32 [00:04<00:00, 20.69it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches:  12%|█▎        | 2/16 [00:12<01:21,  5.85s/it]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s, ESS=453, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  5.03it/s, ESS=453, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  5.03it/s, ESS=243, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.63it/s, ESS=243, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.63it/s, ESS=165, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:06,  4.53it/s, ESS=165, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:06,  4.53it/s, ESS=152, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:00<00:06,  4.48it/s, ESS=152, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:06,  4.48it/s, ESS=144, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:08,  3.31it/s, ESS=144, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:08,  3.31it/s, ESS=130, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:07,  3.59it/s, ESS=130, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:07,  3.59it/s, ESS=109, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:01<00:06,  3.83it/s, ESS=109, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:06,  3.83it/s, ESS=108, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.99it/s, ESS=108, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.99it/s, ESS=110, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:05,  4.11it/s, ESS=110, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:05,  4.11it/s, ESS=135, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:06,  3.32it/s, ESS=135, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:06,  3.32it/s, ESS=131, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:02<00:05,  3.60it/s, ESS=131, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:05,  3.60it/s, ESS=122, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:05,  3.83it/s, ESS=122, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:05,  3.83it/s, ESS=116, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:04,  4.00it/s, ESS=116, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:04,  4.00it/s, ESS=140, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  4.16it/s, ESS=140, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  4.16it/s, ESS=157, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:03<00:05,  3.39it/s, ESS=157, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:05,  3.39it/s, ESS=149, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:04,  3.74it/s, ESS=149, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:04,  3.74it/s, ESS=184, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.09it/s, ESS=184, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.09it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.09it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.09it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.09it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.09it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.66it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.66it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.66it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.66it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.66it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.66it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.97it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.97it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.97it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.97it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.97it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.97it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-Sampling (ours): 100%|██████████| 32/32 [00:04<00:00, 22.66it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches:  19%|█▉        | 3/16 [00:16<01:09,  5.35s/it]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s, ESS=453, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  5.13it/s, ESS=453, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  5.13it/s, ESS=290, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.78it/s, ESS=290, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.78it/s, ESS=214, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:08,  3.32it/s, ESS=214, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:01<00:08,  3.32it/s, ESS=166, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.72it/s, ESS=166, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.72it/s, ESS=158, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:06,  3.94it/s, ESS=158, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:06,  3.94it/s, ESS=143, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:06,  4.12it/s, ESS=143, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:06,  4.12it/s, ESS=174, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:01<00:07,  3.30it/s, ESS=174, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:07,  3.30it/s, ESS=143, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.59it/s, ESS=143, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.59it/s, ESS=127, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.82it/s, ESS=127, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.82it/s, ESS=130, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.96it/s, ESS=130, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.96it/s, ESS=114, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:02<00:05,  4.12it/s, ESS=114, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:05,  4.12it/s, ESS=123, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:06,  3.29it/s, ESS=123, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:06,  3.29it/s, ESS=140, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.61it/s, ESS=140, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.61it/s, ESS=156, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  3.89it/s, ESS=156, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  3.89it/s, ESS=174, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:03<00:04,  4.09it/s, ESS=174, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:04,  4.09it/s, ESS=177, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.28it/s, ESS=177, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.28it/s, ESS=168, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=168, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.31it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.31it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.31it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.31it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.31it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.31it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-Sampling (ours): 100%|██████████| 32/32 [00:04<00:00, 20.87it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches:  25%|██▌       | 4/16 [00:21<01:02,  5.18s/it]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s, ESS=477, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  4.72it/s, ESS=477, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  4.72it/s, ESS=244, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.60it/s, ESS=244, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.60it/s, ESS=197, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:06,  4.57it/s, ESS=197, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:06,  4.57it/s, ESS=143, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:00<00:06,  4.51it/s, ESS=143, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:06,  4.51it/s, ESS=132, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:08,  3.34it/s, ESS=132, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:08,  3.34it/s, ESS=124, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:07,  3.61it/s, ESS=124, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:07,  3.61it/s, ESS=101, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:01<00:06,  3.81it/s, ESS=101, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:06,  3.81it/s, ESS=127, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.95it/s, ESS=127, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.95it/s, ESS=128, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:05,  4.05it/s, ESS=128, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:05,  4.05it/s, ESS=130, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:06,  3.29it/s, ESS=130, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:06,  3.29it/s, ESS=106, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:02<00:05,  3.57it/s, ESS=106, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:05,  3.57it/s, ESS=138, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:05,  3.79it/s, ESS=138, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:05,  3.79it/s, ESS=121, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:04,  3.98it/s, ESS=121, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:04,  3.98it/s, ESS=115, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  4.10it/s, ESS=115, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:04<00:04,  4.10it/s, ESS=171, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:05,  3.33it/s, ESS=171, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:05,  3.33it/s, ESS=170, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:04,  3.67it/s, ESS=170, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:04,  3.67it/s, ESS=198, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.96it/s, ESS=198, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.96it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.96it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.96it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.96it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.96it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.38it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.38it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.38it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.38it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.38it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.38it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.59it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.59it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.59it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.59it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.59it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.59it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-Sampling (ours): 100%|██████████| 32/32 [00:04<00:00, 22.26it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches:  31%|███▏      | 5/16 [00:26<00:55,  5.05s/it]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s, ESS=453, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  4.74it/s, ESS=453, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  4.74it/s, ESS=251, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.69it/s, ESS=251, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.69it/s, ESS=174, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:08,  3.26it/s, ESS=174, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:01<00:08,  3.26it/s, ESS=93.2, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.66it/s, ESS=93.2, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.66it/s, ESS=118, NFEs=5, nan_check=0, prob_check=1] [A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:07,  3.86it/s, ESS=118, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:07,  3.86it/s, ESS=136, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:06,  3.98it/s, ESS=136, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:06,  3.98it/s, ESS=90.2, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:01<00:06,  4.03it/s, ESS=90.2, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:06,  4.03it/s, ESS=116, NFEs=8, nan_check=0, prob_check=1] [A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:07,  3.27it/s, ESS=116, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:07,  3.27it/s, ESS=120, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.54it/s, ESS=120, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.54it/s, ESS=105, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.78it/s, ESS=105, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.78it/s, ESS=144, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:02<00:05,  3.98it/s, ESS=144, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:05,  3.98it/s, ESS=132, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:06,  3.31it/s, ESS=132, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:06,  3.31it/s, ESS=152, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.66it/s, ESS=152, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.66it/s, ESS=155, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  3.96it/s, ESS=155, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  3.96it/s, ESS=171, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:03<00:04,  4.18it/s, ESS=171, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:04,  4.18it/s, ESS=168, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.40it/s, ESS=168, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.40it/s, ESS=194, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.59it/s, ESS=194, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.59it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.59it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.59it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.59it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.59it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 11.73it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 11.73it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 11.73it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 11.73it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 11.73it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 11.73it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 18.31it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 18.31it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 18.31it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 18.31it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 18.31it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 18.31it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-Sampling (ours): 100%|██████████| 32/32 [00:04<00:00, 23.96it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches:  38%|███▊      | 6/16 [00:31<00:49,  4.93s/it]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s, ESS=484, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:12,  2.39it/s, ESS=484, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:12,  2.39it/s, ESS=282, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:09,  3.26it/s, ESS=282, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:09,  3.26it/s, ESS=205, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:07,  3.69it/s, ESS=205, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:01<00:07,  3.69it/s, ESS=174, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.90it/s, ESS=174, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.90it/s, ESS=124, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:06,  4.05it/s, ESS=124, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:06,  4.05it/s, ESS=100, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:08,  3.21it/s, ESS=100, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:02<00:08,  3.21it/s, ESS=117, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:07,  3.48it/s, ESS=117, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:07,  3.48it/s, ESS=102, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.67it/s, ESS=102, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.67it/s, ESS=119, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:05,  3.84it/s, ESS=119, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:05,  3.84it/s, ESS=119, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.96it/s, ESS=119, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:03<00:05,  3.96it/s, ESS=132, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:06,  3.25it/s, ESS=132, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:06,  3.25it/s, ESS=133, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:05,  3.54it/s, ESS=133, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:05,  3.54it/s, ESS=131, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.77it/s, ESS=131, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.77it/s, ESS=137, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  3.97it/s, ESS=137, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:04<00:04,  3.97it/s, ESS=145, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:05,  3.34it/s, ESS=145, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:05,  3.34it/s, ESS=167, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:04,  3.61it/s, ESS=167, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:04,  3.61it/s, ESS=200, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.93it/s, ESS=200, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.93it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.93it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.93it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.93it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.93it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.32it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.32it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.32it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.32it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.32it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.32it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.54it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.54it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.54it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.54it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.54it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:05<00:00, 16.54it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-Sampling (ours): 100%|██████████| 32/32 [00:05<00:00, 22.21it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches:  44%|████▍     | 7/16 [00:36<00:44,  4.97s/it]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s, ESS=484, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  5.11it/s, ESS=484, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  5.11it/s, ESS=305, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.72it/s, ESS=305, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.72it/s, ESS=205, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:08,  3.25it/s, ESS=205, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:01<00:08,  3.25it/s, ESS=190, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.58it/s, ESS=190, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.58it/s, ESS=150, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:07,  3.85it/s, ESS=150, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:07,  3.85it/s, ESS=120, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:06,  4.01it/s, ESS=120, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:06,  4.01it/s, ESS=146, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:01<00:06,  4.11it/s, ESS=146, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:06,  4.11it/s, ESS=127, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:07,  3.32it/s, ESS=127, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:07,  3.32it/s, ESS=154, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.59it/s, ESS=154, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.59it/s, ESS=160, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.78it/s, ESS=160, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.78it/s, ESS=181, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:02<00:05,  3.90it/s, ESS=181, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:05,  3.90it/s, ESS=188, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:04,  4.04it/s, ESS=188, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:04,  4.04it/s, ESS=213, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.27it/s, ESS=213, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.27it/s, ESS=207, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:05,  3.57it/s, ESS=207, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:05,  3.57it/s, ESS=210, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:03<00:04,  3.85it/s, ESS=210, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:04,  3.85it/s, ESS=234, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.09it/s, ESS=234, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.09it/s, ESS=241, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.25it/s, ESS=241, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.25it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.25it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.25it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.25it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.25it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 11.01it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 11.01it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 11.01it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 11.01it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 11.01it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 11.01it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 17.41it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 17.41it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 17.41it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 17.41it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  94%|█████████▍| 30/32 [00:04<00:00, 14.94it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  94%|█████████▍| 30/32 [00:04<00:00, 14.94it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  94%|█████████▍| 30/32 [00:04<00:00, 14.94it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches:  50%|█████     | 8/16 [00:41<00:39,  4.98s/it]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s, ESS=469, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  5.02it/s, ESS=469, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  5.02it/s, ESS=306, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.91it/s, ESS=306, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.91it/s, ESS=212, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:06,  4.67it/s, ESS=212, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:06,  4.67it/s, ESS=166, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:00<00:06,  4.47it/s, ESS=166, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:06,  4.47it/s, ESS=127, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:07,  3.38it/s, ESS=127, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:07,  3.38it/s, ESS=120, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:07,  3.64it/s, ESS=120, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:07,  3.64it/s, ESS=130, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:01<00:06,  3.81it/s, ESS=130, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:01<00:06,  3.81it/s, ESS=92.1, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:01<00:05,  4.00it/s, ESS=92.1, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:05,  4.00it/s, ESS=86.7, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:05,  4.10it/s, ESS=86.7, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:05,  4.10it/s, ESS=88.6, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:06,  3.33it/s, ESS=88.6, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:06,  3.33it/s, ESS=92.5, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:02<00:05,  3.61it/s, ESS=92.5, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:05,  3.61it/s, ESS=102, NFEs=12, nan_check=0, prob_check=1] [A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:05,  3.87it/s, ESS=102, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:05,  3.87it/s, ESS=102, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:04,  4.08it/s, ESS=102, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:04,  4.08it/s, ESS=145, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  4.27it/s, ESS=145, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  4.27it/s, ESS=152, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:03<00:04,  3.45it/s, ESS=152, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:04,  3.45it/s, ESS=175, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:04,  3.82it/s, ESS=175, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:04,  3.82it/s, ESS=174, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.07it/s, ESS=174, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.07it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.07it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.07it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.07it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.07it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.62it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.62it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.62it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.62it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.62it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.62it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.91it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.91it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.91it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.91it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.91it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.91it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-Sampling (ours): 100%|██████████| 32/32 [00:04<00:00, 22.59it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches:  56%|█████▋    | 9/16 [00:46<00:34,  4.90s/it]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s, ESS=484, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  4.69it/s, ESS=484, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  4.69it/s, ESS=282, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:09,  3.01it/s, ESS=282, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:09,  3.01it/s, ESS=181, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:08,  3.44it/s, ESS=181, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:01<00:08,  3.44it/s, ESS=151, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.73it/s, ESS=151, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.73it/s, ESS=129, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:06,  3.91it/s, ESS=129, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:06,  3.91it/s, ESS=169, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:06,  4.01it/s, ESS=169, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:02<00:06,  4.01it/s, ESS=122, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:07,  3.16it/s, ESS=122, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:07,  3.16it/s, ESS=99.2, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.44it/s, ESS=99.2, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.44it/s, ESS=107, NFEs=9, nan_check=0, prob_check=1] [A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.61it/s, ESS=107, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.61it/s, ESS=98.5, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.75it/s, ESS=98.5, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.75it/s, ESS=102, NFEs=11, nan_check=0, prob_check=1] [A
-Sampling (ours):  34%|███▍      | 11/32 [00:02<00:05,  3.88it/s, ESS=102, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:05,  3.88it/s, ESS=95.8, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:06,  3.20it/s, ESS=95.8, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:06,  3.20it/s, ESS=104, NFEs=13, nan_check=0, prob_check=1] [A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.51it/s, ESS=104, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.51it/s, ESS=119, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  3.79it/s, ESS=119, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:04<00:04,  3.79it/s, ESS=157, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:04,  4.04it/s, ESS=157, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:04,  4.04it/s, ESS=155, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.24it/s, ESS=155, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.24it/s, ESS=175, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=175, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.34it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.34it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.34it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.34it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:05<00:00, 15.34it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:05<00:00, 15.34it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-Sampling (ours): 100%|██████████| 32/32 [00:05<00:00, 20.89it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches:  62%|██████▎   | 10/16 [00:51<00:29,  4.95s/it]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s, ESS=477, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  4.76it/s, ESS=477, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  4.76it/s, ESS=243, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.59it/s, ESS=243, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.59it/s, ESS=184, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:06,  4.56it/s, ESS=184, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:06,  4.56it/s, ESS=129, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:00<00:06,  4.52it/s, ESS=129, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:06,  4.52it/s, ESS=90.7, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:07,  3.39it/s, ESS=90.7, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:07,  3.39it/s, ESS=102, NFEs=6, nan_check=0, prob_check=1] [A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:07,  3.65it/s, ESS=102, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:07,  3.65it/s, ESS=71.2, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:01<00:06,  3.81it/s, ESS=71.2, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:06,  3.81it/s, ESS=65.8, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.98it/s, ESS=65.8, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.98it/s, ESS=74.1, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:05,  4.01it/s, ESS=74.1, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:05,  4.01it/s, ESS=86.3, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:06,  3.25it/s, ESS=86.3, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:06,  3.25it/s, ESS=83.3, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:02<00:06,  3.44it/s, ESS=83.3, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:06,  3.44it/s, ESS=86.2, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:05,  3.68it/s, ESS=86.2, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:05,  3.68it/s, ESS=106, NFEs=13, nan_check=0, prob_check=1] [A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:04,  3.88it/s, ESS=106, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:04,  3.88it/s, ESS=147, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  4.05it/s, ESS=147, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:04<00:04,  4.05it/s, ESS=132, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:05,  3.38it/s, ESS=132, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:05,  3.38it/s, ESS=162, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:04,  3.70it/s, ESS=162, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:04,  3.70it/s, ESS=184, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.99it/s, ESS=184, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.99it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.99it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.99it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.99it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  3.99it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.46it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.46it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.46it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.46it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.46it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.46it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.70it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.70it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.70it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.70it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.70it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.70it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-Sampling (ours): 100%|██████████| 32/32 [00:04<00:00, 22.36it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches:  69%|██████▉   | 11/16 [00:55<00:24,  4.91s/it]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s, ESS=492, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  5.09it/s, ESS=492, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  5.09it/s, ESS=252, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.51it/s, ESS=252, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.51it/s, ESS=159, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:09,  3.21it/s, ESS=159, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:01<00:09,  3.21it/s, ESS=131, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.61it/s, ESS=131, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.61it/s, ESS=125, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:07,  3.78it/s, ESS=125, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:07,  3.78it/s, ESS=133, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:06,  3.95it/s, ESS=133, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:06,  3.95it/s, ESS=118, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:01<00:06,  4.05it/s, ESS=118, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:06,  4.05it/s, ESS=102, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:07,  3.24it/s, ESS=102, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:07,  3.24it/s, ESS=110, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.52it/s, ESS=110, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.52it/s, ESS=137, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.75it/s, ESS=137, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.75it/s, ESS=122, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:02<00:05,  3.97it/s, ESS=122, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:05,  3.97it/s, ESS=126, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:04,  4.14it/s, ESS=126, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:04,  4.14it/s, ESS=132, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.38it/s, ESS=132, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.38it/s, ESS=138, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  3.74it/s, ESS=138, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  3.74it/s, ESS=161, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:03<00:04,  4.03it/s, ESS=161, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:04,  4.03it/s, ESS=153, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.27it/s, ESS=153, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.27it/s, ESS=177, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=177, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.53it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.43it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.34it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.34it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.34it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.34it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.34it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.34it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-Sampling (ours): 100%|██████████| 32/32 [00:04<00:00, 20.91it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches:  75%|███████▌  | 12/16 [01:00<00:19,  4.92s/it]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s, ESS=492, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  5.11it/s, ESS=492, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  5.11it/s, ESS=229, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.72it/s, ESS=229, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.72it/s, ESS=143, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:06,  4.51it/s, ESS=143, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:06,  4.51it/s, ESS=146, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:00<00:06,  4.38it/s, ESS=146, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:06,  4.38it/s, ESS=124, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:08,  3.36it/s, ESS=124, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:08,  3.36it/s, ESS=100, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:07,  3.68it/s, ESS=100, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:07,  3.68it/s, ESS=69.8, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:01<00:06,  3.81it/s, ESS=69.8, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:01<00:06,  3.81it/s, ESS=107, NFEs=8, nan_check=0, prob_check=1] [A
-Sampling (ours):  25%|██▌       | 8/32 [00:01<00:06,  4.00it/s, ESS=107, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  4.00it/s, ESS=76.7, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:05,  4.09it/s, ESS=76.7, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:05,  4.09it/s, ESS=74.5, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:06,  3.34it/s, ESS=74.5, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:06,  3.34it/s, ESS=98.7, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:02<00:05,  3.62it/s, ESS=98.7, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:05,  3.62it/s, ESS=108, NFEs=12, nan_check=0, prob_check=1] [A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:05,  3.80it/s, ESS=108, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:05,  3.80it/s, ESS=110, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:04,  4.03it/s, ESS=110, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:04,  4.03it/s, ESS=121, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:05,  3.31it/s, ESS=121, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:05,  3.31it/s, ESS=114, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:03<00:04,  3.64it/s, ESS=114, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:04,  3.64it/s, ESS=122, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:04,  3.89it/s, ESS=122, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:04,  3.89it/s, ESS=137, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.10it/s, ESS=137, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.10it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.10it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.10it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.10it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.10it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.68it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.68it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.68it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.68it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.68it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.68it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.98it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.98it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.98it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.98it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.98it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.98it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-Sampling (ours): 100%|██████████| 32/32 [00:04<00:00, 22.66it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches:  81%|████████▏ | 13/16 [01:05<00:14,  4.88s/it]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s, ESS=430, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  4.93it/s, ESS=430, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  4.93it/s, ESS=267, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:09,  3.01it/s, ESS=267, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:09,  3.01it/s, ESS=190, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:08,  3.53it/s, ESS=190, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:01<00:08,  3.53it/s, ESS=89.3, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.77it/s, ESS=89.3, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.77it/s, ESS=97.8, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:06,  3.90it/s, ESS=97.8, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:06,  3.90it/s, ESS=84.8, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:06,  4.00it/s, ESS=84.8, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:02<00:06,  4.00it/s, ESS=99.8, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:07,  3.22it/s, ESS=99.8, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:07,  3.22it/s, ESS=100, NFEs=8, nan_check=0, prob_check=1] [A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.52it/s, ESS=100, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.52it/s, ESS=110, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.73it/s, ESS=110, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.73it/s, ESS=80.3, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.88it/s, ESS=80.3, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.88it/s, ESS=104, NFEs=11, nan_check=0, prob_check=1] [A
-Sampling (ours):  34%|███▍      | 11/32 [00:02<00:05,  4.00it/s, ESS=104, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:05,  4.00it/s, ESS=97.6, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:06,  3.31it/s, ESS=97.6, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:06,  3.31it/s, ESS=95, NFEs=13, nan_check=0, prob_check=1]  [A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.63it/s, ESS=95, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.63it/s, ESS=128, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  3.94it/s, ESS=128, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  3.94it/s, ESS=120, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:03<00:04,  4.19it/s, ESS=120, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:04,  4.19it/s, ESS=126, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.41it/s, ESS=126, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.41it/s, ESS=150, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.56it/s, ESS=150, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.56it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.56it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.56it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.56it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.56it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.50it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.50it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.50it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.50it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.50it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.50it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.43it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.43it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.43it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.43it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.43it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.43it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-Sampling (ours): 100%|██████████| 32/32 [00:04<00:00, 21.01it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches:  88%|████████▊ | 14/16 [01:10<00:09,  4.90s/it]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s, ESS=492, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  4.95it/s, ESS=492, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  4.95it/s, ESS=222, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.70it/s, ESS=222, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.70it/s, ESS=144, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:06,  4.59it/s, ESS=144, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:06,  4.59it/s, ESS=107, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:00<00:06,  4.38it/s, ESS=107, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:06,  4.38it/s, ESS=122, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:08,  3.27it/s, ESS=122, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:08,  3.27it/s, ESS=131, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:07,  3.55it/s, ESS=131, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:07,  3.55it/s, ESS=127, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:01<00:06,  3.71it/s, ESS=127, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:06,  3.71it/s, ESS=121, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.85it/s, ESS=121, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:06,  3.85it/s, ESS=120, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:05,  3.94it/s, ESS=120, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:05,  3.94it/s, ESS=107, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:06,  3.22it/s, ESS=107, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:06,  3.22it/s, ESS=109, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:02<00:05,  3.51it/s, ESS=109, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:05,  3.51it/s, ESS=130, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:05,  3.77it/s, ESS=130, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:05,  3.77it/s, ESS=123, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:04,  3.93it/s, ESS=123, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:04,  3.93it/s, ESS=142, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  4.11it/s, ESS=142, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:04<00:04,  4.11it/s, ESS=159, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:04,  3.42it/s, ESS=159, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:04,  3.42it/s, ESS=158, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:04,  3.78it/s, ESS=158, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:04,  3.78it/s, ESS=180, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.08it/s, ESS=180, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.08it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.08it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.08it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.08it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:03,  4.08it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.66it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.66it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.66it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.66it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.66it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:00, 10.66it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.96it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.96it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.96it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.96it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.96it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 16.96it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-Sampling (ours): 100%|██████████| 32/32 [00:04<00:00, 22.65it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches:  94%|█████████▍| 15/16 [01:15<00:04,  4.88s/it]
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s][A
-Sampling (ours):   0%|          | 0/32 [00:00<?, ?it/s, ESS=461, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  4.93it/s, ESS=461, NFEs=1, nan_check=0, prob_check=1][A
-Sampling (ours):   3%|▎         | 1/32 [00:00<00:06,  4.93it/s, ESS=251, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.65it/s, ESS=251, NFEs=2, nan_check=0, prob_check=1][A
-Sampling (ours):   6%|▋         | 2/32 [00:00<00:06,  4.65it/s, ESS=150, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:00<00:08,  3.23it/s, ESS=150, NFEs=3, nan_check=0, prob_check=1][A
-Sampling (ours):   9%|▉         | 3/32 [00:01<00:08,  3.23it/s, ESS=161, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.63it/s, ESS=161, NFEs=4, nan_check=0, prob_check=1][A
-Sampling (ours):  12%|█▎        | 4/32 [00:01<00:07,  3.63it/s, ESS=146, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:06,  3.87it/s, ESS=146, NFEs=5, nan_check=0, prob_check=1][A
-Sampling (ours):  16%|█▌        | 5/32 [00:01<00:06,  3.87it/s, ESS=123, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:06,  3.99it/s, ESS=123, NFEs=6, nan_check=0, prob_check=1][A
-Sampling (ours):  19%|█▉        | 6/32 [00:01<00:06,  3.99it/s, ESS=116, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:01<00:06,  4.08it/s, ESS=116, NFEs=7, nan_check=0, prob_check=1][A
-Sampling (ours):  22%|██▏       | 7/32 [00:02<00:06,  4.08it/s, ESS=92, NFEs=8, nan_check=0, prob_check=1] [A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:07,  3.30it/s, ESS=92, NFEs=8, nan_check=0, prob_check=1][A
-Sampling (ours):  25%|██▌       | 8/32 [00:02<00:07,  3.30it/s, ESS=116, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.51it/s, ESS=116, NFEs=9, nan_check=0, prob_check=1][A
-Sampling (ours):  28%|██▊       | 9/32 [00:02<00:06,  3.51it/s, ESS=118, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.71it/s, ESS=118, NFEs=10, nan_check=0, prob_check=1][A
-Sampling (ours):  31%|███▏      | 10/32 [00:02<00:05,  3.71it/s, ESS=113, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:02<00:05,  3.88it/s, ESS=113, NFEs=11, nan_check=0, prob_check=1][A
-Sampling (ours):  34%|███▍      | 11/32 [00:03<00:05,  3.88it/s, ESS=121, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:06,  3.21it/s, ESS=121, NFEs=12, nan_check=0, prob_check=1][A
-Sampling (ours):  38%|███▊      | 12/32 [00:03<00:06,  3.21it/s, ESS=116, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.52it/s, ESS=116, NFEs=13, nan_check=0, prob_check=1][A
-Sampling (ours):  41%|████      | 13/32 [00:03<00:05,  3.52it/s, ESS=104, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:03<00:04,  3.72it/s, ESS=104, NFEs=14, nan_check=0, prob_check=1][A
-Sampling (ours):  44%|████▍     | 14/32 [00:04<00:04,  3.72it/s, ESS=140, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:04,  4.01it/s, ESS=140, NFEs=15, nan_check=0, prob_check=1][A
-Sampling (ours):  47%|████▋     | 15/32 [00:04<00:04,  4.01it/s, ESS=155, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.26it/s, ESS=155, NFEs=16, nan_check=0, prob_check=1][A
-Sampling (ours):  50%|█████     | 16/32 [00:04<00:03,  4.26it/s, ESS=172, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.56it/s, ESS=172, NFEs=17, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.56it/s, ESS=nan, NFEs=18, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.56it/s, ESS=nan, NFEs=19, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.56it/s, ESS=nan, NFEs=20, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.56it/s, ESS=nan, NFEs=21, nan_check=0, prob_check=1][A
-Sampling (ours):  53%|█████▎    | 17/32 [00:04<00:04,  3.56it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.50it/s, ESS=nan, NFEs=22, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.50it/s, ESS=nan, NFEs=23, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.50it/s, ESS=nan, NFEs=24, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.50it/s, ESS=nan, NFEs=25, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.50it/s, ESS=nan, NFEs=26, nan_check=0, prob_check=1][A
-Sampling (ours):  69%|██████▉   | 22/32 [00:04<00:01,  9.50it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.45it/s, ESS=nan, NFEs=27, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.45it/s, ESS=nan, NFEs=28, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.45it/s, ESS=nan, NFEs=29, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.45it/s, ESS=nan, NFEs=30, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.45it/s, ESS=nan, NFEs=31, nan_check=0, prob_check=1][A
-Sampling (ours):  84%|████████▍ | 27/32 [00:04<00:00, 15.45it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-Sampling (ours): 100%|██████████| 32/32 [00:04<00:00, 20.93it/s, ESS=nan, NFEs=32, nan_check=0, prob_check=1][A
-                                                                                                             [AGen. batches: 100%|██████████| 16/16 [01:20<00:00,  4.91s/it]                                                             Guidance: Method - ours, Reward - qed, Lambda_ - 1000, Num_x0_samples - 500, T_min - 0.5, T_max - 1.0, Mixture_sampling - aggregate_x0, Invalid_reward - 0.0, Support_floor - 0.0, Normalize_reward - False, Num_reward_workers - 32, Condition - -1
-	Valid: 580 / 1,024 (56.64%)  Unique (of valid): 537 / 580 (92.59%)  Novel (of valid): 258 / 580 (44.48%)
-	QED Mean: 0.474, Median: 0.477
-	Novel QED Mean: 0.479, Median: 0.481

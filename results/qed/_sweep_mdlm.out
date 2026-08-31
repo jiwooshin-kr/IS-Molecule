@@ -1,0 +1,570 @@
+######## mdlm x qed: 5 N x 7 lambda x 2 modes ########
+lambda grid: 0 2 5 20 50 200 1000
+N grid     : 10 30 100 300 500
+=============== mdlm_ours_marginal_N10_lam0_win0.0-1.0 ===============
+	Valid: 547 / 1,024 (53.42%)  Unique (of valid): 518 / 547 (94.70%)  Novel (of valid): 216 / 547 (39.49%)
+	QED Mean: 0.454, Median: 0.463
+	Novel QED Mean: 0.456, Median: 0.463
+  last ESS: ESS=10 | 45s
+=============== mdlm_ours_edlm_N10_lam0_win0.0-1.0 ===============
+	Valid: 564 / 1,024 (55.08%)  Unique (of valid): 519 / 564 (92.02%)  Novel (of valid): 215 / 564 (38.12%)
+	QED Mean: 0.453, Median: 0.461
+	Novel QED Mean: 0.458, Median: 0.465
+  last ESS: ESS=10 | 46s
+=============== mdlm_ours_marginal_N10_lam2_win0.0-1.0 ===============
+	Valid: 571 / 1,024 (55.76%)  Unique (of valid): 541 / 571 (94.75%)  Novel (of valid): 222 / 571 (38.88%)
+	QED Mean: 0.458, Median: 0.466
+	Novel QED Mean: 0.456, Median: 0.465
+  last ESS: ESS=9.97 | 47s
+=============== mdlm_ours_edlm_N10_lam2_win0.0-1.0 ===============
+	Valid: 589 / 1,024 (57.52%)  Unique (of valid): 542 / 589 (92.02%)  Novel (of valid): 231 / 589 (39.22%)
+	QED Mean: 0.457, Median: 0.460
+	Novel QED Mean: 0.465, Median: 0.469
+  last ESS: ESS=10 | 45s
+=============== mdlm_ours_marginal_N10_lam5_win0.0-1.0 ===============
+	Valid: 601 / 1,024 (58.69%)  Unique (of valid): 565 / 601 (94.01%)  Novel (of valid): 246 / 601 (40.93%)
+	QED Mean: 0.463, Median: 0.470
+	Novel QED Mean: 0.460, Median: 0.464
+  last ESS: ESS=9.93 | 44s
+=============== mdlm_ours_edlm_N10_lam5_win0.0-1.0 ===============
+	Valid: 605 / 1,024 (59.08%)  Unique (of valid): 554 / 605 (91.57%)  Novel (of valid): 234 / 605 (38.68%)
+	QED Mean: 0.460, Median: 0.464
+	Novel QED Mean: 0.468, Median: 0.469
+  last ESS: ESS=10 | 42s
+=============== mdlm_ours_marginal_N10_lam20_win0.0-1.0 ===============
+	Valid: 638 / 1,024 (62.30%)  Unique (of valid): 593 / 638 (92.95%)  Novel (of valid): 253 / 638 (39.66%)
+	QED Mean: 0.472, Median: 0.478
+	Novel QED Mean: 0.467, Median: 0.466
+  last ESS: ESS=9.97 | 42s
+=============== mdlm_ours_edlm_N10_lam20_win0.0-1.0 ===============
+	Valid: 634 / 1,024 (61.91%)  Unique (of valid): 574 / 634 (90.54%)  Novel (of valid): 244 / 634 (38.49%)
+	QED Mean: 0.468, Median: 0.470
+	Novel QED Mean: 0.473, Median: 0.472
+  last ESS: ESS=9.92 | 43s
+=============== mdlm_ours_marginal_N10_lam50_win0.0-1.0 ===============
+	Valid: 646 / 1,024 (63.09%)  Unique (of valid): 600 / 646 (92.88%)  Novel (of valid): 262 / 646 (40.56%)
+	QED Mean: 0.482, Median: 0.486
+	Novel QED Mean: 0.478, Median: 0.479
+  last ESS: ESS=9.86 | 44s
+=============== mdlm_ours_edlm_N10_lam50_win0.0-1.0 ===============
+	Valid: 631 / 1,024 (61.62%)  Unique (of valid): 567 / 631 (89.86%)  Novel (of valid): 247 / 631 (39.14%)
+	QED Mean: 0.477, Median: 0.480
+	Novel QED Mean: 0.474, Median: 0.472
+  last ESS: ESS=9.83 | 43s
+=============== mdlm_ours_marginal_N10_lam200_win0.0-1.0 ===============
+	Valid: 647 / 1,024 (63.18%)  Unique (of valid): 601 / 647 (92.89%)  Novel (of valid): 263 / 647 (40.65%)
+	QED Mean: 0.487, Median: 0.490
+	Novel QED Mean: 0.480, Median: 0.479
+  last ESS: ESS=9.66 | 43s
+=============== mdlm_ours_edlm_N10_lam200_win0.0-1.0 ===============
+	Valid: 630 / 1,024 (61.52%)  Unique (of valid): 566 / 630 (89.84%)  Novel (of valid): 248 / 630 (39.37%)
+	QED Mean: 0.482, Median: 0.486
+	Novel QED Mean: 0.479, Median: 0.476
+  last ESS: ESS=9.66 | 42s
+=============== mdlm_ours_marginal_N10_lam1000_win0.0-1.0 ===============
+	Valid: 648 / 1,024 (63.28%)  Unique (of valid): 599 / 648 (92.44%)  Novel (of valid): 268 / 648 (41.36%)
+	QED Mean: 0.487, Median: 0.490
+	Novel QED Mean: 0.482, Median: 0.481
+  last ESS: ESS=9.7 | 42s
+=============== mdlm_ours_edlm_N10_lam1000_win0.0-1.0 ===============
+	Valid: 630 / 1,024 (61.52%)  Unique (of valid): 567 / 630 (90.00%)  Novel (of valid): 248 / 630 (39.37%)
+	QED Mean: 0.482, Median: 0.485
+	Novel QED Mean: 0.480, Median: 0.476
+  last ESS: ESS=9.75 | 42s
+=============== mdlm_ours_marginal_N30_lam0_win0.0-1.0 ===============
+	Valid: 542 / 1,024 (52.93%)  Unique (of valid): 496 / 542 (91.51%)  Novel (of valid): 211 / 542 (38.93%)
+	QED Mean: 0.452, Median: 0.454
+	Novel QED Mean: 0.457, Median: 0.461
+  last ESS: ESS=30 | 45s
+=============== mdlm_ours_edlm_N30_lam0_win0.0-1.0 ===============
+	Valid: 558 / 1,024 (54.49%)  Unique (of valid): 514 / 558 (92.11%)  Novel (of valid): 234 / 558 (41.94%)
+	QED Mean: 0.449, Median: 0.457
+	Novel QED Mean: 0.451, Median: 0.464
+  last ESS: ESS=30 | 46s
+=============== mdlm_ours_marginal_N30_lam2_win0.0-1.0 ===============
+	Valid: 555 / 1,024 (54.20%)  Unique (of valid): 514 / 555 (92.61%)  Novel (of valid): 216 / 555 (38.92%)
+	QED Mean: 0.454, Median: 0.461
+	Novel QED Mean: 0.459, Median: 0.466
+  last ESS: ESS=30 | 46s
+=============== mdlm_ours_edlm_N30_lam2_win0.0-1.0 ===============
+	Valid: 583 / 1,024 (56.93%)  Unique (of valid): 537 / 583 (92.11%)  Novel (of valid): 236 / 583 (40.48%)
+	QED Mean: 0.452, Median: 0.462
+	Novel QED Mean: 0.455, Median: 0.464
+  last ESS: ESS=30 | 47s
+=============== mdlm_ours_marginal_N30_lam5_win0.0-1.0 ===============
+	Valid: 596 / 1,024 (58.20%)  Unique (of valid): 549 / 596 (92.11%)  Novel (of valid): 247 / 596 (41.44%)
+	QED Mean: 0.456, Median: 0.465
+	Novel QED Mean: 0.455, Median: 0.465
+  last ESS: ESS=29.8 | 46s
+=============== mdlm_ours_edlm_N30_lam5_win0.0-1.0 ===============
+	Valid: 623 / 1,024 (60.84%)  Unique (of valid): 576 / 623 (92.46%)  Novel (of valid): 256 / 623 (41.09%)
+	QED Mean: 0.456, Median: 0.464
+	Novel QED Mean: 0.459, Median: 0.467
+  last ESS: ESS=29.7 | 46s
+=============== mdlm_ours_marginal_N30_lam20_win0.0-1.0 ===============
+	Valid: 650 / 1,024 (63.48%)  Unique (of valid): 590 / 650 (90.77%)  Novel (of valid): 275 / 650 (42.31%)
+	QED Mean: 0.473, Median: 0.477
+	Novel QED Mean: 0.470, Median: 0.472
+  last ESS: ESS=29.1 | 46s
+=============== mdlm_ours_edlm_N30_lam20_win0.0-1.0 ===============
+	Valid: 670 / 1,024 (65.43%)  Unique (of valid): 605 / 670 (90.30%)  Novel (of valid): 270 / 670 (40.30%)
+	QED Mean: 0.473, Median: 0.475
+	Novel QED Mean: 0.478, Median: 0.473
+  last ESS: ESS=29.2 | 47s
+=============== mdlm_ours_marginal_N30_lam50_win0.0-1.0 ===============
+	Valid: 650 / 1,024 (63.48%)  Unique (of valid): 578 / 650 (88.92%)  Novel (of valid): 283 / 650 (43.54%)
+	QED Mean: 0.486, Median: 0.488
+	Novel QED Mean: 0.487, Median: 0.485
+  last ESS: ESS=28.9 | 45s
+=============== mdlm_ours_edlm_N30_lam50_win0.0-1.0 ===============
+	Valid: 670 / 1,024 (65.43%)  Unique (of valid): 604 / 670 (90.15%)  Novel (of valid): 277 / 670 (41.34%)
+	QED Mean: 0.483, Median: 0.486
+	Novel QED Mean: 0.487, Median: 0.479
+  last ESS: ESS=29 | 47s
+=============== mdlm_ours_marginal_N30_lam200_win0.0-1.0 ===============
+	Valid: 655 / 1,024 (63.96%)  Unique (of valid): 587 / 655 (89.62%)  Novel (of valid): 297 / 655 (45.34%)
+	QED Mean: 0.493, Median: 0.501
+	Novel QED Mean: 0.492, Median: 0.495
+  last ESS: ESS=29.1 | 46s
+=============== mdlm_ours_edlm_N30_lam200_win0.0-1.0 ===============
+	Valid: 673 / 1,024 (65.72%)  Unique (of valid): 604 / 673 (89.75%)  Novel (of valid): 297 / 673 (44.13%)
+	QED Mean: 0.490, Median: 0.495
+	Novel QED Mean: 0.489, Median: 0.485
+  last ESS: ESS=29.2 | 46s
+=============== mdlm_ours_marginal_N30_lam1000_win0.0-1.0 ===============
+	Valid: 659 / 1,024 (64.36%)  Unique (of valid): 587 / 659 (89.07%)  Novel (of valid): 295 / 659 (44.76%)
+	QED Mean: 0.494, Median: 0.497
+	Novel QED Mean: 0.491, Median: 0.490
+  last ESS: ESS=28.9 | 46s
+=============== mdlm_ours_edlm_N30_lam1000_win0.0-1.0 ===============
+	Valid: 675 / 1,024 (65.92%)  Unique (of valid): 601 / 675 (89.04%)  Novel (of valid): 302 / 675 (44.74%)
+	QED Mean: 0.492, Median: 0.496
+	Novel QED Mean: 0.492, Median: 0.489
+  last ESS: ESS=29.5 | 46s
+=============== mdlm_ours_marginal_N100_lam0_win0.0-1.0 ===============
+	Valid: 532 / 1,024 (51.95%)  Unique (of valid): 484 / 532 (90.98%)  Novel (of valid): 211 / 532 (39.66%)
+	QED Mean: 0.456, Median: 0.461
+	Novel QED Mean: 0.464, Median: 0.464
+  last ESS: ESS=100 | 60s
+=============== mdlm_ours_edlm_N100_lam0_win0.0-1.0 ===============
+	Valid: 553 / 1,024 (54.00%)  Unique (of valid): 500 / 553 (90.42%)  Novel (of valid): 208 / 553 (37.61%)
+	QED Mean: 0.450, Median: 0.457
+	Novel QED Mean: 0.458, Median: 0.462
+  last ESS: ESS=100 | 60s
+=============== mdlm_ours_marginal_N100_lam2_win0.0-1.0 ===============
+	Valid: 545 / 1,024 (53.22%)  Unique (of valid): 494 / 545 (90.64%)  Novel (of valid): 214 / 545 (39.27%)
+	QED Mean: 0.455, Median: 0.458
+	Novel QED Mean: 0.459, Median: 0.456
+  last ESS: ESS=100 | 61s
+=============== mdlm_ours_edlm_N100_lam2_win0.0-1.0 ===============
+	Valid: 588 / 1,024 (57.42%)  Unique (of valid): 540 / 588 (91.84%)  Novel (of valid): 231 / 588 (39.29%)
+	QED Mean: 0.456, Median: 0.462
+	Novel QED Mean: 0.469, Median: 0.472
+  last ESS: ESS=100 | 60s
+=============== mdlm_ours_marginal_N100_lam5_win0.0-1.0 ===============
+	Valid: 593 / 1,024 (57.91%)  Unique (of valid): 535 / 593 (90.22%)  Novel (of valid): 236 / 593 (39.80%)
+	QED Mean: 0.461, Median: 0.466
+	Novel QED Mean: 0.460, Median: 0.462
+  last ESS: ESS=99.8 | 61s
+=============== mdlm_ours_edlm_N100_lam5_win0.0-1.0 ===============
+	Valid: 624 / 1,024 (60.94%)  Unique (of valid): 574 / 624 (91.99%)  Novel (of valid): 260 / 624 (41.67%)
+	QED Mean: 0.461, Median: 0.471
+	Novel QED Mean: 0.460, Median: 0.467
+  last ESS: ESS=100 | 60s
+=============== mdlm_ours_marginal_N100_lam20_win0.0-1.0 ===============
+	Valid: 662 / 1,024 (64.65%)  Unique (of valid): 595 / 662 (89.88%)  Novel (of valid): 287 / 662 (43.35%)
+	QED Mean: 0.476, Median: 0.480
+	Novel QED Mean: 0.478, Median: 0.476
+  last ESS: ESS=100 | 63s
+=============== mdlm_ours_edlm_N100_lam20_win0.0-1.0 ===============
+	Valid: 725 / 1,024 (70.80%)  Unique (of valid): 658 / 725 (90.76%)  Novel (of valid): 305 / 725 (42.07%)
+	QED Mean: 0.481, Median: 0.487
+	Novel QED Mean: 0.483, Median: 0.485
+  last ESS: ESS=97.2 | 62s
+=============== mdlm_ours_marginal_N100_lam50_win0.0-1.0 ===============
+	Valid: 665 / 1,024 (64.94%)  Unique (of valid): 590 / 665 (88.72%)  Novel (of valid): 286 / 665 (43.01%)
+	QED Mean: 0.489, Median: 0.492
+	Novel QED Mean: 0.493, Median: 0.492
+  last ESS: ESS=99.1 | 61s
+=============== mdlm_ours_edlm_N100_lam50_win0.0-1.0 ===============
+	Valid: 727 / 1,024 (71.00%)  Unique (of valid): 647 / 727 (89.00%)  Novel (of valid): 314 / 727 (43.19%)
+	QED Mean: 0.492, Median: 0.496
+	Novel QED Mean: 0.495, Median: 0.497
+  last ESS: ESS=95.9 | 61s
+=============== mdlm_ours_marginal_N100_lam200_win0.0-1.0 ===============
+	Valid: 666 / 1,024 (65.04%)  Unique (of valid): 585 / 666 (87.84%)  Novel (of valid): 305 / 666 (45.80%)
+	QED Mean: 0.497, Median: 0.500
+	Novel QED Mean: 0.495, Median: 0.495
+  last ESS: ESS=100 | 62s
+=============== mdlm_ours_edlm_N100_lam200_win0.0-1.0 ===============
+	Valid: 721 / 1,024 (70.41%)  Unique (of valid): 645 / 721 (89.46%)  Novel (of valid): 332 / 721 (46.05%)
+	QED Mean: 0.502, Median: 0.508
+	Novel QED Mean: 0.501, Median: 0.501
+  last ESS: ESS=95.8 | 62s
+=============== mdlm_ours_marginal_N100_lam1000_win0.0-1.0 ===============
+	Valid: 663 / 1,024 (64.75%)  Unique (of valid): 579 / 663 (87.33%)  Novel (of valid): 314 / 663 (47.36%)
+	QED Mean: 0.499, Median: 0.502
+	Novel QED Mean: 0.499, Median: 0.497
+  last ESS: ESS=100 | 62s
+=============== mdlm_ours_edlm_N100_lam1000_win0.0-1.0 ===============
+	Valid: 716 / 1,024 (69.92%)  Unique (of valid): 634 / 716 (88.55%)  Novel (of valid): 336 / 716 (46.93%)
+	QED Mean: 0.503, Median: 0.510
+	Novel QED Mean: 0.503, Median: 0.505
+  last ESS: ESS=95.6 | 61s
+=============== mdlm_ours_marginal_N300_lam0_win0.0-1.0 ===============
+	Valid: 552 / 1,024 (53.91%)  Unique (of valid): 506 / 552 (91.67%)  Novel (of valid): 220 / 552 (39.86%)
+	QED Mean: 0.448, Median: 0.461
+	Novel QED Mean: 0.455, Median: 0.464
+  last ESS: ESS=300 | 109s
+=============== mdlm_ours_edlm_N300_lam0_win0.0-1.0 ===============
+	Valid: 556 / 1,024 (54.30%)  Unique (of valid): 519 / 556 (93.35%)  Novel (of valid): 209 / 556 (37.59%)
+	QED Mean: 0.452, Median: 0.458
+	Novel QED Mean: 0.452, Median: 0.456
+  last ESS: ESS=300 | 110s
+=============== mdlm_ours_marginal_N300_lam2_win0.0-1.0 ===============
+	Valid: 577 / 1,024 (56.35%)  Unique (of valid): 528 / 577 (91.51%)  Novel (of valid): 229 / 577 (39.69%)
+	QED Mean: 0.450, Median: 0.459
+	Novel QED Mean: 0.456, Median: 0.459
+  last ESS: ESS=300 | 109s
+=============== mdlm_ours_edlm_N300_lam2_win0.0-1.0 ===============
+	Valid: 591 / 1,024 (57.71%)  Unique (of valid): 549 / 591 (92.89%)  Novel (of valid): 238 / 591 (40.27%)
+	QED Mean: 0.456, Median: 0.462
+	Novel QED Mean: 0.455, Median: 0.460
+  last ESS: ESS=300 | 108s
+=============== mdlm_ours_marginal_N300_lam5_win0.0-1.0 ===============
+	Valid: 609 / 1,024 (59.47%)  Unique (of valid): 558 / 609 (91.63%)  Novel (of valid): 234 / 609 (38.42%)
+	QED Mean: 0.457, Median: 0.461
+	Novel QED Mean: 0.459, Median: 0.458
+  last ESS: ESS=299 | 108s
+=============== mdlm_ours_edlm_N300_lam5_win0.0-1.0 ===============
+	Valid: 630 / 1,024 (61.52%)  Unique (of valid): 578 / 630 (91.75%)  Novel (of valid): 238 / 630 (37.78%)
+	QED Mean: 0.456, Median: 0.462
+	Novel QED Mean: 0.459, Median: 0.461
+  last ESS: ESS=300 | 108s
+=============== mdlm_ours_marginal_N300_lam20_win0.0-1.0 ===============
+	Valid: 699 / 1,024 (68.26%)  Unique (of valid): 634 / 699 (90.70%)  Novel (of valid): 313 / 699 (44.78%)
+	QED Mean: 0.478, Median: 0.478
+	Novel QED Mean: 0.478, Median: 0.476
+  last ESS: ESS=299 | 110s
+=============== mdlm_ours_edlm_N300_lam20_win0.0-1.0 ===============
+	Valid: 715 / 1,024 (69.82%)  Unique (of valid): 649 / 715 (90.77%)  Novel (of valid): 301 / 715 (42.10%)
+	QED Mean: 0.480, Median: 0.481
+	Novel QED Mean: 0.481, Median: 0.479
+  last ESS: ESS=299 | 113s
+=============== mdlm_ours_marginal_N300_lam50_win0.0-1.0 ===============
+	Valid: 706 / 1,024 (68.95%)  Unique (of valid): 633 / 706 (89.66%)  Novel (of valid): 319 / 706 (45.18%)
+	QED Mean: 0.498, Median: 0.501
+	Novel QED Mean: 0.497, Median: 0.495
+  last ESS: ESS=300 | 115s
+=============== mdlm_ours_edlm_N300_lam50_win0.0-1.0 ===============
+	Valid: 717 / 1,024 (70.02%)  Unique (of valid): 648 / 717 (90.38%)  Novel (of valid): 330 / 717 (46.03%)
+	QED Mean: 0.496, Median: 0.497
+	Novel QED Mean: 0.495, Median: 0.492
+  last ESS: ESS=287 | 108s
+=============== mdlm_ours_marginal_N300_lam200_win0.0-1.0 ===============
+	Valid: 713 / 1,024 (69.63%)  Unique (of valid): 641 / 713 (89.90%)  Novel (of valid): 381 / 713 (53.44%)
+	QED Mean: 0.507, Median: 0.511
+	Novel QED Mean: 0.509, Median: 0.509
+  last ESS: ESS=290 | 112s
+=============== mdlm_ours_edlm_N300_lam200_win0.0-1.0 ===============
+	Valid: 719 / 1,024 (70.21%)  Unique (of valid): 642 / 719 (89.29%)  Novel (of valid): 356 / 719 (49.51%)
+	QED Mean: 0.503, Median: 0.508
+	Novel QED Mean: 0.501, Median: 0.500
+  last ESS: ESS=293 | 111s
+=============== mdlm_ours_marginal_N300_lam1000_win0.0-1.0 ===============
+	Valid: 720 / 1,024 (70.31%)  Unique (of valid): 644 / 720 (89.44%)  Novel (of valid): 389 / 720 (54.03%)
+	QED Mean: 0.510, Median: 0.512
+	Novel QED Mean: 0.512, Median: 0.510
+  last ESS: ESS=291 | 117s
+=============== mdlm_ours_edlm_N300_lam1000_win0.0-1.0 ===============
+	Valid: 713 / 1,024 (69.63%)  Unique (of valid): 629 / 713 (88.22%)  Novel (of valid): 358 / 713 (50.21%)
+	QED Mean: 0.505, Median: 0.510
+	Novel QED Mean: 0.504, Median: 0.500
+  last ESS: ESS=284 | 116s
+=============== mdlm_ours_marginal_N500_lam0_win0.0-1.0 ===============
+	Valid: 558 / 1,024 (54.49%)  Unique (of valid): 516 / 558 (92.47%)  Novel (of valid): 228 / 558 (40.86%)
+	QED Mean: 0.449, Median: 0.458
+	Novel QED Mean: 0.456, Median: 0.464
+  last ESS: ESS=500 | 160s
+=============== mdlm_ours_edlm_N500_lam0_win0.0-1.0 ===============
+	Valid: 549 / 1,024 (53.61%)  Unique (of valid): 491 / 549 (89.44%)  Novel (of valid): 195 / 549 (35.52%)
+	QED Mean: 0.449, Median: 0.454
+	Novel QED Mean: 0.454, Median: 0.459
+  last ESS: ESS=500 | 157s
+=============== mdlm_ours_marginal_N500_lam2_win0.0-1.0 ===============
+	Valid: 581 / 1,024 (56.74%)  Unique (of valid): 538 / 581 (92.60%)  Novel (of valid): 244 / 581 (42.00%)
+	QED Mean: 0.450, Median: 0.458
+	Novel QED Mean: 0.457, Median: 0.460
+  last ESS: ESS=499 | 160s
+=============== mdlm_ours_edlm_N500_lam2_win0.0-1.0 ===============
+	Valid: 570 / 1,024 (55.66%)  Unique (of valid): 509 / 570 (89.30%)  Novel (of valid): 198 / 570 (34.74%)
+	QED Mean: 0.448, Median: 0.453
+	Novel QED Mean: 0.453, Median: 0.459
+  last ESS: ESS=500 | 159s
+=============== mdlm_ours_marginal_N500_lam5_win0.0-1.0 ===============
+	Valid: 610 / 1,024 (59.57%)  Unique (of valid): 567 / 610 (92.95%)  Novel (of valid): 270 / 610 (44.26%)
+	QED Mean: 0.458, Median: 0.464
+	Novel QED Mean: 0.462, Median: 0.462
+  last ESS: ESS=498 | 160s
+=============== mdlm_ours_edlm_N500_lam5_win0.0-1.0 ===============
+	Valid: 614 / 1,024 (59.96%)  Unique (of valid): 552 / 614 (89.90%)  Novel (of valid): 233 / 614 (37.95%)
+	QED Mean: 0.459, Median: 0.461
+	Novel QED Mean: 0.467, Median: 0.470
+  last ESS: ESS=499 | 159s
+=============== mdlm_ours_marginal_N500_lam20_win0.0-1.0 ===============
+	Valid: 708 / 1,024 (69.14%)  Unique (of valid): 658 / 708 (92.94%)  Novel (of valid): 327 / 708 (46.19%)
+	QED Mean: 0.483, Median: 0.482
+	Novel QED Mean: 0.483, Median: 0.477
+  last ESS: ESS=487 | 160s
+=============== mdlm_ours_edlm_N500_lam20_win0.0-1.0 ===============
+	Valid: 728 / 1,024 (71.09%)  Unique (of valid): 657 / 728 (90.25%)  Novel (of valid): 295 / 728 (40.52%)
+	QED Mean: 0.483, Median: 0.489
+	Novel QED Mean: 0.484, Median: 0.483
+  last ESS: ESS=499 | 158s
+=============== mdlm_ours_marginal_N500_lam50_win0.0-1.0 ===============
+	Valid: 719 / 1,024 (70.21%)  Unique (of valid): 664 / 719 (92.35%)  Novel (of valid): 348 / 719 (48.40%)
+	QED Mean: 0.498, Median: 0.506
+	Novel QED Mean: 0.500, Median: 0.503
+  last ESS: ESS=493 | 161s
+=============== mdlm_ours_edlm_N500_lam50_win0.0-1.0 ===============
+	Valid: 747 / 1,024 (72.95%)  Unique (of valid): 662 / 747 (88.62%)  Novel (of valid): 345 / 747 (46.18%)
+	QED Mean: 0.497, Median: 0.498
+	Novel QED Mean: 0.503, Median: 0.496
+  last ESS: ESS=482 | 159s
+=============== mdlm_ours_marginal_N500_lam200_win0.0-1.0 ===============
+	Valid: 718 / 1,024 (70.12%)  Unique (of valid): 654 / 718 (91.09%)  Novel (of valid): 386 / 718 (53.76%)
+	QED Mean: 0.510, Median: 0.513
+	Novel QED Mean: 0.511, Median: 0.505
+  last ESS: ESS=489 | 161s
+=============== mdlm_ours_edlm_N500_lam200_win0.0-1.0 ===============
+	Valid: 724 / 1,024 (70.70%)  Unique (of valid): 625 / 724 (86.33%)  Novel (of valid): 351 / 724 (48.48%)
+	QED Mean: 0.508, Median: 0.513
+	Novel QED Mean: 0.510, Median: 0.512
+  last ESS: ESS=492 | 157s
+=============== mdlm_ours_marginal_N500_lam1000_win0.0-1.0 ===============
+	Valid: 718 / 1,024 (70.12%)  Unique (of valid): 646 / 718 (89.97%)  Novel (of valid): 391 / 718 (54.46%)
+	QED Mean: 0.512, Median: 0.513
+	Novel QED Mean: 0.515, Median: 0.505
+  last ESS: ESS=480 | 156s
+=============== mdlm_ours_edlm_N500_lam1000_win0.0-1.0 ===============
+	Valid: 722 / 1,024 (70.51%)  Unique (of valid): 628 / 722 (86.98%)  Novel (of valid): 369 / 722 (51.11%)
+	QED Mean: 0.510, Median: 0.513
+	Novel QED Mean: 0.512, Median: 0.511
+  last ESS: ESS=496 | 151s
+######## Done: mdlm x qed ########
+70
+######## mdlm x qed: 7 N x 7 lambda x 2 modes ########
+lambda grid: 0 2 5 20 50 200 1000
+N grid     : 10 30 100 300 500 1000 2000
+[skip] mdlm_ours_marginal_N10_lam0_win0.0-1.0
+[skip] mdlm_ours_edlm_N10_lam0_win0.0-1.0
+[skip] mdlm_ours_marginal_N10_lam2_win0.0-1.0
+[skip] mdlm_ours_edlm_N10_lam2_win0.0-1.0
+[skip] mdlm_ours_marginal_N10_lam5_win0.0-1.0
+[skip] mdlm_ours_edlm_N10_lam5_win0.0-1.0
+[skip] mdlm_ours_marginal_N10_lam20_win0.0-1.0
+[skip] mdlm_ours_edlm_N10_lam20_win0.0-1.0
+[skip] mdlm_ours_marginal_N10_lam50_win0.0-1.0
+[skip] mdlm_ours_edlm_N10_lam50_win0.0-1.0
+[skip] mdlm_ours_marginal_N10_lam200_win0.0-1.0
+[skip] mdlm_ours_edlm_N10_lam200_win0.0-1.0
+[skip] mdlm_ours_marginal_N10_lam1000_win0.0-1.0
+[skip] mdlm_ours_edlm_N10_lam1000_win0.0-1.0
+[skip] mdlm_ours_marginal_N30_lam0_win0.0-1.0
+[skip] mdlm_ours_edlm_N30_lam0_win0.0-1.0
+[skip] mdlm_ours_marginal_N30_lam2_win0.0-1.0
+[skip] mdlm_ours_edlm_N30_lam2_win0.0-1.0
+[skip] mdlm_ours_marginal_N30_lam5_win0.0-1.0
+[skip] mdlm_ours_edlm_N30_lam5_win0.0-1.0
+[skip] mdlm_ours_marginal_N30_lam20_win0.0-1.0
+[skip] mdlm_ours_edlm_N30_lam20_win0.0-1.0
+[skip] mdlm_ours_marginal_N30_lam50_win0.0-1.0
+[skip] mdlm_ours_edlm_N30_lam50_win0.0-1.0
+[skip] mdlm_ours_marginal_N30_lam200_win0.0-1.0
+[skip] mdlm_ours_edlm_N30_lam200_win0.0-1.0
+[skip] mdlm_ours_marginal_N30_lam1000_win0.0-1.0
+[skip] mdlm_ours_edlm_N30_lam1000_win0.0-1.0
+[skip] mdlm_ours_marginal_N100_lam0_win0.0-1.0
+[skip] mdlm_ours_edlm_N100_lam0_win0.0-1.0
+[skip] mdlm_ours_marginal_N100_lam2_win0.0-1.0
+[skip] mdlm_ours_edlm_N100_lam2_win0.0-1.0
+[skip] mdlm_ours_marginal_N100_lam5_win0.0-1.0
+[skip] mdlm_ours_edlm_N100_lam5_win0.0-1.0
+[skip] mdlm_ours_marginal_N100_lam20_win0.0-1.0
+[skip] mdlm_ours_edlm_N100_lam20_win0.0-1.0
+[skip] mdlm_ours_marginal_N100_lam50_win0.0-1.0
+[skip] mdlm_ours_edlm_N100_lam50_win0.0-1.0
+[skip] mdlm_ours_marginal_N100_lam200_win0.0-1.0
+[skip] mdlm_ours_edlm_N100_lam200_win0.0-1.0
+[skip] mdlm_ours_marginal_N100_lam1000_win0.0-1.0
+[skip] mdlm_ours_edlm_N100_lam1000_win0.0-1.0
+[skip] mdlm_ours_marginal_N300_lam0_win0.0-1.0
+[skip] mdlm_ours_edlm_N300_lam0_win0.0-1.0
+[skip] mdlm_ours_marginal_N300_lam2_win0.0-1.0
+[skip] mdlm_ours_edlm_N300_lam2_win0.0-1.0
+[skip] mdlm_ours_marginal_N300_lam5_win0.0-1.0
+[skip] mdlm_ours_edlm_N300_lam5_win0.0-1.0
+[skip] mdlm_ours_marginal_N300_lam20_win0.0-1.0
+[skip] mdlm_ours_edlm_N300_lam20_win0.0-1.0
+[skip] mdlm_ours_marginal_N300_lam50_win0.0-1.0
+[skip] mdlm_ours_edlm_N300_lam50_win0.0-1.0
+[skip] mdlm_ours_marginal_N300_lam200_win0.0-1.0
+[skip] mdlm_ours_edlm_N300_lam200_win0.0-1.0
+[skip] mdlm_ours_marginal_N300_lam1000_win0.0-1.0
+[skip] mdlm_ours_edlm_N300_lam1000_win0.0-1.0
+[skip] mdlm_ours_marginal_N500_lam0_win0.0-1.0
+[skip] mdlm_ours_edlm_N500_lam0_win0.0-1.0
+[skip] mdlm_ours_marginal_N500_lam2_win0.0-1.0
+[skip] mdlm_ours_edlm_N500_lam2_win0.0-1.0
+[skip] mdlm_ours_marginal_N500_lam5_win0.0-1.0
+[skip] mdlm_ours_edlm_N500_lam5_win0.0-1.0
+[skip] mdlm_ours_marginal_N500_lam20_win0.0-1.0
+[skip] mdlm_ours_edlm_N500_lam20_win0.0-1.0
+[skip] mdlm_ours_marginal_N500_lam50_win0.0-1.0
+[skip] mdlm_ours_edlm_N500_lam50_win0.0-1.0
+[skip] mdlm_ours_marginal_N500_lam200_win0.0-1.0
+[skip] mdlm_ours_edlm_N500_lam200_win0.0-1.0
+[skip] mdlm_ours_marginal_N500_lam1000_win0.0-1.0
+[skip] mdlm_ours_edlm_N500_lam1000_win0.0-1.0
+=============== mdlm_ours_marginal_N1000_lam0_win0.0-1.0 ===============
+	Valid: 549 / 1,024 (53.61%)  Unique (of valid): 515 / 549 (93.81%)  Novel (of valid): 204 / 549 (37.16%)
+	QED Mean: 0.454, Median: 0.460
+	Novel QED Mean: 0.455, Median: 0.458
+  last ESS: ESS=1 | 278s
+=============== mdlm_ours_edlm_N1000_lam0_win0.0-1.0 ===============
+	Valid: 542 / 1,024 (52.93%)  Unique (of valid): 512 / 542 (94.46%)  Novel (of valid): 219 / 542 (40.41%)
+	QED Mean: 0.458, Median: 0.463
+	Novel QED Mean: 0.459, Median: 0.460
+  last ESS: ESS=1 | 281s
+=============== mdlm_ours_marginal_N1000_lam2_win0.0-1.0 ===============
+	Valid: 578 / 1,024 (56.45%)  Unique (of valid): 543 / 578 (93.94%)  Novel (of valid): 222 / 578 (38.41%)
+	QED Mean: 0.458, Median: 0.462
+	Novel QED Mean: 0.459, Median: 0.460
+  last ESS: ESS=1 | 279s
+=============== mdlm_ours_edlm_N1000_lam2_win0.0-1.0 ===============
+	Valid: 573 / 1,024 (55.96%)  Unique (of valid): 543 / 573 (94.76%)  Novel (of valid): 234 / 573 (40.84%)
+	QED Mean: 0.459, Median: 0.464
+	Novel QED Mean: 0.461, Median: 0.462
+  last ESS: ESS=999 | 279s
+=============== mdlm_ours_marginal_N1000_lam5_win0.0-1.0 ===============
+	Valid: 605 / 1,024 (59.08%)  Unique (of valid): 570 / 605 (94.21%)  Novel (of valid): 252 / 605 (41.65%)
+	QED Mean: 0.463, Median: 0.467
+	Novel QED Mean: 0.460, Median: 0.463
+  last ESS: ESS=992 | 277s
+=============== mdlm_ours_edlm_N1000_lam5_win0.0-1.0 ===============
+	Valid: 609 / 1,024 (59.47%)  Unique (of valid): 576 / 609 (94.58%)  Novel (of valid): 252 / 609 (41.38%)
+	QED Mean: 0.465, Median: 0.467
+	Novel QED Mean: 0.467, Median: 0.467
+  last ESS: ESS=987 | 274s
+=============== mdlm_ours_marginal_N1000_lam20_win0.0-1.0 ===============
+	Valid: 718 / 1,024 (70.12%)  Unique (of valid): 661 / 718 (92.06%)  Novel (of valid): 344 / 718 (47.91%)
+	QED Mean: 0.479, Median: 0.482
+	Novel QED Mean: 0.479, Median: 0.480
+  last ESS: ESS=995 | 287s
+=============== mdlm_ours_edlm_N1000_lam20_win0.0-1.0 ===============
+	Valid: 738 / 1,024 (72.07%)  Unique (of valid): 689 / 738 (93.36%)  Novel (of valid): 349 / 738 (47.29%)
+	QED Mean: 0.483, Median: 0.485
+	Novel QED Mean: 0.484, Median: 0.485
+  last ESS: ESS=982 | 280s
+=============== mdlm_ours_marginal_N1000_lam50_win0.0-1.0 ===============
+	Valid: 716 / 1,024 (69.92%)  Unique (of valid): 658 / 716 (91.90%)  Novel (of valid): 367 / 716 (51.26%)
+	QED Mean: 0.498, Median: 0.502
+	Novel QED Mean: 0.501, Median: 0.500
+  last ESS: ESS=952 | 281s
+=============== mdlm_ours_edlm_N1000_lam50_win0.0-1.0 ===============
+	Valid: 744 / 1,024 (72.66%)  Unique (of valid): 687 / 744 (92.34%)  Novel (of valid): 373 / 744 (50.13%)
+	QED Mean: 0.497, Median: 0.498
+	Novel QED Mean: 0.498, Median: 0.495
+  last ESS: ESS=955 | 278s
+=============== mdlm_ours_marginal_N1000_lam200_win0.0-1.0 ===============
+	Valid: 724 / 1,024 (70.70%)  Unique (of valid): 662 / 724 (91.44%)  Novel (of valid): 424 / 724 (58.56%)
+	QED Mean: 0.513, Median: 0.515
+	Novel QED Mean: 0.515, Median: 0.513
+  last ESS: ESS=957 | 281s
+=============== mdlm_ours_edlm_N1000_lam200_win0.0-1.0 ===============
+	Valid: 736 / 1,024 (71.88%)  Unique (of valid): 673 / 736 (91.44%)  Novel (of valid): 415 / 736 (56.39%)
+	QED Mean: 0.510, Median: 0.513
+	Novel QED Mean: 0.513, Median: 0.513
+  last ESS: ESS=953 | 277s
+=============== mdlm_ours_marginal_N1000_lam1000_win0.0-1.0 ===============
+	Valid: 715 / 1,024 (69.82%)  Unique (of valid): 653 / 715 (91.33%)  Novel (of valid): 410 / 715 (57.34%)
+	QED Mean: 0.514, Median: 0.515
+	Novel QED Mean: 0.516, Median: 0.513
+  last ESS: ESS=972 | 283s
+=============== mdlm_ours_edlm_N1000_lam1000_win0.0-1.0 ===============
+	Valid: 739 / 1,024 (72.17%)  Unique (of valid): 673 / 739 (91.07%)  Novel (of valid): 433 / 739 (58.59%)
+	QED Mean: 0.512, Median: 0.513
+	Novel QED Mean: 0.514, Median: 0.514
+  last ESS: ESS=955 | 276s
+=============== mdlm_ours_marginal_N2000_lam0_win0.0-1.0 ===============
+	Valid: 544 / 1,024 (53.12%)  Unique (of valid): 498 / 544 (91.54%)  Novel (of valid): 190 / 544 (34.93%)
+	QED Mean: 0.451, Median: 0.458
+	Novel QED Mean: 0.459, Median: 0.464
+  last ESS: ESS=2 | 510s
+=============== mdlm_ours_edlm_N2000_lam0_win0.0-1.0 ===============
+	Valid: 559 / 1,024 (54.59%)  Unique (of valid): 504 / 559 (90.16%)  Novel (of valid): 213 / 559 (38.10%)
+	QED Mean: 0.451, Median: 0.455
+	Novel QED Mean: 0.454, Median: 0.457
+  last ESS: ESS=2 | 498s
+=============== mdlm_ours_marginal_N2000_lam2_win0.0-1.0 ===============
+	Valid: 568 / 1,024 (55.47%)  Unique (of valid): 521 / 568 (91.73%)  Novel (of valid): 206 / 568 (36.27%)
+	QED Mean: 0.454, Median: 0.460
+	Novel QED Mean: 0.465, Median: 0.468
+  last ESS: ESS=2 | 508s
+=============== mdlm_ours_edlm_N2000_lam2_win0.0-1.0 ===============
+	Valid: 601 / 1,024 (58.69%)  Unique (of valid): 541 / 601 (90.02%)  Novel (of valid): 227 / 601 (37.77%)
+	QED Mean: 0.455, Median: 0.460
+	Novel QED Mean: 0.460, Median: 0.465
+  last ESS: ESS=1993.9 | 514s
+=============== mdlm_ours_marginal_N2000_lam5_win0.0-1.0 ===============
+	Valid: 593 / 1,024 (57.91%)  Unique (of valid): 540 / 593 (91.06%)  Novel (of valid): 234 / 593 (39.46%)
+	QED Mean: 0.459, Median: 0.464
+	Novel QED Mean: 0.464, Median: 0.463
+  last ESS: ESS=1986.4 | 517s
+=============== mdlm_ours_edlm_N2000_lam5_win0.0-1.0 ===============
+	Valid: 622 / 1,024 (60.74%)  Unique (of valid): 559 / 622 (89.87%)  Novel (of valid): 238 / 622 (38.26%)
+	QED Mean: 0.456, Median: 0.460
+	Novel QED Mean: 0.461, Median: 0.462
+  last ESS: ESS=2 | 500s
+=============== mdlm_ours_marginal_N2000_lam20_win0.0-1.0 ===============
+	Valid: 736 / 1,024 (71.88%)  Unique (of valid): 655 / 736 (88.99%)  Novel (of valid): 342 / 736 (46.47%)
+	QED Mean: 0.481, Median: 0.488
+	Novel QED Mean: 0.486, Median: 0.488
+  last ESS: ESS=1985.39 | 506s
+=============== mdlm_ours_edlm_N2000_lam20_win0.0-1.0 ===============
+	Valid: 753 / 1,024 (73.54%)  Unique (of valid): 680 / 753 (90.31%)  Novel (of valid): 343 / 753 (45.55%)
+	QED Mean: 0.481, Median: 0.482
+	Novel QED Mean: 0.486, Median: 0.483
+  last ESS: ESS=1973.46 | 497s
+=============== mdlm_ours_marginal_N2000_lam50_win0.0-1.0 ===============
+	Valid: 749 / 1,024 (73.14%)  Unique (of valid): 668 / 749 (89.19%)  Novel (of valid): 386 / 749 (51.54%)
+	QED Mean: 0.497, Median: 0.503
+	Novel QED Mean: 0.503, Median: 0.505
+  last ESS: ESS=1934.2 | 514s
+=============== mdlm_ours_edlm_N2000_lam50_win0.0-1.0 ===============
+	Valid: 758 / 1,024 (74.02%)  Unique (of valid): 680 / 758 (89.71%)  Novel (of valid): 370 / 758 (48.81%)
+	QED Mean: 0.501, Median: 0.504
+	Novel QED Mean: 0.506, Median: 0.503
+  last ESS: ESS=1980.94 | 525s
+=============== mdlm_ours_marginal_N2000_lam200_win0.0-1.0 ===============
+	Valid: 741 / 1,024 (72.36%)  Unique (of valid): 663 / 741 (89.47%)  Novel (of valid): 410 / 741 (55.33%)
+	QED Mean: 0.512, Median: 0.513
+	Novel QED Mean: 0.519, Median: 0.514
+  last ESS: ESS=1913.28 | 521s
+=============== mdlm_ours_edlm_N2000_lam200_win0.0-1.0 ===============
+	Valid: 747 / 1,024 (72.95%)  Unique (of valid): 667 / 747 (89.29%)  Novel (of valid): 426 / 747 (57.03%)
+	QED Mean: 0.514, Median: 0.514
+	Novel QED Mean: 0.520, Median: 0.516
+  last ESS: ESS=1881.86 | 498s
+=============== mdlm_ours_marginal_N2000_lam1000_win0.0-1.0 ===============
+	Valid: 750 / 1,024 (73.24%)  Unique (of valid): 673 / 750 (89.73%)  Novel (of valid): 439 / 750 (58.53%)
+	QED Mean: 0.513, Median: 0.513
+	Novel QED Mean: 0.516, Median: 0.516
+  last ESS: ESS=1853.12 | 523s
+=============== mdlm_ours_edlm_N2000_lam1000_win0.0-1.0 ===============
+	Valid: 747 / 1,024 (72.95%)  Unique (of valid): 660 / 747 (88.35%)  Novel (of valid): 434 / 747 (58.10%)
+	QED Mean: 0.513, Median: 0.513
+	Novel QED Mean: 0.518, Median: 0.515
+  last ESS: ESS=1.9 | 521s
+######## Done: mdlm x qed ########
+98

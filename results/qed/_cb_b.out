@@ -1,0 +1,124 @@
+waiting for GPU 1 to go idle ...
+starting on GPU 1 at 2026. 08. 16. (일) 01:11:11 KST
+=============== mdlm_cb_beta0_N1000_lam0 ===============
+	Valid: 725 / 1,024 (70.80%)  Unique (of valid): 676 / 725 (93.24%)  Novel (of valid): 217 / 725 (29.93%)
+	QED Mean: 0.457, Median: 0.462
+	Novel QED Mean: 0.468, Median: 0.469
+  343s
+=============== mdlm_cb_beta0.25_N1000_lam0 ===============
+	Valid: 762 / 1,024 (74.41%)  Unique (of valid): 708 / 762 (92.91%)  Novel (of valid): 237 / 762 (31.10%)
+	QED Mean: 0.453, Median: 0.462
+	Novel QED Mean: 0.455, Median: 0.458
+  344s
+=============== mdlm_cb_beta0.5_N1000_lam0 ===============
+	Valid: 762 / 1,024 (74.41%)  Unique (of valid): 709 / 762 (93.04%)  Novel (of valid): 246 / 762 (32.28%)
+	QED Mean: 0.451, Median: 0.459
+	Novel QED Mean: 0.454, Median: 0.459
+  341s
+=============== mdlm_cb_beta0.75_N1000_lam0 ===============
+	Valid: 770 / 1,024 (75.20%)  Unique (of valid): 715 / 770 (92.86%)  Novel (of valid): 246 / 770 (31.95%)
+	QED Mean: 0.451, Median: 0.455
+	Novel QED Mean: 0.454, Median: 0.455
+  334s
+=============== mdlm_cb_beta1_N1000_lam0 ===============
+	Valid: 772 / 1,024 (75.39%)  Unique (of valid): 715 / 772 (92.62%)  Novel (of valid): 242 / 772 (31.35%)
+	QED Mean: 0.451, Median: 0.455
+	Novel QED Mean: 0.450, Median: 0.452
+  343s
+=============== mdlm_cb_cv_N1000_lam0 ===============
+	Valid: 721 / 1,024 (70.41%)  Unique (of valid): 678 / 721 (94.04%)  Novel (of valid): 221 / 721 (30.65%)
+	QED Mean: 0.458, Median: 0.463
+	Novel QED Mean: 0.468, Median: 0.469
+  346s
+=============== mdlm_cb_beta0_N1000_lam50 ===============
+	Valid: 818 / 1,024 (79.88%)  Unique (of valid): 738 / 818 (90.22%)  Novel (of valid): 282 / 818 (34.47%)
+	QED Mean: 0.505, Median: 0.512
+	Novel QED Mean: 0.510, Median: 0.512
+  357s
+=============== mdlm_cb_beta0.25_N1000_lam50 ===============
+	Valid: 872 / 1,024 (85.16%)  Unique (of valid): 728 / 872 (83.49%)  Novel (of valid): 192 / 872 (22.02%)
+	QED Mean: 0.503, Median: 0.513
+	Novel QED Mean: 0.499, Median: 0.501
+  367s
+=============== mdlm_cb_beta0.5_N1000_lam50 ===============
+	Valid: 875 / 1,024 (85.45%)  Unique (of valid): 695 / 875 (79.43%)  Novel (of valid): 172 / 875 (19.66%)
+	QED Mean: 0.510, Median: 0.520
+	Novel QED Mean: 0.505, Median: 0.504
+  354s
+=============== mdlm_cb_beta0.75_N1000_lam50 ===============
+	Valid: 875 / 1,024 (85.45%)  Unique (of valid): 695 / 875 (79.43%)  Novel (of valid): 185 / 875 (21.14%)
+	QED Mean: 0.511, Median: 0.520
+	Novel QED Mean: 0.515, Median: 0.515
+  339s
+=============== mdlm_cb_beta1_N1000_lam50 ===============
+	Valid: 867 / 1,024 (84.67%)  Unique (of valid): 761 / 867 (87.77%)  Novel (of valid): 230 / 867 (26.53%)
+	QED Mean: 0.511, Median: 0.514
+	Novel QED Mean: 0.512, Median: 0.511
+  332s
+=============== mdlm_cb_cv_N1000_lam50 ===============
+	Valid: 833 / 1,024 (81.35%)  Unique (of valid): 746 / 833 (89.56%)  Novel (of valid): 243 / 833 (29.17%)
+	QED Mean: 0.515, Median: 0.522
+	Novel QED Mean: 0.513, Median: 0.520
+  334s
+=============== mdlm_cb_beta0_N1000_lam200 ===============
+	Valid: 814 / 1,024 (79.49%)  Unique (of valid): 727 / 814 (89.31%)  Novel (of valid): 353 / 814 (43.37%)
+	QED Mean: 0.514, Median: 0.516
+	Novel QED Mean: 0.517, Median: 0.518
+  324s
+=============== mdlm_cb_beta0.25_N1000_lam200 ===============
+	Valid: 868 / 1,024 (84.77%)  Unique (of valid): 604 / 868 (69.59%)  Novel (of valid): 176 / 868 (20.28%)
+	QED Mean: 0.518, Median: 0.523
+	Novel QED Mean: 0.506, Median: 0.508
+  301s
+=============== mdlm_cb_beta0.5_N1000_lam200 ===============
+	Valid: 866 / 1,024 (84.57%)  Unique (of valid): 548 / 866 (63.28%)  Novel (of valid): 161 / 866 (18.59%)
+	QED Mean: 0.521, Median: 0.524
+	Novel QED Mean: 0.516, Median: 0.507
+  296s
+=============== mdlm_cb_beta0.75_N1000_lam200 ===============
+	Valid: 870 / 1,024 (84.96%)  Unique (of valid): 559 / 870 (64.25%)  Novel (of valid): 174 / 870 (20.00%)
+	QED Mean: 0.525, Median: 0.537
+	Novel QED Mean: 0.525, Median: 0.526
+  298s
+=============== mdlm_cb_beta1_N1000_lam200 ===============
+	Valid: 857 / 1,024 (83.69%)  Unique (of valid): 733 / 857 (85.53%)  Novel (of valid): 273 / 857 (31.86%)
+	QED Mean: 0.525, Median: 0.529
+	Novel QED Mean: 0.526, Median: 0.524
+  295s
+=============== mdlm_cb_cv_N1000_lam200 ===============
+	Valid: 816 / 1,024 (79.69%)  Unique (of valid): 718 / 816 (87.99%)  Novel (of valid): 307 / 816 (37.62%)
+	QED Mean: 0.522, Median: 0.523
+	Novel QED Mean: 0.523, Median: 0.523
+  290s
+=============== mdlm_cb_beta0_N1000_lam1000 ===============
+	Valid: 812 / 1,024 (79.30%)  Unique (of valid): 714 / 812 (87.93%)  Novel (of valid): 373 / 812 (45.94%)
+	QED Mean: 0.516, Median: 0.519
+	Novel QED Mean: 0.520, Median: 0.523
+  283s
+=============== mdlm_cb_beta0.25_N1000_lam1000 ===============
+	Valid: 868 / 1,024 (84.77%)  Unique (of valid): 501 / 868 (57.72%)  Novel (of valid): 185 / 868 (21.31%)
+	QED Mean: 0.522, Median: 0.528
+	Novel QED Mean: 0.516, Median: 0.515
+  294s
+=============== mdlm_cb_beta0.5_N1000_lam1000 ===============
+	Valid: 868 / 1,024 (84.77%)  Unique (of valid): 488 / 868 (56.22%)  Novel (of valid): 150 / 868 (17.28%)
+	QED Mean: 0.520, Median: 0.525
+	Novel QED Mean: 0.512, Median: 0.502
+  297s
+=============== mdlm_cb_beta0.75_N1000_lam1000 ===============
+	Valid: 872 / 1,024 (85.16%)  Unique (of valid): 484 / 872 (55.50%)  Novel (of valid): 155 / 872 (17.78%)
+	QED Mean: 0.524, Median: 0.530
+	Novel QED Mean: 0.518, Median: 0.509
+  300s
+=============== mdlm_cb_beta1_N1000_lam1000 ===============
+	Valid: 838 / 1,024 (81.84%)  Unique (of valid): 738 / 838 (88.07%)  Novel (of valid): 366 / 838 (43.68%)
+	QED Mean: 0.518, Median: 0.522
+	Novel QED Mean: 0.518, Median: 0.515
+  285s
+=============== mdlm_cb_cv_N1000_lam1000 ===============
+	Valid: 822 / 1,024 (80.27%)  Unique (of valid): 727 / 822 (88.44%)  Novel (of valid): 352 / 822 (42.82%)
+	QED Mean: 0.522, Median: 0.522
+	Novel QED Mean: 0.523, Median: 0.520
+  289s
+######## Done: mdlm x qed conf_blend ########
+72

@@ -1,0 +1,14 @@
+######## fewstep: mdlm x qed | k=[16] N=[1000]
+######## lambda=[1000] seeds=[1 2 3 4 5] on GPU 1 at 2026. 08. 26. (수) 09:38:09 KST
+=============== N=1000 ===============
+  mdlm_fs_k16_N1000_lam1000_marginal_s1              64s  ESS=906
+  mdlm_fs_k16_N1000_lam1000_edlm_s1                  62s  ESS=865
+  mdlm_fs_k16_N1000_lam1000_marginal_s2              61s  ESS=877
+  mdlm_fs_k16_N1000_lam1000_edlm_s2                  60s  ESS=813
+  mdlm_fs_k16_N1000_lam1000_marginal_s3              60s  ESS=828
+  mdlm_fs_k16_N1000_lam1000_edlm_s3                  61s  ESS=891
+  mdlm_fs_k16_N1000_lam1000_marginal_s4              60s  ESS=844
+  mdlm_fs_k16_N1000_lam1000_edlm_s4                  57s  ESS=907
+  mdlm_fs_k16_N1000_lam1000_marginal_s5              57s  ESS=719
+  mdlm_fs_k16_N1000_lam1000_edlm_s5                  54s  ESS=844
+######## Done at 2026. 08. 26. (수) 09:48:05 KST: 880 csv

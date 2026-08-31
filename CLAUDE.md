@@ -3,7 +3,7 @@
 ## 구조
 - 코드는 **로컬에서 수정**하고, **GPU 서버에서 실행**한다
 - 서버: `wp03052@143.248.84.179`
-- 서버 프로젝트 경로: `/home/aailab/wp03052/Synthetic-Data/DLRT`
+- 서버 프로젝트 경로: `/home/aailab/wp03052/Synthetic-Data/Molecule`
 - 서버는 절대 직접 수정하지 않는다. 항상 로컬 수정 → 동기화 → 실행 순서
 - 베이스 코드: https://github.com/kuleshov-group/discrete-diffusion-guidance
 
@@ -26,7 +26,7 @@
   (HF 캐시가 홈 디렉토리 `~/.cache`에 생기는 것을 방지 — 작업 폴더 외부에 영향 금지):
   ```
   ssh wp03052@143.248.84.179 "source /home/aailab/wp03052/venvs/dlrt_env/bin/activate && \
-    cd /home/aailab/wp03052/Synthetic-Data/DLRT && \
+    cd /home/aailab/wp03052/Synthetic-Data/Molecule && \
     export HF_HOME=\$PWD/.hf_cache && \
     export PYTHONPATH=\$PWD:\$PWD/guidance_eval:\$HF_HOME/modules && \
     python main.py ..."
@@ -57,5 +57,5 @@
 - 디버깅/테스트 목적의 짧은 실행만 SSH로 직접 돌릴 것
 - 긴 학습/스윕은 반드시 서버 `tmux` 세션으로 띄울 것. SSH에 붙여 돌리면 연결이 끊기면 죽는다.
   현재 사용 중인 세션: `cbg`(classifier 학습), `cmp`(비교 스윕), `agg`(표 자동 생성)
-- 서버에서는 프로젝트 폴더(`/home/aailab/wp03052/Synthetic-Data/DLRT`)와 venv 폴더(`/home/aailab/wp03052/venvs/dlrt_env`) 외의 어떤 경로도 생성/수정하지 말 것
+- 서버에서는 프로젝트 폴더(`/home/aailab/wp03052/Synthetic-Data/Molecule`)와 venv 폴더(`/home/aailab/wp03052/venvs/dlrt_env`) 외의 어떤 경로도 생성/수정하지 말 것
 - 의존성을 변경했으면 서버 venv에도 동일하게 pip install 할 것

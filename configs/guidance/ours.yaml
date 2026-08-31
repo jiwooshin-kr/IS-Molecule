@@ -4,6 +4,15 @@ reward: qed  # qed / ring_count
 # Tilting strength: q(x_0) \propto p_theta(x_0) exp(lambda * r(x_0)).
 # lambda_ = 0 recovers unguided sampling (uniform weights).
 lambda_: 10.0
+# Draw `oversample` x N candidates, screen them on validity (parse only, ~1/20
+# the cost of the reward), and keep N: every valid one, in random order, then
+# random invalids to pad. This makes the proposal p_theta(.|valid), i.e. the
+# same target as invalid_reward = -inf, but with N usable candidates instead of
+# N x (valid fraction) -- measured as low as 0.007 early in a UDLM trajectory.
+# 1 = off, and reproduces every earlier result.
+# INCOMPATIBLE with position_selection=cv_conf, whose control variate needs the
+# candidates drawn from x_theta itself.
+oversample: 1
 # N in Eq. (4): number of x_0 candidates drawn per denoising step.
 num_x0_samples: 30
 # Apply guidance only while t_min <= t <= t_max; sampling is unguided outside
@@ -13,24 +22,71 @@ num_x0_samples: 30
 t_min: 0.0
 t_max: 1.0
 # How to draw x_{t-1} from the mixture in Eq. (8).
-#   exact:        n* ~ Cat(w), then x_{t-1} ~ q(x_{t-1} | x_t, x_0^(n*)).
-#                 Samples the mixture of Eq. (8) without approximation.
-#   marginal:     average the N *normalized* posteriors, sample positions
-#                 independently. Keeps the mixture's per-position marginals,
-#                 drops correlations across positions.
-#   aggregate_x0: substitute the weighted histogram xbar_0 of the N candidates
-#                 for x_0 in the posterior, normalize once. This is the form
-#                 discriminator guidance uses; equals `marginal` for
-#                 absorbing-state diffusion.
-mixture_sampling: aggregate_x0
+#   marginal: our method. Average the N *individually normalized* posteriors,
+#             then sample positions independently. Normalizing each component
+#             before aggregating is what makes this the faithful form of
+#             Eq. (8): for uniform diffusion the posterior normalizer
+#             x_0 Qbar_t x_t^T depends on x_0, so the division has to happen
+#             inside the sum. Matches per-position marginals of the mixture
+#             exactly; drops correlations across positions.
+#   edlm:     n* ~ Cat(w), then x_{t-1} ~ q(x_{t-1} | x_t, x_0^(n*)). This is
+#             EDLM's Algorithm 1 (Denoising via Importance Sampling) with the
+#             learned energy replaced by our reward. Samples the *joint*
+#             mixture without approximation, so it keeps the cross-position
+#             correlations that `marginal` discards.
+mixture_sampling: marginal
+# Which masked position to unmask, for absorbing-state (MDLM) only. The base
+# sampler's "stay masked" probability is the same at every masked position, so
+# the choice carries no information and is free to be made better.
+#   bernoulli   : the schedule's coin flip. The original sampler; default.
+#   random_k    : deterministic count, uniformly random positions.
+#   xtheta_conf : deterministic count, ranked by the denoiser marginal x_theta.
+#   xbar_conf   : deterministic count, ranked by the reward-weighted candidate
+#                 histogram xbar_0. Ours -- and only defined under
+#                 mixture_sampling=marginal, since `edlm` makes the per-position
+#                 token distribution a one-hot whose confidence is 1 everywhere.
+#   blend_conf  : rank by a mixture (1-beta)*x_theta + beta*xbar_0, with beta =
+#                 `conf_blend`. beta=0 reproduces xtheta_conf exactly and beta=1
+#                 reproduces xbar_conf exactly, so this contains both as
+#                 endpoints. xbar_0 estimates the *tilted* denoiser marginal and
+#                 x_theta is the *untilted* one, so beta trades bias towards
+#                 untilted against the O(1/sqrt(N)) Monte Carlo error in xbar_0.
+# The last four break the importance-sampling derivation (the reverse kernel
+# stops being the forward posterior); they are decoder heuristics, like
+# MaskGIT-style confidence decoding.
+position_selection: bernoulli
+# Time window for `position_selection` only -- independent of the `t_min`/`t_max`
+# guidance window above, since the reward tilt and the position choice are
+# separate mechanisms. Outside it the schedule's own coin flip is used.
+# Same convention: t runs 1 (noise) -> 0 (clean), so position_t_max < 1 means
+# "apply the ranking only on the late, nearly-clean steps".
+position_t_min: 0.0
+position_t_max: 1.0
+# Shrinkage weight for `blend_conf` only; ignored by the other arms.
+conf_blend: 0.5
+# Control-variate coefficient for `cv_conf` only. c=0 turns the correction off
+# and reproduces `xbar_conf` exactly; c=1 is the value that is exactly optimal at
+# any position the reward does not couple to. It is NOT restricted to [0,1] --
+# the variance-optimal Cov/Var can exceed 1.
+cv_coeff: 1.0
+# Restrict the target to parseable molecules: q(x_0) = 0 wherever RDKit cannot
+# read x_0, so invalid candidates carry zero weight. The proposal then becomes
+# p_theta(.|valid) and the resulting normaliser cancels, so Eq. (8) is unchanged
+# -- unlike padding invalid candidates in at reward `invalid_reward`, which makes
+# the proposal depend on how many happened to be valid and is not a correct
+# estimator of anything. Implemented by masking the logits, never by putting
+# -inf in the reward (lambda_ * -inf is NaN at lambda_ = 0).
+exclude_invalid: False
+# When the importance weights come out uniform -- lambda_ = 0, or no candidate
+# parses so every reward ties -- the mixture is only a Monte Carlo estimate of
+# p_theta(x_{t-1}|x_t), which absorbing-state diffusion gives in closed form
+# because its posterior is linear in x_0. Substituting the closed form removes
+# that sampling error at no cost. Absorbing state only: for uniform diffusion the
+# closed form is biased, not exact. Off by default so earlier results stay
+# reproducible.
+exact_uniform_step: False
 # Reward given to x_0 candidates that RDKit cannot parse.
 invalid_reward: 0.0
-# `aggregate_x0` only: mix the denoiser marginal x_theta back into the candidate
-# histogram with this weight. The histogram is an atomic measure over the N
-# candidates, so tokens none of them proposed at a position get exactly zero
-# probability -- an implicit truncation of x_theta's ~1/N tail. A small floor
-# restores full support. 0 disables it.
-support_floor: 0.0
 # z-score the N rewards within each step before applying lambda_.
 normalize_reward: False
 # Process-pool size for the RDKit reward calls (<=1 runs them inline). RDKit

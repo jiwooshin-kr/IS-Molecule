@@ -1,0 +1,923 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=black]{hyperref}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+% \texttt{ring\_count} and friends are unbreakable and otherwise poke into the
+% margin; let TeX stretch interword space instead.
+\sloppy
+
+\title{The $(\lambda, N)$ sweep on QED\\\large \texttt{marginal} against \texttt{edlm}, MDLM and UDLM}
+\author{}\date{2026-08-15}
+\begin{document}\maketitle
+\section{Setup}
+
+196 runs, 1{,}024 samples each at $T=32$ steps, seed 1, reward
+\texttt{qed}. Grid: $\lambda \in \{0, 2, 5, 20, 50, 200, 1000\}$ against
+$N \in \{10, 30, 100, 300, 500, 1000, 2000\}$, for both mixture-sampling modes
+and both base models.
+
+$N$ is the number of $\mathbf{x}_0$ candidates drawn per denoising step --- the
+Monte Carlo budget of the estimator. $\lambda$ is the tilt in
+$q(\mathbf{x}_0) \propto p_\theta(\mathbf{x}_0)\,e^{\lambda r(\mathbf{x}_0)}$.
+The two modes differ only in how $\mathbf{x}_{t-1}$ is drawn from the resulting
+mixture: \texttt{marginal} averages the $N$ individually normalised posteriors,
+\texttt{edlm} draws a component and then samples from it. They share
+per-position marginals and differ only in the joint.
+
+\section{Reading ESS: use the median, never the last step}
+
+Effective sample size $\mathrm{ESS} = 1/\sum_n w_n^2$ says which end of the grid
+a run is on: $\mathrm{ESS}=N$ means the tilt is doing nothing, $\mathrm{ESS}\to1$
+means it has collapsed onto a single candidate.
+
+The driver script prints only the \emph{final} step's ESS, and that number is
+actively misleading on MDLM. Absorbing-state sampling has almost everything
+unmasked by the last step, so all $N$ candidates decode to the same sequence and
+tie on reward --- the last-step ESS reads $\approx N$ however hard $\lambda$ is
+tilting. Judged on it, MDLM looks entirely unguided. Its novel QED in fact climbs
+across the $\lambda$ grid. Every ESS below is the \textbf{median over the
+trajectory}, digested from the per-run logs into
+\texttt{results/\_ess\_summary.csv}.
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 1.00 & 0.97 & 0.87 & 0.81 & 0.77 & 0.74 & 0.73 \\
+30 & 1.00 & 0.96 & 0.83 & 0.72 & 0.67 & 0.63 & 0.62 \\
+100 & 1.00 & 0.96 & 0.81 & 0.66 & 0.60 & 0.54 & 0.54 \\
+300 & 1.00 & 0.96 & 0.78 & 0.57 & 0.50 & 0.44 & 0.43 \\
+500 & 1.00 & 0.96 & 0.78 & 0.56 & 0.49 & 0.43 & 0.41 \\
+1000 & 0.00 & 0.95 & 0.77 & 0.54 & 0.45 & 0.40 & 0.40 \\
+2000 & 0.00 & 0.95 & 0.73 & 0.43 & 0.40 & 0.34 & 0.32 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{marginal}: median ESS as a fraction of $N$.}
+\label{tab:ess-qed-MDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 1.00 & 0.97 & 0.89 & 0.82 & 0.78 & 0.74 & 0.73 \\
+30 & 1.00 & 0.96 & 0.84 & 0.72 & 0.67 & 0.63 & 0.62 \\
+100 & 1.00 & 0.96 & 0.80 & 0.62 & 0.56 & 0.51 & 0.50 \\
+300 & 1.00 & 0.96 & 0.77 & 0.57 & 0.49 & 0.44 & 0.44 \\
+500 & 1.00 & 0.96 & 0.78 & 0.55 & 0.48 & 0.43 & 0.41 \\
+1000 & 0.00 & 0.95 & 0.76 & 0.53 & 0.46 & 0.41 & 0.39 \\
+2000 & 0.00 & 0.95 & 0.73 & 0.47 & 0.39 & 0.34 & 0.32 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{edlm}: median ESS as a fraction of $N$.}
+\label{tab:ess-qed-MDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 1.00 & 0.96 & 0.85 & 0.78 & 0.76 & 0.76 & 0.76 \\
+30 & 1.00 & 0.95 & 0.77 & 0.60 & 0.56 & 0.56 & 0.56 \\
+100 & 1.00 & 0.95 & 0.65 & 0.43 & 0.37 & 0.34 & 0.34 \\
+300 & 1.00 & 0.95 & 0.57 & 0.22 & 0.19 & 0.17 & 0.16 \\
+500 & 1.00 & 0.94 & 0.54 & 0.17 & 0.15 & 0.13 & 0.12 \\
+1000 & 0.00 & 0.95 & 0.51 & 0.10 & 0.09 & 0.08 & 0.08 \\
+2000 & 0.00 & 0.94 & 0.49 & 0.07 & 0.06 & 0.05 & 0.05 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{marginal}: median ESS as a fraction of $N$.}
+\label{tab:ess-qed-UDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 1.00 & 0.96 & 0.86 & 0.79 & 0.77 & 0.76 & 0.76 \\
+30 & 1.00 & 0.95 & 0.76 & 0.60 & 0.56 & 0.56 & 0.56 \\
+100 & 1.00 & 0.95 & 0.67 & 0.42 & 0.37 & 0.35 & 0.35 \\
+300 & 1.00 & 0.94 & 0.56 & 0.22 & 0.20 & 0.18 & 0.17 \\
+500 & 1.00 & 0.95 & 0.53 & 0.16 & 0.14 & 0.13 & 0.12 \\
+1000 & 0.00 & 0.95 & 0.52 & 0.11 & 0.10 & 0.08 & 0.08 \\
+2000 & 0.00 & 0.94 & 0.49 & 0.07 & 0.06 & 0.05 & 0.05 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{edlm}: median ESS as a fraction of $N$.}
+\label{tab:ess-qed-UDLM-edlm}
+\end{table}
+
+\section{The grid}
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 0.456 & 0.456 & 0.460 & 0.467 & 0.478 & 0.480 & 0.482 \\
+30 & 0.457 & 0.459 & 0.455 & 0.470 & 0.487 & 0.492 & 0.491 \\
+100 & 0.464 & 0.459 & 0.460 & 0.478 & 0.493 & 0.495 & 0.499 \\
+300 & 0.455 & 0.456 & 0.459 & 0.478 & 0.497 & 0.509 & 0.512 \\
+500 & 0.456 & 0.457 & 0.462 & 0.483 & 0.500 & 0.511 & 0.515 \\
+1000 & 0.455 & 0.459 & 0.460 & 0.479 & 0.501 & 0.515 & 0.516 \\
+2000 & 0.459 & 0.465 & 0.464 & 0.486 & 0.503 & 0.519 & 0.516 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{marginal}: novel-QED mean.}
+\label{tab:grid-qed-MDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 0.458 & 0.465 & 0.468 & 0.473 & 0.474 & 0.479 & 0.480 \\
+30 & 0.451 & 0.455 & 0.459 & 0.478 & 0.487 & 0.489 & 0.492 \\
+100 & 0.458 & 0.469 & 0.460 & 0.483 & 0.495 & 0.501 & 0.503 \\
+300 & 0.452 & 0.455 & 0.459 & 0.481 & 0.495 & 0.501 & 0.504 \\
+500 & 0.454 & 0.453 & 0.467 & 0.484 & 0.503 & 0.510 & 0.512 \\
+1000 & 0.459 & 0.461 & 0.467 & 0.484 & 0.498 & 0.513 & 0.514 \\
+2000 & 0.454 & 0.460 & 0.461 & 0.486 & 0.506 & 0.520 & 0.518 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{edlm}: novel-QED mean.}
+\label{tab:grid-qed-MDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 0.452 & 0.452 & 0.451 & 0.476 & 0.492 & 0.506 & 0.502 \\
+30 & 0.457 & 0.460 & 0.458 & 0.487 & 0.505 & 0.515 & 0.522 \\
+100 & 0.456 & 0.464 & 0.464 & 0.489 & 0.506 & 0.521 & 0.529 \\
+300 & 0.459 & 0.459 & 0.459 & 0.485 & 0.513 & 0.533 & 0.533 \\
+500 & 0.452 & 0.463 & 0.462 & 0.484 & 0.514 & 0.536 & 0.540 \\
+1000 & 0.454 & 0.454 & 0.468 & 0.484 & 0.516 & 0.542 & 0.551 \\
+2000 & 0.463 & 0.467 & 0.463 & 0.492 & 0.511 & 0.547 & 0.548 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{marginal}: novel-QED mean.}
+\label{tab:grid-qed-UDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 0.446 & 0.454 & 0.462 & 0.482 & 0.501 & 0.512 & 0.510 \\
+30 & 0.459 & 0.466 & 0.475 & 0.488 & 0.508 & 0.521 & 0.525 \\
+100 & 0.457 & 0.468 & 0.468 & 0.502 & 0.519 & 0.533 & 0.535 \\
+300 & 0.449 & 0.462 & 0.468 & 0.494 & 0.530 & 0.543 & 0.542 \\
+500 & 0.441 & 0.450 & 0.462 & 0.503 & 0.525 & 0.544 & 0.549 \\
+1000 & 0.451 & 0.456 & 0.470 & 0.497 & 0.531 & 0.544 & 0.546 \\
+2000 & 0.455 & 0.465 & 0.471 & 0.502 & 0.534 & 0.552 & 0.556 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{edlm}: novel-QED mean.}
+\label{tab:grid-qed-UDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 216 & 222 & 246 & 253 & 262 & 263 & 268 \\
+30 & 211 & 216 & 247 & 275 & 283 & 297 & 295 \\
+100 & 211 & 214 & 236 & 287 & 286 & 305 & 314 \\
+300 & 220 & 229 & 234 & 313 & 319 & 381 & 389 \\
+500 & 228 & 244 & 270 & 327 & 348 & 386 & 391 \\
+1000 & 204 & 222 & 252 & 344 & 367 & 424 & 410 \\
+2000 & 190 & 206 & 234 & 342 & 386 & 410 & 439 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{marginal}: number of novel molecules (out of 1{,}024 generated).}
+\label{tab:novel-qed-MDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 215 & 231 & 234 & 244 & 247 & 248 & 248 \\
+30 & 234 & 236 & 256 & 270 & 277 & 297 & 302 \\
+100 & 208 & 231 & 260 & 305 & 314 & 332 & 336 \\
+300 & 209 & 238 & 238 & 301 & 330 & 356 & 358 \\
+500 & 195 & 198 & 233 & 295 & 345 & 351 & 369 \\
+1000 & 219 & 234 & 252 & 349 & 373 & 415 & 433 \\
+2000 & 213 & 227 & 238 & 343 & 370 & 426 & 434 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{edlm}: number of novel molecules (out of 1{,}024 generated).}
+\label{tab:novel-qed-MDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 189 & 211 & 229 & 239 & 236 & 232 & 231 \\
+30 & 195 & 201 & 205 & 246 & 238 & 245 & 269 \\
+100 & 194 & 233 & 241 & 288 & 259 & 279 & 288 \\
+300 & 193 & 214 & 217 & 251 & 259 & 316 & 311 \\
+500 & 196 & 225 & 229 & 275 & 274 & 334 & 333 \\
+1000 & 186 & 207 & 236 & 271 & 274 & 345 & 371 \\
+2000 & 207 & 236 & 242 & 257 & 295 & 359 & 392 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{marginal}: number of novel molecules (out of 1{,}024 generated).}
+\label{tab:novel-qed-UDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 165 & 212 & 238 & 222 & 228 & 240 & 239 \\
+30 & 191 & 224 & 240 & 252 & 236 & 254 & 272 \\
+100 & 180 & 214 & 230 & 300 & 263 & 307 & 297 \\
+300 & 179 & 200 & 251 & 327 & 290 & 306 & 326 \\
+500 & 190 & 210 & 247 & 266 & 274 & 306 & 355 \\
+1000 & 164 & 207 & 241 & 256 & 310 & 331 & 366 \\
+2000 & 212 & 215 & 263 & 300 & 297 & 374 & 397 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{edlm}: number of novel molecules (out of 1{,}024 generated).}
+\label{tab:novel-qed-UDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 0.636 & 0.636 & 0.636 & 0.644 & 0.674 & 0.674 & 0.684 \\
+30 & 0.696 & 0.696 & 0.673 & 0.692 & 0.692 & 0.692 & 0.692 \\
+100 & 0.642 & 0.642 & 0.642 & 0.695 & 0.695 & 0.682 & 0.695 \\
+300 & 0.667 & 0.673 & 0.673 & 0.635 & 0.680 & 0.688 & 0.688 \\
+500 & 0.629 & 0.629 & 0.668 & 0.659 & 0.662 & 0.692 & 0.697 \\
+1000 & 0.644 & 0.644 & 0.687 & 0.649 & 0.705 & 0.697 & 0.697 \\
+2000 & 0.628 & 0.628 & 0.641 & 0.670 & 0.682 & 0.688 & 0.688 \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize A raw max grows with the number of molecules it is taken over, and these cells differ several-fold in novel count, so a higher max here is partly a deeper pool. That is a real advantage at a fixed generation budget -- every cell generated the same 1,024 sequences -- but it is not a claim about distribution shape. Section~\ref{sec:beyond-mean-qed} separates the two.\end{minipage}
+\caption{MDLM, \texttt{marginal}: highest novel-QED of the run.}
+\label{tab:max-qed-MDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 0.644 & 0.644 & 0.680 & 0.638 & 0.644 & 0.644 & 0.644 \\
+30 & 0.628 & 0.628 & 0.630 & 0.648 & 0.683 & 0.690 & 0.690 \\
+100 & 0.627 & 0.625 & 0.622 & 0.646 & 0.667 & 0.670 & 0.670 \\
+300 & 0.624 & 0.660 & 0.660 & 0.684 & 0.657 & 0.694 & 0.684 \\
+500 & 0.645 & 0.645 & 0.643 & 0.650 & 0.684 & 0.688 & 0.688 \\
+1000 & 0.614 & 0.636 & 0.652 & 0.658 & 0.670 & 0.696 & 0.687 \\
+2000 & 0.643 & 0.652 & 0.644 & 0.688 & 0.666 & 0.699 & 0.690 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{edlm}: highest novel-QED of the run.}
+\label{tab:max-qed-MDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 0.622 & 0.623 & 0.624 & 0.643 & 0.645 & 0.658 & 0.656 \\
+30 & 0.680 & 0.659 & 0.631 & 0.693 & 0.693 & 0.661 & 0.686 \\
+100 & 0.616 & 0.640 & 0.683 & 0.655 & 0.673 & 0.688 & 0.697 \\
+300 & 0.601 & 0.680 & 0.680 & 0.651 & 0.654 & 0.701 & 0.701 \\
+500 & 0.611 & 0.648 & 0.647 & 0.697 & 0.693 & 0.690 & 0.687 \\
+1000 & 0.637 & 0.632 & 0.638 & 0.685 & 0.730 & 0.730 & 0.730 \\
+2000 & 0.675 & 0.644 & 0.620 & 0.663 & 0.662 & 0.710 & 0.733 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{marginal}: highest novel-QED of the run.}
+\label{tab:max-qed-UDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 0.615 & 0.624 & 0.653 & 0.675 & 0.675 & 0.660 & 0.660 \\
+30 & 0.636 & 0.652 & 0.655 & 0.693 & 0.665 & 0.666 & 0.675 \\
+100 & 0.648 & 0.661 & 0.623 & 0.670 & 0.651 & 0.675 & 0.672 \\
+300 & 0.617 & 0.629 & 0.655 & 0.657 & 0.661 & 0.716 & 0.677 \\
+500 & 0.647 & 0.645 & 0.656 & 0.666 & 0.663 & 0.700 & 0.735 \\
+1000 & 0.619 & 0.657 & 0.655 & 0.705 & 0.713 & 0.709 & 0.714 \\
+2000 & 0.663 & 0.663 & 0.635 & 0.693 & 0.677 & 0.707 & 0.711 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{edlm}: highest novel-QED of the run.}
+\label{tab:max-qed-UDLM-edlm}
+\end{table}
+
+\section{\texttt{marginal} against \texttt{edlm}}
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lr rrrr}
+\toprule
+model & $\lambda$ & mean $|\Delta|$ property & mean $\Delta$ property & mean $|\Delta|$ novel & mean $\Delta$ novel \\
+\midrule
+MDLM & 0 & 0.004 & +0.002 & 15.6 & -1.9 \\
+MDLM & 2 & 0.005 & -0.001 & 19.1 & -6.0 \\
+MDLM & 5 & 0.004 & -0.003 & 12.9 & +1.1 \\
+MDLM & 20 & 0.004 & -0.004 & 11.7 & +4.9 \\
+MDLM & 50 & 0.002 & +0.000 & 12.1 & -0.7 \\
+MDLM & 200 & 0.003 & +0.001 & 18.1 & +5.9 \\
+MDLM & 1000 & 0.003 & +0.001 & 18.6 & +3.7 \\
+UDLM & 0 & 0.006 & +0.005 & 12.7 & +11.3 \\
+UDLM & 2 & 0.005 & -0.001 & 13.3 & +6.4 \\
+UDLM & 5 & 0.007 & -0.007 & 19.0 & -15.9 \\
+UDLM & 20 & 0.010 & -0.010 & 25.4 & -13.7 \\
+UDLM & 50 & 0.013 & -0.013 & 11.9 & -9.0 \\
+UDLM & 200 & 0.007 & -0.007 & 16.0 & -1.1 \\
+UDLM & 1000 & 0.007 & -0.005 & 9.6 & -8.1 \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize A systematic winner would show as a consistent sign in the $\Delta$ columns. There is none.\end{minipage}
+\caption{\texttt{marginal} minus \texttt{edlm}, averaged over the five $N$ at each $\lambda$. $|\Delta|$ is the typical size of the gap, $\Delta$ its sign.}
+\label{tab:modes-qed}
+\end{table}
+
+
+Two things were predicted before the sweep ran, and only one holds.
+
+\textbf{Predicted and confirmed:} the two modes are empirically
+interchangeable. Across the whole grid the mean absolute gap in novel-QED is
+0.006 with mean signed gap
+-0.003 --- no consistent winner, at any $\lambda$ or $N$.
+
+\textbf{Predicted and \emph{not} confirmed:} the gap was expected to
+\emph{shrink} as $\lambda$ grows, because one-hot weights make
+$\sum_n w_n q(\cdot\,|\,\mathbf{x}_0^{(n)})$ collapse to the single component
+\texttt{edlm} would have drawn, and a posterior conditioned on a fixed
+$\mathbf{x}_0$ already factorises over positions. Measured, the gap is flat:
+0.005 at $\lambda=0$ against
+0.005 at $\lambda=1000$. The reason is
+visible in the ESS tables --- the weights never actually become one-hot in this
+grid, so the limit is never entered. The flat gap is therefore sampling noise
+between two samplers that agree, which is the same conclusion by a weaker route.
+
+\section{$\lambda = 0$: the unguided control}
+
+At $\lambda=0$ the weights are uniform, so no tilt is applied whatever $N$ or the
+mode is. Every cell of Table~\ref{tab:lam0-qed} should therefore be
+the base sampler, and the spread across it measures the sampling noise that every
+other comparison in this report has to clear.
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{llrrrrrrr}
+\toprule
+model & mode & $N=10$ & $N=30$ & $N=100$ & $N=300$ & $N=500$ & $N=1000$ & $N=2000$ \\
+\midrule
+MDLM & marginal & 0.456 & 0.457 & 0.464 & 0.455 & 0.456 & 0.455 & 0.459 \\
+MDLM & edlm & 0.458 & 0.451 & 0.458 & 0.452 & 0.454 & 0.459 & 0.454 \\
+UDLM & marginal & 0.452 & 0.457 & 0.456 & 0.459 & 0.452 & 0.454 & 0.463 \\
+UDLM & edlm & 0.446 & 0.459 & 0.457 & 0.449 & 0.441 & 0.451 & 0.455 \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize This is the implementation control: at $\lambda=0$ the weights are uniform, so no tilt is applied and the numbers must be flat in $N$ up to sampling noise. They are.\end{minipage}
+\caption{novel-QED at $\lambda=0$. Every entry should be the base sampler, independent of $N$ and of the mode.}
+\label{tab:lam0-qed}
+\end{table}
+
+
+This table also calibrates everything else in the report. The widest $\lambda=0$
+spread within a single model is 0.021 in novel-QED --- runs that are
+identical in distribution, differing only by sampling noise. The mean gap between
+\texttt{marginal} and \texttt{edlm} across the whole grid is 0.006,
+\textbf{smaller} than that floor. So the two
+modes are not merely close: their difference is
+indistinguishable from noise.
+
+\section{The frontier against D-CBG}
+
+Both methods are swept, then compared on the axes the paper's Figure 3 uses:
+number of novel molecules against novel-QED mean. Comparing at single
+hyperparameter points would be meaningless --- the paper tunes $\gamma$ per model
+\emph{and} per property.
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{ll rrr}
+\toprule
+method & setting & valid & novel & novel-QED \\
+\midrule
+ours & edlm, $N=2000$, $\lambda=200$ & 747 & 426 & 0.520 \\
+ours & edlm, $N=2000$, $\lambda=1000$ & 747 & 434 & 0.518 \\
+ours & marginal, $N=2000$, $\lambda=1000$ & 750 & 439 & 0.516 \\
+D-CBG & $\gamma=3$, exact & 390 & 100 & 0.588 \\
+D-CBG & $\gamma=2$, exact & 488 & 127 & 0.574 \\
+D-CBG & $\gamma=1$, exact & 537 & 189 & 0.557 \\
+D-CBG & $\gamma=1$, approx. & 504 & 208 & 0.467 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM: the Pareto-optimal settings of each method on (novel count, novel-QED).}
+\label{tab:frontier-qed-MDLM}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{ll rrr}
+\toprule
+method & setting & valid & novel & novel-QED \\
+\midrule
+ours & edlm, $N=2000$, $\lambda=1000$ & 923 & 397 & 0.556 \\
+D-CBG & $\gamma=10$, exact & 989 & 63 & 0.609 \\
+D-CBG & $\gamma=5$, exact & 968 & 82 & 0.593 \\
+D-CBG & $\gamma=3$, exact & 946 & 102 & 0.588 \\
+D-CBG & $\gamma=2$, exact & 903 & 115 & 0.567 \\
+D-CBG & $\gamma=1$, exact & 949 & 118 & 0.528 \\
+D-CBG & $\gamma=1$, approx. & 997 & 121 & 0.477 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM: the Pareto-optimal settings of each method on (novel count, novel-QED).}
+\label{tab:frontier-qed-UDLM}
+\end{table}
+
+\section{Beyond the mean}\label{sec:beyond-mean-qed}
+
+Everything above compares \emph{means}, which is the paper's metric but not the
+one a screening pipeline faces. Nobody consumes the mean of a generated library;
+they take the usable molecules out of it. And the mean is blind to the axis these
+methods differ on most: from the same 1{,}024 generated sequences our runs yield
+several times more novel molecules than D-CBG's.
+
+\subsection{The primary comparison: usable molecules per fixed budget}
+
+Both methods generated exactly 1{,}024 sequences. So simply count the novel
+molecules that clear a quality bar. Quality and quantity both enter --- a run
+that yields many poor novel molecules scores nothing, and one that yields a
+handful of excellent ones scores little.
+
+This number needs no correction of any kind. In particular it must \textbf{not}
+be normalised by the novel count, nor size-matched against the competitor:
+converting a fixed budget into more usable molecules \emph{is} the result, and
+dividing it out would erase precisely what is being measured.
+
+
+\subsubsection{The whole grid, on the primary metric}
+
+The tables above pick a best setting per method, which is what a headline needs
+but not what a reader should have to trust. Below is the raw grid: hits at the
+headline bar at every $(N, \lambda)$, both modes, nothing averaged and nothing
+filtered. It shows where in the grid the hits live --- and that the surface is
+not monotone in either axis, so a single ``best'' cell is partly a draw from run
+noise.
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrrr}
+\toprule
+$N$ & marg.\,0 & marg.\,20 & marg.\,50 & marg.\,200 & marg.\,1000 & edlm.\,0 & edlm.\,20 & edlm.\,50 & edlm.\,200 & edlm.\,1000 \\
+\midrule
+10 & 2 & 7 & 11 & 12 & 13 & 5 & 9 & 10 & 10 & 11 \\
+30 & 9 & 8 & 12 & 19 & 18 & 3 & 14 & 15 & 17 & 18 \\
+100 & 6 & 10 & 20 & 22 & 29 & 6 & 13 & 19 & 24 & 31 \\
+300 & 3 & 12 & 23 & 39 & 39 & 2 & 9 & 23 & 27 & 33 \\
+500 & 4 & 18 & 19 & 37 & 41 & 6 & 14 & 33 & 38 & 38 \\
+1000 & 5 & 11 & 23 & 45 & 48 & 3 & 12 & 26 & 40 & 47 \\
+2000 & 3 & 19 & 25 & 56 & 53 & 3 & 10 & 35 & 63 & 50 \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize Novel molecules clearing the bar, out of the 1{,}024 generated. Every cell is a single run, seed 1; nothing is averaged. $\lambda \in \{2, 5\}$ are omitted to fit the page. \textbf{Not} filtered by \texttt{MIN\_NOVEL}, unlike the Pareto table --- a collapsed run simply scores few hits here, which is the honest reading, whereas a mean over 2 molecules is not. \textbf{D-CBG's best on this bar is 40} (exact $\gamma=2$), for comparison.\end{minipage}
+\caption{MDLM: hits at QED $\geq 0.6$ across the whole $(N, \lambda)$ grid. Columns are (mixture mode) $\times$ $\lambda$.}
+\label{tab:hits-grid-qed-MDLM}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrrrrr}
+\toprule
+$N$ & marg.\,0 & marg.\,20 & marg.\,50 & marg.\,200 & marg.\,1000 & edlm.\,0 & edlm.\,20 & edlm.\,50 & edlm.\,200 & edlm.\,1000 \\
+\midrule
+10 & 7 & 9 & 13 & 15 & 11 & 2 & 14 & 15 & 24 & 23 \\
+30 & 5 & 12 & 27 & 17 & 27 & 8 & 18 & 18 & 17 & 27 \\
+100 & 7 & 17 & 20 & 35 & 31 & 4 & 15 & 31 & 38 & 42 \\
+300 & 1 & 9 & 21 & 43 & 47 & 4 & 8 & 34 & 55 & 59 \\
+500 & 2 & 13 & 28 & 54 & 66 & 7 & 16 & 38 & 72 & 87 \\
+1000 & 3 & 11 & 33 & 60 & 83 & 1 & 14 & 51 & 67 & 86 \\
+2000 & 9 & 21 & 29 & 82 & 93 & 5 & 25 & 56 & 91 & 111 \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize Novel molecules clearing the bar, out of the 1{,}024 generated. Every cell is a single run, seed 1; nothing is averaged. $\lambda \in \{2, 5\}$ are omitted to fit the page. \textbf{Not} filtered by \texttt{MIN\_NOVEL}, unlike the Pareto table --- a collapsed run simply scores few hits here, which is the honest reading, whereas a mean over 2 molecules is not. \textbf{D-CBG's best on this bar is 46} (exact $\gamma=3$), for comparison.\end{minipage}
+\caption{UDLM: hits at QED $\geq 0.6$ across the whole $(N, \lambda)$ grid. Columns are (mixture mode) $\times$ $\lambda$.}
+\label{tab:hits-grid-qed-UDLM}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lll rrrrr}
+\toprule
+model & method & setting & novel & mean & $\geq 0.55$ & $\geq 0.6$ & $\geq 0.65$ \\
+\midrule
+MDLM & \texttt{marginal} & $N=2000$, $\lambda=200$ & 410 & 0.519 & \textbf{129} (1.3$\times$) & \textbf{56} (1.4$\times$) & 8 (0.9$\times$) \\
+MDLM & \texttt{edlm} & $N=2000$, $\lambda=200$ & 426 & 0.520 & \textbf{130} (1.4$\times$) & \textbf{63} (1.6$\times$) & 8 (0.9$\times$) \\
+MDLM & D-CBG & $\gamma=2$, exact & 127 & 0.574 & 96 & 40 & 9 \\
+UDLM & \texttt{marginal} & $N=2000$, $\lambda=1000$ & 392 & 0.548 & \textbf{198} (2.1$\times$) & \textbf{93} (2.0$\times$) & \textbf{20} (5.0$\times$) \\
+UDLM & \texttt{edlm} & $N=2000$, $\lambda=1000$ & 397 & 0.556 & \textbf{223} (2.4$\times$) & \textbf{111} (2.4$\times$) & \textbf{21} (5.2$\times$) \\
+UDLM & D-CBG & $\gamma=3$, exact & 102 & 0.588 & 93 & 46 & 4 \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize No size matching and no normalisation --- every run spent the same generation budget, so these are directly comparable counts.\end{minipage}
+\caption{Novel molecules clearing each QED bar, out of the 1{,}024 sequences each run generated. The two mixture-sampling modes are kept apart rather than merged into a single \emph{ours} row, since they are different samplers. Each is at its own best setting, ranked on the middle bar; the multiplier is against D-CBG on the same model.}
+\label{tab:hits-qed}
+\end{table}
+
+
+\subsection{Secondary: shape comparisons, which discard the counts}
+
+Two standard distribution-free comparisons. Both deliberately ignore how many
+molecules each method produced, so neither can see the advantage above; they are
+here to answer a different question --- whether our \emph{distribution} is
+better, or only our yield.
+
+\begin{itemize}
+  \item \textbf{Rank against rank.} Sort both sets and compare like for like:
+        best against best, tenth percentile against tenth. The fraction of
+        quantiles where we lead is the \emph{quantile win rate}; 1.0 would be
+        \textbf{first-order stochastic dominance}. Comparing the $k$-th
+        \emph{rank} directly would need equal sample sizes, so this compares at
+        matched quantiles, the size-independent form of the same idea.
+  \item \textbf{Draw against draw.} $A_{12}$, the Vargha--Delaney probability of
+        superiority: one molecule drawn at random from each, how often is ours
+        better? The normalised Mann--Whitney $U$; $0.5$ is indistinguishable.
+\end{itemize}
+
+The \emph{matched} column subsamples the larger novel set down to the smaller.
+It is a \textbf{decomposition, not a fairness correction} --- it separates
+``we win because our tail is better'' from ``we win because our pool is deeper''.
+The counterfactual it describes never occurs in practice, so it should not be
+read as the fair comparison; the table above is.
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{ll rrrrr rr}
+\toprule
+model & method & novel & mean & max & top10 & top10 matched & q-win & $A_{12}$ \\
+\midrule
+MDLM & ours & 391 & 0.515 & 0.697 & 0.679 & 0.639 & 0.00 & 0.20 \\
+MDLM & D-CBG & 100 & 0.588 & 0.697 & 0.672 & 0.672 & -- & -- \\
+UDLM & ours & 392 & 0.548 & 0.733 & 0.693 & 0.646 & 0.05 & 0.21 \\
+UDLM & D-CBG & 63 & 0.609 & 0.656 & 0.649 & 0.649 & -- & -- \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize \emph{max} and \emph{top-K} are at the fixed 1,024-sequence budget and so include our deeper novel pool. \emph{matched} removes that, and answers only ``quality or quantity?.\end{minipage}
+\caption{Each method at its own best setting by top-10. \emph{q-win} and $A_{12}$ sit on the ours row and describe ours against D-CBG.}
+\label{tab:beyond-qed}
+\end{table}
+
+\section{Validity}\label{sec:validity-qed}
+
+Validity is the axis on which the two mechanisms differ most sharply, and it is
+what drives the curve directions of the previous section, so it is worth
+reporting on its own.
+
+Our reward sees a \emph{clean} $x_0$ candidate and returns
+\texttt{invalid\_reward} $=0$ when RDKit cannot parse it. Raising $\lambda$
+therefore pushes probability towards parseable molecules before it pushes
+towards high QED: an invalid candidate is treated as a QED-zero one and
+suppressed. D-CBG instead perturbs the per-position logits with the gradient of
+a noisy classifier, which carries no such term --- nothing in it prefers a
+parseable string.
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 547 & 571 & 601 & 638 & 646 & 647 & 648 \\
+30 & 542 & 555 & 596 & 650 & 650 & 655 & 659 \\
+100 & 532 & 545 & 593 & 662 & 665 & 666 & 663 \\
+300 & 552 & 577 & 609 & 699 & 706 & 713 & 720 \\
+500 & 558 & 581 & 610 & 708 & 719 & 718 & 718 \\
+1000 & 549 & 578 & 605 & 718 & 716 & 724 & 715 \\
+2000 & 544 & 568 & 593 & 736 & 749 & 741 & 750 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{marginal}: valid molecules out of the 1{,}024 generated.}
+\label{tab:valid-qed-MDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 564 & 589 & 605 & 634 & 631 & 630 & 630 \\
+30 & 558 & 583 & 623 & 670 & 670 & 673 & 675 \\
+100 & 553 & 588 & 624 & 725 & 727 & 721 & 716 \\
+300 & 556 & 591 & 630 & 715 & 717 & 719 & 713 \\
+500 & 549 & 570 & 614 & 728 & 747 & 724 & 722 \\
+1000 & 542 & 573 & 609 & 738 & 744 & 736 & 739 \\
+2000 & 559 & 601 & 622 & 753 & 758 & 747 & 747 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, \texttt{edlm}: valid molecules out of the 1{,}024 generated.}
+\label{tab:valid-qed-MDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 682 & 730 & 801 & 893 & 885 & 886 & 892 \\
+30 & 695 & 764 & 810 & 920 & 924 & 920 & 918 \\
+100 & 686 & 758 & 834 & 934 & 921 & 910 & 929 \\
+300 & 672 & 742 & 844 & 929 & 917 & 925 & 921 \\
+500 & 691 & 761 & 822 & 934 & 920 & 910 & 916 \\
+1000 & 695 & 757 & 835 & 924 & 911 & 927 & 901 \\
+2000 & 694 & 770 & 830 & 937 & 926 & 911 & 903 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{marginal}: valid molecules out of the 1{,}024 generated.}
+\label{tab:valid-qed-UDLM-marginal}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rrrrrrrr}
+\toprule
+$N$ & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+10 & 657 & 746 & 842 & 900 & 894 & 890 & 891 \\
+30 & 675 & 761 & 874 & 936 & 929 & 930 & 928 \\
+100 & 679 & 744 & 845 & 952 & 932 & 916 & 921 \\
+300 & 693 & 772 & 860 & 963 & 957 & 948 & 938 \\
+500 & 686 & 785 & 863 & 966 & 948 & 928 & 927 \\
+1000 & 685 & 763 & 856 & 964 & 954 & 923 & 910 \\
+2000 & 685 & 759 & 863 & 969 & 964 & 927 & 923 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, \texttt{edlm}: valid molecules out of the 1{,}024 generated.}
+\label{tab:valid-qed-UDLM-edlm}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{ll rrr l}
+\toprule
+model & method & weakest dial & best & strongest dial & trend \\
+\midrule
+MDLM & ours ($N=2000$) & 544 & 750 & 750 & \textbf{rises} \\
+MDLM & D-CBG exact & 537 & 537 & 33 & falls \\
+MDLM & D-CBG approx. & 504 & 504 & 108 & falls \\
+UDLM & ours ($N=2000$) & 694 & 937 & 903 & \textbf{rises} \\
+UDLM & D-CBG exact & 949 & 989 & 989 & rises \\
+UDLM & D-CBG approx. & 997 & 997 & 819 & falls \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize This is the mechanism behind the opposite curve directions: our dial buys validity on the way to buying property, so the novel count rises with it, while D-CBG spends validity and the novel count falls. On MDLM the D-CBG exact arm reaches zero valid molecules at $\gamma \geq 6$, which is why the paper does not report it there.\end{minipage}
+\caption{Valid molecules out of 1{,}024 as the strength dial is turned up. Ours is read along $\lambda$ at the largest $N$; D-CBG along $\gamma$.}
+\label{tab:valid-vs-dial-qed}
+\end{table}
+
+\section{The shape of each curve}
+
+Plot novel count on the $x$-axis against novel-QED mean on the $y$-axis and
+sweep each method's strength dial --- $\lambda$ for ours, $\gamma$ for D-CBG.
+The two methods trace curves in \emph{opposite directions}, and that is a
+property worth reporting on its own, independently of which sits higher.
+
+\begin{itemize}
+  \item \textbf{D-CBG runs up and to the left.} Raising $\gamma$ buys
+        property by spending novelty: the dial is a genuine trade-off the user
+        has to tune, and the original paper tunes it per model and per property.
+  \item \textbf{Ours runs up and to the right.} Raising $\lambda$ improves
+        \emph{both} axes at once. The reason is visible in the validity
+        column: the first thing $\lambda$ buys is valid molecules, which raises
+        the novel count, and only then does it buy property. There is no
+        trade-off to tune --- the only cost is compute.
+\end{itemize}
+
+The correlation between the two axes along each sweep reduces this to one
+number. Crucially it is measured at \emph{fixed} $N$, so the up-right shape
+is not an artifact of spending more Monte Carlo budget: along every row below,
+only the strength dial moves.
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{ll r rr rl}
+\toprule
+model & method & pts & weakest dial & strongest dial & corr & shape \\
+\midrule
+MDLM & ours, $N=100$ & 7 & (211, 0.464) & (314, 0.499) & +0.94 & \textbf{up-right} \\
+MDLM & ours, $N=300$ & 7 & (220, 0.455) & (389, 0.512) & +0.98 & \textbf{up-right} \\
+MDLM & ours, $N=1000$ & 7 & (204, 0.455) & (410, 0.516) & +0.97 & \textbf{up-right} \\
+MDLM & ours, $N=2000$ & 7 & (190, 0.459) & (439, 0.516) & +0.98 & \textbf{up-right} \\
+MDLM & D-CBG exact & 5 & (189, 0.557) & (14, 0.575) & -0.43 & up-left \\
+MDLM & D-CBG approx. & 5 & (208, 0.467) & (45, 0.556) & -0.84 & up-left \\
+UDLM & ours, $N=100$ & 7 & (194, 0.456) & (288, 0.529) & +0.83 & \textbf{up-right} \\
+UDLM & ours, $N=300$ & 7 & (193, 0.459) & (311, 0.533) & +0.96 & \textbf{up-right} \\
+UDLM & ours, $N=1000$ & 7 & (186, 0.454) & (371, 0.551) & +0.97 & \textbf{up-right} \\
+UDLM & ours, $N=2000$ & 7 & (207, 0.463) & (392, 0.548) & +0.97 & \textbf{up-right} \\
+UDLM & D-CBG exact & 5 & (118, 0.528) & (63, 0.609) & -0.86 & up-left \\
+UDLM & D-CBG approx. & 5 & (121, 0.477) & (59, 0.556) & -0.98 & up-left \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize Measured at fixed $N$, so the up-right shape is not an effect of raising the Monte Carlo budget --- only the strength dial moves along each row.\end{minipage}
+\caption{Direction of each curve in (novel count, novel-QED) space. \emph{corr} is between the two axes along the sweep: positive means the dial improves both, negative means it trades one for the other.}
+\label{tab:shape-qed}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lccccccc}
+\toprule
+ours & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+$N=10$ & (216, 0.456) & (222, 0.456) & (246, 0.460) & (253, 0.467) & (262, 0.478) & (263, 0.480) & (268, 0.482) \\
+$N=30$ & (211, 0.457) & (216, 0.459) & (247, 0.455) & (275, 0.470) & (283, 0.487) & (297, 0.492) & (295, 0.491) \\
+$N=100$ & (211, 0.464) & (214, 0.459) & (236, 0.460) & (287, 0.478) & (286, 0.493) & (305, 0.495) & (314, 0.499) \\
+$N=300$ & (220, 0.455) & (229, 0.456) & (234, 0.459) & (313, 0.478) & (319, 0.497) & (381, 0.509) & (389, 0.512) \\
+$N=500$ & (228, 0.456) & (244, 0.457) & (270, 0.462) & (327, 0.483) & (348, 0.500) & (386, 0.511) & (391, 0.515) \\
+$N=1000$ & (204, 0.455) & (222, 0.459) & (252, 0.460) & (344, 0.479) & (367, 0.501) & (424, 0.515) & (410, 0.516) \\
+$N=2000$ & (190, 0.459) & (206, 0.465) & (234, 0.464) & (342, 0.486) & (386, 0.503) & (410, 0.519) & (439, 0.516) \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM: the (novel, novel-QED) point at each $\lambda$, for every $N$. Reading a row left to right traces that curve.}
+\label{tab:curve-qed-MDLM}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{llllll}
+\toprule
+D-CBG &  &  &  &  &  \\
+\midrule
+exact & $\gamma=1$: (189, 0.557) & $\gamma=2$: (127, 0.574) & $\gamma=3$: (100, 0.588) & $\gamma=4$: (56, 0.566) & $\gamma=5$: (14, 0.575) \\
+approx. & $\gamma=1$: (208, 0.467) & $\gamma=2$: (165, 0.464) & $\gamma=3$: (145, 0.472) & $\gamma=5$: (80, 0.488) & $\gamma=10$: (45, 0.556) \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM: the same for D-CBG, sweeping $\gamma$. The novel count falls as the property rises --- the opposite direction.}
+\label{tab:curve-cbg-qed-MDLM}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lccccccc}
+\toprule
+ours & $\lambda=0$ & $\lambda=2$ & $\lambda=5$ & $\lambda=20$ & $\lambda=50$ & $\lambda=200$ & $\lambda=1000$ \\
+\midrule
+$N=10$ & (189, 0.452) & (211, 0.452) & (229, 0.451) & (239, 0.476) & (236, 0.492) & (232, 0.506) & (231, 0.502) \\
+$N=30$ & (195, 0.457) & (201, 0.460) & (205, 0.458) & (246, 0.487) & (238, 0.505) & (245, 0.515) & (269, 0.522) \\
+$N=100$ & (194, 0.456) & (233, 0.464) & (241, 0.464) & (288, 0.489) & (259, 0.506) & (279, 0.521) & (288, 0.529) \\
+$N=300$ & (193, 0.459) & (214, 0.459) & (217, 0.459) & (251, 0.485) & (259, 0.513) & (316, 0.533) & (311, 0.533) \\
+$N=500$ & (196, 0.452) & (225, 0.463) & (229, 0.462) & (275, 0.484) & (274, 0.514) & (334, 0.536) & (333, 0.540) \\
+$N=1000$ & (186, 0.454) & (207, 0.454) & (236, 0.468) & (271, 0.484) & (274, 0.516) & (345, 0.542) & (371, 0.551) \\
+$N=2000$ & (207, 0.463) & (236, 0.467) & (242, 0.463) & (257, 0.492) & (295, 0.511) & (359, 0.547) & (392, 0.548) \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM: the (novel, novel-QED) point at each $\lambda$, for every $N$. Reading a row left to right traces that curve.}
+\label{tab:curve-qed-UDLM}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{3.5pt}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{llllll}
+\toprule
+D-CBG &  &  &  &  &  \\
+\midrule
+exact & $\gamma=1$: (118, 0.528) & $\gamma=2$: (115, 0.567) & $\gamma=3$: (102, 0.588) & $\gamma=5$: (82, 0.593) & $\gamma=10$: (63, 0.609) \\
+approx. & $\gamma=1$: (121, 0.477) & $\gamma=2$: (116, 0.485) & $\gamma=3$: (95, 0.523) & $\gamma=5$: (78, 0.529) & $\gamma=10$: (59, 0.556) \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM: the same for D-CBG, sweeping $\gamma$. The novel count falls as the property rises --- the opposite direction.}
+\label{tab:curve-cbg-qed-UDLM}
+\end{table}
+
+\section{What the sweep says}
+\textbf{MDLM.} Peak novel-QED: ours 0.520 against D-CBG 0.588. Peak novel count: ours 439 against D-CBG 208. Each method wins one axis, so the comparison is a genuine frontier.
+\textbf{UDLM.} Peak novel-QED: ours 0.556 against D-CBG 0.609. Peak novel count: ours 397 against D-CBG 121. Each method wins one axis, so the comparison is a genuine frontier.
+
+\subsection{Where the gains come from}
+
+$\lambda$ and $N$ are not interchangeable. $\lambda$ sets \emph{how hard} the
+tilt pulls and saturates once the weights concentrate; $N$ sets \emph{how good
+the best available candidate is}, and along the high-$\lambda$ edge the property
+still rises with $N$ at $N=500$. The two together trace the frontier: high
+$\lambda$ with small $N$ is a greedy sampler with nothing good to pick from,
+while large $N$ with $\lambda=0$ is just the base model.
+
+\end{document}

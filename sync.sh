@@ -18,4 +18,4 @@ rsync -av --delete \
   --exclude '*.ckpt' \
   --exclude '*.pt' \
   --exclude '*.pth' \
-  ./ wp03052@143.248.84.179:/home/aailab/wp03052/Synthetic-Data/DLRT
+  ./ wp03052@143.248.84.179:/home/aailab/wp03052/Synthetic-Data/Molecule

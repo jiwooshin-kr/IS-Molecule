@@ -1,0 +1,3 @@
+,Seed,T,Num Samples,Valid,Unique,Novel,RING_COUNT Mean,RING_COUNT 25%ile,RING_COUNT Median,RING_COUNT 75%ile,Novel RING_COUNT Mean,Novel RING_COUNT 25%ile,Novel RING_COUNT Median,Novel RING_COUNT 75%ile,Method,Reward,Lambda_,Num_x0_samples,T_min,T_max,Mixture_sampling,Position_selection,Invalid_reward,Normalize_reward,Num_reward_workers,Condition
+0,-1,-1,133885,1.0,1.0,1.0,1.7406953728946484,1.0,1.0,2.0,1.7406953728946484,1.0,1.0,2.0,-1,-1,-1,-1,-1.0,-1.0,-1,-1,-1.0,-1,-1,-1
+1,1,32,1024,0.6005859375,0.9886178861788618,0.46504065040650405,2.4943089430894307,1.5,2.0,3.0,2.611888111888112,2.0,2.0,3.75,ours,ring_count,10,300,0.0,1.0,marginal,xtheta_conf,0.0,False,32,-1

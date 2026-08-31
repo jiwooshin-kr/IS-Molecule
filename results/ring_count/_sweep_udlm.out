@@ -1,0 +1,710 @@
+######## udlm x ring_count: 5 N x 7 lambda x 2 modes ########
+lambda grid: 0 0.5 1 2 5 10 30
+N grid     : 10 30 100 300 500
+=============== s1024_ours_marginal_N10_lam0_win0.0-1.0 ===============
+	Valid: 682 / 1,024 (66.60%)  Unique (of valid): 681 / 682 (99.85%)  Novel (of valid): 189 / 682 (27.71%)
+	RING_COUNT Mean: 1.711, Median: 1.000
+	Novel RING_COUNT Mean: 1.656, Median: 1.000
+  last ESS: ESS=10 | 45s
+=============== s1024_ours_edlm_N10_lam0_win0.0-1.0 ===============
+	Valid: 657 / 1,024 (64.16%)  Unique (of valid): 657 / 657 (100.00%)  Novel (of valid): 165 / 657 (25.11%)
+	RING_COUNT Mean: 1.638, Median: 1.000
+	Novel RING_COUNT Mean: 1.624, Median: 1.000
+  last ESS: ESS=10 | 47s
+=============== s1024_ours_marginal_N10_lam0.5_win0.0-1.0 ===============
+	Valid: 731 / 1,024 (71.39%)  Unique (of valid): 731 / 731 (100.00%)  Novel (of valid): 208 / 731 (28.45%)
+	RING_COUNT Mean: 1.787, Median: 2.000
+	Novel RING_COUNT Mean: 1.865, Median: 2.000
+  last ESS: ESS=9.62 | 45s
+=============== s1024_ours_edlm_N10_lam0.5_win0.0-1.0 ===============
+	Valid: 731 / 1,024 (71.39%)  Unique (of valid): 731 / 731 (100.00%)  Novel (of valid): 182 / 731 (24.90%)
+	RING_COUNT Mean: 1.735, Median: 1.000
+	Novel RING_COUNT Mean: 1.764, Median: 1.000
+  last ESS: ESS=9.86 | 46s
+=============== s1024_ours_marginal_N10_lam1_win0.0-1.0 ===============
+	Valid: 770 / 1,024 (75.20%)  Unique (of valid): 770 / 770 (100.00%)  Novel (of valid): 230 / 770 (29.87%)
+	RING_COUNT Mean: 1.827, Median: 2.000
+	Novel RING_COUNT Mean: 1.935, Median: 2.000
+  last ESS: ESS=9.24 | 43s
+=============== s1024_ours_edlm_N10_lam1_win0.0-1.0 ===============
+	Valid: 786 / 1,024 (76.76%)  Unique (of valid): 786 / 786 (100.00%)  Novel (of valid): 204 / 786 (25.95%)
+	RING_COUNT Mean: 1.758, Median: 1.000
+	Novel RING_COUNT Mean: 1.775, Median: 1.500
+  last ESS: ESS=9.6 | 43s
+=============== s1024_ours_marginal_N10_lam2_win0.0-1.0 ===============
+	Valid: 832 / 1,024 (81.25%)  Unique (of valid): 832 / 832 (100.00%)  Novel (of valid): 251 / 832 (30.17%)
+	RING_COUNT Mean: 1.839, Median: 2.000
+	Novel RING_COUNT Mean: 1.873, Median: 2.000
+  last ESS: ESS=8.9 | 42s
+=============== s1024_ours_edlm_N10_lam2_win0.0-1.0 ===============
+	Valid: 845 / 1,024 (82.52%)  Unique (of valid): 843 / 845 (99.76%)  Novel (of valid): 233 / 845 (27.57%)
+	RING_COUNT Mean: 1.775, Median: 2.000
+	Novel RING_COUNT Mean: 1.828, Median: 2.000
+  last ESS: ESS=9.38 | 43s
+=============== s1024_ours_marginal_N10_lam5_win0.0-1.0 ===============
+	Valid: 858 / 1,024 (83.79%)  Unique (of valid): 857 / 858 (99.88%)  Novel (of valid): 243 / 858 (28.32%)
+	RING_COUNT Mean: 1.819, Median: 2.000
+	Novel RING_COUNT Mean: 1.868, Median: 2.000
+  last ESS: ESS=8.15 | 43s
+=============== s1024_ours_edlm_N10_lam5_win0.0-1.0 ===============
+	Valid: 889 / 1,024 (86.82%)  Unique (of valid): 885 / 889 (99.55%)  Novel (of valid): 252 / 889 (28.35%)
+	RING_COUNT Mean: 1.727, Median: 1.000
+	Novel RING_COUNT Mean: 1.738, Median: 1.000
+  last ESS: ESS=9.02 | 43s
+=============== s1024_ours_marginal_N10_lam10_win0.0-1.0 ===============
+	Valid: 866 / 1,024 (84.57%)  Unique (of valid): 865 / 866 (99.88%)  Novel (of valid): 241 / 866 (27.83%)
+	RING_COUNT Mean: 1.806, Median: 2.000
+	Novel RING_COUNT Mean: 1.884, Median: 2.000
+  last ESS: ESS=8.27 | 43s
+=============== s1024_ours_edlm_N10_lam10_win0.0-1.0 ===============
+	Valid: 890 / 1,024 (86.91%)  Unique (of valid): 886 / 890 (99.55%)  Novel (of valid): 257 / 890 (28.88%)
+	RING_COUNT Mean: 1.728, Median: 1.000
+	Novel RING_COUNT Mean: 1.732, Median: 1.000
+  last ESS: ESS=8.98 | 43s
+=============== s1024_ours_marginal_N10_lam30_win0.0-1.0 ===============
+	Valid: 867 / 1,024 (84.67%)  Unique (of valid): 866 / 867 (99.88%)  Novel (of valid): 241 / 867 (27.80%)
+	RING_COUNT Mean: 1.805, Median: 2.000
+	Novel RING_COUNT Mean: 1.884, Median: 2.000
+  last ESS: ESS=8.27 | 42s
+=============== s1024_ours_edlm_N10_lam30_win0.0-1.0 ===============
+	Valid: 890 / 1,024 (86.91%)  Unique (of valid): 886 / 890 (99.55%)  Novel (of valid): 257 / 890 (28.88%)
+	RING_COUNT Mean: 1.728, Median: 1.000
+	Novel RING_COUNT Mean: 1.732, Median: 1.000
+  last ESS: ESS=8.98 | 42s
+=============== s1024_ours_marginal_N30_lam0_win0.0-1.0 ===============
+	Valid: 695 / 1,024 (67.87%)  Unique (of valid): 694 / 695 (99.86%)  Novel (of valid): 195 / 695 (28.06%)
+	RING_COUNT Mean: 1.619, Median: 1.000
+	Novel RING_COUNT Mean: 1.708, Median: 1.000
+  last ESS: ESS=30 | 46s
+=============== s1024_ours_edlm_N30_lam0_win0.0-1.0 ===============
+	Valid: 675 / 1,024 (65.92%)  Unique (of valid): 674 / 675 (99.85%)  Novel (of valid): 191 / 675 (28.30%)
+	RING_COUNT Mean: 1.618, Median: 1.000
+	Novel RING_COUNT Mean: 1.524, Median: 1.000
+  last ESS: ESS=30 | 45s
+=============== s1024_ours_marginal_N30_lam0.5_win0.0-1.0 ===============
+	Valid: 759 / 1,024 (74.12%)  Unique (of valid): 757 / 759 (99.74%)  Novel (of valid): 214 / 759 (28.19%)
+	RING_COUNT Mean: 1.733, Median: 1.000
+	Novel RING_COUNT Mean: 1.785, Median: 1.000
+  last ESS: ESS=28.6 | 47s
+=============== s1024_ours_edlm_N30_lam0.5_win0.0-1.0 ===============
+	Valid: 744 / 1,024 (72.66%)  Unique (of valid): 743 / 744 (99.87%)  Novel (of valid): 222 / 744 (29.84%)
+	RING_COUNT Mean: 1.733, Median: 1.000
+	Novel RING_COUNT Mean: 1.707, Median: 1.000
+  last ESS: ESS=28.8 | 47s
+=============== s1024_ours_marginal_N30_lam1_win0.0-1.0 ===============
+	Valid: 791 / 1,024 (77.25%)  Unique (of valid): 788 / 791 (99.62%)  Novel (of valid): 202 / 791 (25.54%)
+	RING_COUNT Mean: 1.772, Median: 1.000
+	Novel RING_COUNT Mean: 1.787, Median: 1.000
+  last ESS: ESS=27.5 | 45s
+=============== s1024_ours_edlm_N30_lam1_win0.0-1.0 ===============
+	Valid: 802 / 1,024 (78.32%)  Unique (of valid): 801 / 802 (99.88%)  Novel (of valid): 238 / 802 (29.68%)
+	RING_COUNT Mean: 1.802, Median: 2.000
+	Novel RING_COUNT Mean: 1.853, Median: 1.000
+  last ESS: ESS=27.7 | 45s
+=============== s1024_ours_marginal_N30_lam2_win0.0-1.0 ===============
+	Valid: 867 / 1,024 (84.67%)  Unique (of valid): 865 / 867 (99.77%)  Novel (of valid): 242 / 867 (27.91%)
+	RING_COUNT Mean: 1.824, Median: 2.000
+	Novel RING_COUNT Mean: 1.884, Median: 2.000
+  last ESS: ESS=26.6 | 46s
+=============== s1024_ours_edlm_N30_lam2_win0.0-1.0 ===============
+	Valid: 879 / 1,024 (85.84%)  Unique (of valid): 876 / 879 (99.66%)  Novel (of valid): 266 / 879 (30.26%)
+	RING_COUNT Mean: 1.753, Median: 2.000
+	Novel RING_COUNT Mean: 1.718, Median: 1.000
+  last ESS: ESS=26.7 | 47s
+=============== s1024_ours_marginal_N30_lam5_win0.0-1.0 ===============
+	Valid: 902 / 1,024 (88.09%)  Unique (of valid): 899 / 902 (99.67%)  Novel (of valid): 251 / 902 (27.83%)
+	RING_COUNT Mean: 1.796, Median: 1.000
+	Novel RING_COUNT Mean: 1.789, Median: 1.000
+  last ESS: ESS=25.4 | 45s
+=============== s1024_ours_edlm_N30_lam5_win0.0-1.0 ===============
+	Valid: 912 / 1,024 (89.06%)  Unique (of valid): 910 / 912 (99.78%)  Novel (of valid): 274 / 912 (30.04%)
+	RING_COUNT Mean: 1.746, Median: 1.000
+	Novel RING_COUNT Mean: 1.734, Median: 1.000
+  last ESS: ESS=27.4 | 45s
+=============== s1024_ours_marginal_N30_lam10_win0.0-1.0 ===============
+	Valid: 922 / 1,024 (90.04%)  Unique (of valid): 918 / 922 (99.57%)  Novel (of valid): 264 / 922 (28.63%)
+	RING_COUNT Mean: 1.785, Median: 1.000
+	Novel RING_COUNT Mean: 1.799, Median: 1.000
+  last ESS: ESS=24.9 | 46s
+=============== s1024_ours_edlm_N30_lam10_win0.0-1.0 ===============
+	Valid: 919 / 1,024 (89.75%)  Unique (of valid): 919 / 919 (100.00%)  Novel (of valid): 276 / 919 (30.03%)
+	RING_COUNT Mean: 1.769, Median: 1.000
+	Novel RING_COUNT Mean: 1.717, Median: 1.000
+  last ESS: ESS=26.2 | 47s
+=============== s1024_ours_marginal_N30_lam30_win0.0-1.0 ===============
+	Valid: 922 / 1,024 (90.04%)  Unique (of valid): 918 / 922 (99.57%)  Novel (of valid): 265 / 922 (28.74%)
+	RING_COUNT Mean: 1.786, Median: 1.000
+	Novel RING_COUNT Mean: 1.804, Median: 1.000
+  last ESS: ESS=24.9 | 46s
+=============== s1024_ours_edlm_N30_lam30_win0.0-1.0 ===============
+	Valid: 919 / 1,024 (89.75%)  Unique (of valid): 919 / 919 (100.00%)  Novel (of valid): 276 / 919 (30.03%)
+	RING_COUNT Mean: 1.769, Median: 1.000
+	Novel RING_COUNT Mean: 1.717, Median: 1.000
+  last ESS: ESS=26.2 | 45s
+=============== s1024_ours_marginal_N100_lam0_win0.0-1.0 ===============
+	Valid: 686 / 1,024 (66.99%)  Unique (of valid): 685 / 686 (99.85%)  Novel (of valid): 194 / 686 (28.28%)
+	RING_COUNT Mean: 1.617, Median: 1.000
+	Novel RING_COUNT Mean: 1.660, Median: 1.000
+  last ESS: ESS=100 | 61s
+=============== s1024_ours_edlm_N100_lam0_win0.0-1.0 ===============
+	Valid: 679 / 1,024 (66.31%)  Unique (of valid): 678 / 679 (99.85%)  Novel (of valid): 180 / 679 (26.51%)
+	RING_COUNT Mean: 1.710, Median: 1.000
+	Novel RING_COUNT Mean: 1.600, Median: 1.000
+  last ESS: ESS=100 | 60s
+=============== s1024_ours_marginal_N100_lam0.5_win0.0-1.0 ===============
+	Valid: 743 / 1,024 (72.56%)  Unique (of valid): 743 / 743 (100.00%)  Novel (of valid): 214 / 743 (28.80%)
+	RING_COUNT Mean: 1.721, Median: 1.000
+	Novel RING_COUNT Mean: 1.776, Median: 1.000
+  last ESS: ESS=95.9 | 61s
+=============== s1024_ours_edlm_N100_lam0.5_win0.0-1.0 ===============
+	Valid: 746 / 1,024 (72.85%)  Unique (of valid): 743 / 746 (99.60%)  Novel (of valid): 211 / 746 (28.28%)
+	RING_COUNT Mean: 1.840, Median: 2.000
+	Novel RING_COUNT Mean: 1.801, Median: 2.000
+  last ESS: ESS=95 | 62s
+=============== s1024_ours_marginal_N100_lam1_win0.0-1.0 ===============
+	Valid: 798 / 1,024 (77.93%)  Unique (of valid): 798 / 798 (100.00%)  Novel (of valid): 229 / 798 (28.70%)
+	RING_COUNT Mean: 1.762, Median: 1.000
+	Novel RING_COUNT Mean: 1.825, Median: 2.000
+  last ESS: ESS=93.6 | 63s
+=============== s1024_ours_edlm_N100_lam1_win0.0-1.0 ===============
+	Valid: 813 / 1,024 (79.39%)  Unique (of valid): 813 / 813 (100.00%)  Novel (of valid): 233 / 813 (28.66%)
+	RING_COUNT Mean: 1.887, Median: 2.000
+	Novel RING_COUNT Mean: 1.888, Median: 2.000
+  last ESS: ESS=92.6 | 60s
+=============== s1024_ours_marginal_N100_lam2_win0.0-1.0 ===============
+	Valid: 863 / 1,024 (84.28%)  Unique (of valid): 863 / 863 (100.00%)  Novel (of valid): 240 / 863 (27.81%)
+	RING_COUNT Mean: 1.841, Median: 2.000
+	Novel RING_COUNT Mean: 1.846, Median: 2.000
+  last ESS: ESS=90.6 | 62s
+=============== s1024_ours_edlm_N100_lam2_win0.0-1.0 ===============
+	Valid: 879 / 1,024 (85.84%)  Unique (of valid): 877 / 879 (99.77%)  Novel (of valid): 265 / 879 (30.15%)
+	RING_COUNT Mean: 1.858, Median: 2.000
+	Novel RING_COUNT Mean: 1.860, Median: 2.000
+  last ESS: ESS=88.8 | 62s
+=============== s1024_ours_marginal_N100_lam5_win0.0-1.0 ===============
+	Valid: 916 / 1,024 (89.45%)  Unique (of valid): 915 / 916 (99.89%)  Novel (of valid): 286 / 916 (31.22%)
+	RING_COUNT Mean: 1.855, Median: 2.000
+	Novel RING_COUNT Mean: 1.920, Median: 2.000
+  last ESS: ESS=89 | 61s
+=============== s1024_ours_edlm_N100_lam5_win0.0-1.0 ===============
+	Valid: 944 / 1,024 (92.19%)  Unique (of valid): 940 / 944 (99.58%)  Novel (of valid): 269 / 944 (28.50%)
+	RING_COUNT Mean: 1.845, Median: 2.000
+	Novel RING_COUNT Mean: 1.918, Median: 2.000
+  last ESS: ESS=85.9 | 61s
+=============== s1024_ours_marginal_N100_lam10_win0.0-1.0 ===============
+	Valid: 921 / 1,024 (89.94%)  Unique (of valid): 915 / 921 (99.35%)  Novel (of valid): 267 / 921 (28.99%)
+	RING_COUNT Mean: 1.865, Median: 2.000
+	Novel RING_COUNT Mean: 1.936, Median: 2.000
+  last ESS: ESS=87.1 | 61s
+=============== s1024_ours_edlm_N100_lam10_win0.0-1.0 ===============
+	Valid: 953 / 1,024 (93.07%)  Unique (of valid): 948 / 953 (99.48%)  Novel (of valid): 296 / 953 (31.06%)
+	RING_COUNT Mean: 1.824, Median: 2.000
+	Novel RING_COUNT Mean: 1.791, Median: 2.000
+  last ESS: ESS=89 | 60s
+=============== s1024_ours_marginal_N100_lam30_win0.0-1.0 ===============
+	Valid: 921 / 1,024 (89.94%)  Unique (of valid): 915 / 921 (99.35%)  Novel (of valid): 265 / 921 (28.77%)
+	RING_COUNT Mean: 1.877, Median: 2.000
+	Novel RING_COUNT Mean: 1.932, Median: 2.000
+  last ESS: ESS=87.1 | 62s
+=============== s1024_ours_edlm_N100_lam30_win0.0-1.0 ===============
+	Valid: 953 / 1,024 (93.07%)  Unique (of valid): 947 / 953 (99.37%)  Novel (of valid): 295 / 953 (30.95%)
+	RING_COUNT Mean: 1.818, Median: 2.000
+	Novel RING_COUNT Mean: 1.793, Median: 2.000
+  last ESS: ESS=89 | 61s
+=============== s1024_ours_marginal_N300_lam0_win0.0-1.0 ===============
+	Valid: 672 / 1,024 (65.62%)  Unique (of valid): 671 / 672 (99.85%)  Novel (of valid): 193 / 672 (28.72%)
+	RING_COUNT Mean: 1.732, Median: 1.000
+	Novel RING_COUNT Mean: 1.637, Median: 1.000
+  last ESS: ESS=300 | 115s
+=============== s1024_ours_edlm_N300_lam0_win0.0-1.0 ===============
+	Valid: 693 / 1,024 (67.68%)  Unique (of valid): 693 / 693 (100.00%)  Novel (of valid): 179 / 693 (25.83%)
+	RING_COUNT Mean: 1.620, Median: 1.000
+	Novel RING_COUNT Mean: 1.693, Median: 1.000
+  last ESS: ESS=300 | 114s
+=============== s1024_ours_marginal_N300_lam0.5_win0.0-1.0 ===============
+	Valid: 733 / 1,024 (71.58%)  Unique (of valid): 732 / 733 (99.86%)  Novel (of valid): 207 / 733 (28.24%)
+	RING_COUNT Mean: 1.808, Median: 2.000
+	Novel RING_COUNT Mean: 1.768, Median: 1.000
+  last ESS: ESS=285 | 115s
+=============== s1024_ours_edlm_N300_lam0.5_win0.0-1.0 ===============
+	Valid: 765 / 1,024 (74.71%)  Unique (of valid): 763 / 765 (99.74%)  Novel (of valid): 191 / 765 (24.97%)
+	RING_COUNT Mean: 1.698, Median: 1.000
+	Novel RING_COUNT Mean: 1.801, Median: 2.000
+  last ESS: ESS=289 | 114s
+=============== s1024_ours_marginal_N300_lam1_win0.0-1.0 ===============
+	Valid: 774 / 1,024 (75.59%)  Unique (of valid): 774 / 774 (100.00%)  Novel (of valid): 212 / 774 (27.39%)
+	RING_COUNT Mean: 1.855, Median: 2.000
+	Novel RING_COUNT Mean: 1.764, Median: 1.000
+  last ESS: ESS=262 | 115s
+=============== s1024_ours_edlm_N300_lam1_win0.0-1.0 ===============
+	Valid: 810 / 1,024 (79.10%)  Unique (of valid): 807 / 810 (99.63%)  Novel (of valid): 205 / 810 (25.31%)
+	RING_COUNT Mean: 1.831, Median: 2.000
+	Novel RING_COUNT Mean: 1.820, Median: 2.000
+  last ESS: ESS=273 | 112s
+=============== s1024_ours_marginal_N300_lam2_win0.0-1.0 ===============
+	Valid: 872 / 1,024 (85.16%)  Unique (of valid): 870 / 872 (99.77%)  Novel (of valid): 240 / 872 (27.52%)
+	RING_COUNT Mean: 1.984, Median: 2.000
+	Novel RING_COUNT Mean: 1.954, Median: 2.000
+  last ESS: ESS=263 | 116s
+=============== s1024_ours_edlm_N300_lam2_win0.0-1.0 ===============
+	Valid: 901 / 1,024 (87.99%)  Unique (of valid): 898 / 901 (99.67%)  Novel (of valid): 251 / 901 (27.86%)
+	RING_COUNT Mean: 1.939, Median: 2.000
+	Novel RING_COUNT Mean: 2.028, Median: 2.000
+  last ESS: ESS=246 | 116s
+=============== s1024_ours_marginal_N300_lam5_win0.0-1.0 ===============
+	Valid: 940 / 1,024 (91.80%)  Unique (of valid): 934 / 940 (99.36%)  Novel (of valid): 268 / 940 (28.51%)
+	RING_COUNT Mean: 2.093, Median: 2.000
+	Novel RING_COUNT Mean: 2.168, Median: 2.000
+  last ESS: ESS=230 | 118s
+=============== s1024_ours_edlm_N300_lam5_win0.0-1.0 ===============
+	Valid: 969 / 1,024 (94.63%)  Unique (of valid): 965 / 969 (99.59%)  Novel (of valid): 310 / 969 (31.99%)
+	RING_COUNT Mean: 2.061, Median: 2.000
+	Novel RING_COUNT Mean: 2.161, Median: 2.000
+  last ESS: ESS=227 | 114s
+=============== s1024_ours_marginal_N300_lam10_win0.0-1.0 ===============
+	Valid: 957 / 1,024 (93.46%)  Unique (of valid): 953 / 957 (99.58%)  Novel (of valid): 292 / 957 (30.51%)
+	RING_COUNT Mean: 2.056, Median: 2.000
+	Novel RING_COUNT Mean: 2.110, Median: 2.000
+  last ESS: ESS=235 | 115s
+=============== s1024_ours_edlm_N300_lam10_win0.0-1.0 ===============
+	Valid: 978 / 1,024 (95.51%)  Unique (of valid): 977 / 978 (99.90%)  Novel (of valid): 301 / 978 (30.78%)
+	RING_COUNT Mean: 2.074, Median: 2.000
+	Novel RING_COUNT Mean: 2.043, Median: 2.000
+  last ESS: ESS=244 | 116s
+=============== s1024_ours_marginal_N300_lam30_win0.0-1.0 ===============
+	Valid: 961 / 1,024 (93.85%)  Unique (of valid): 957 / 961 (99.58%)  Novel (of valid): 288 / 961 (29.97%)
+	RING_COUNT Mean: 2.057, Median: 2.000
+	Novel RING_COUNT Mean: 2.125, Median: 2.000
+  last ESS: ESS=238 | 114s
+=============== s1024_ours_edlm_N300_lam30_win0.0-1.0 ===============
+	Valid: 979 / 1,024 (95.61%)  Unique (of valid): 978 / 979 (99.90%)  Novel (of valid): 301 / 979 (30.75%)
+	RING_COUNT Mean: 2.065, Median: 2.000
+	Novel RING_COUNT Mean: 2.027, Median: 2.000
+  last ESS: ESS=244 | 114s
+=============== s1024_ours_marginal_N500_lam0_win0.0-1.0 ===============
+	Valid: 691 / 1,024 (67.48%)  Unique (of valid): 691 / 691 (100.00%)  Novel (of valid): 196 / 691 (28.36%)
+	RING_COUNT Mean: 1.637, Median: 1.000
+	Novel RING_COUNT Mean: 1.592, Median: 1.000
+  last ESS: ESS=500 | 169s
+=============== s1024_ours_edlm_N500_lam0_win0.0-1.0 ===============
+	Valid: 686 / 1,024 (66.99%)  Unique (of valid): 685 / 686 (99.85%)  Novel (of valid): 190 / 686 (27.70%)
+	RING_COUNT Mean: 1.653, Median: 1.000
+	Novel RING_COUNT Mean: 1.653, Median: 1.000
+  last ESS: ESS=500 | 171s
+=============== s1024_ours_marginal_N500_lam0.5_win0.0-1.0 ===============
+	Valid: 744 / 1,024 (72.66%)  Unique (of valid): 744 / 744 (100.00%)  Novel (of valid): 217 / 744 (29.17%)
+	RING_COUNT Mean: 1.696, Median: 1.000
+	Novel RING_COUNT Mean: 1.627, Median: 1.000
+  last ESS: ESS=484 | 171s
+=============== s1024_ours_edlm_N500_lam0.5_win0.0-1.0 ===============
+	Valid: 775 / 1,024 (75.68%)  Unique (of valid): 773 / 775 (99.74%)  Novel (of valid): 222 / 775 (28.65%)
+	RING_COUNT Mean: 1.782, Median: 2.000
+	Novel RING_COUNT Mean: 1.901, Median: 1.500
+  last ESS: ESS=489 | 171s
+=============== s1024_ours_marginal_N500_lam1_win0.0-1.0 ===============
+	Valid: 792 / 1,024 (77.34%)  Unique (of valid): 791 / 792 (99.87%)  Novel (of valid): 222 / 792 (28.03%)
+	RING_COUNT Mean: 1.784, Median: 2.000
+	Novel RING_COUNT Mean: 1.721, Median: 1.000
+  last ESS: ESS=466 | 168s
+=============== s1024_ours_edlm_N500_lam1_win0.0-1.0 ===============
+	Valid: 806 / 1,024 (78.71%)  Unique (of valid): 804 / 806 (99.75%)  Novel (of valid): 214 / 806 (26.55%)
+	RING_COUNT Mean: 1.836, Median: 2.000
+	Novel RING_COUNT Mean: 1.902, Median: 2.000
+  last ESS: ESS=471 | 166s
+=============== s1024_ours_marginal_N500_lam2_win0.0-1.0 ===============
+	Valid: 862 / 1,024 (84.18%)  Unique (of valid): 860 / 862 (99.77%)  Novel (of valid): 249 / 862 (28.89%)
+	RING_COUNT Mean: 1.942, Median: 2.000
+	Novel RING_COUNT Mean: 2.008, Median: 2.000
+  last ESS: ESS=414 | 171s
+=============== s1024_ours_edlm_N500_lam2_win0.0-1.0 ===============
+	Valid: 882 / 1,024 (86.13%)  Unique (of valid): 881 / 882 (99.89%)  Novel (of valid): 252 / 882 (28.57%)
+	RING_COUNT Mean: 1.873, Median: 2.000
+	Novel RING_COUNT Mean: 1.933, Median: 2.000
+  last ESS: ESS=421 | 167s
+=============== s1024_ours_marginal_N500_lam5_win0.0-1.0 ===============
+	Valid: 943 / 1,024 (92.09%)  Unique (of valid): 940 / 943 (99.68%)  Novel (of valid): 278 / 943 (29.48%)
+	RING_COUNT Mean: 2.255, Median: 2.000
+	Novel RING_COUNT Mean: 2.317, Median: 2.000
+  last ESS: ESS=427 | 177s
+=============== s1024_ours_edlm_N500_lam5_win0.0-1.0 ===============
+	Valid: 966 / 1,024 (94.34%)  Unique (of valid): 964 / 966 (99.79%)  Novel (of valid): 277 / 966 (28.67%)
+	RING_COUNT Mean: 2.121, Median: 2.000
+	Novel RING_COUNT Mean: 2.195, Median: 2.000
+  last ESS: ESS=400 | 166s
+=============== s1024_ours_marginal_N500_lam10_win0.0-1.0 ===============
+	Valid: 953 / 1,024 (93.07%)  Unique (of valid): 949 / 953 (99.58%)  Novel (of valid): 284 / 953 (29.80%)
+	RING_COUNT Mean: 2.125, Median: 2.000
+	Novel RING_COUNT Mean: 2.162, Median: 2.000
+  last ESS: ESS=417 | 169s
+=============== s1024_ours_edlm_N500_lam10_win0.0-1.0 ===============
+	Valid: 979 / 1,024 (95.61%)  Unique (of valid): 973 / 979 (99.39%)  Novel (of valid): 297 / 979 (30.34%)
+	RING_COUNT Mean: 2.144, Median: 2.000
+	Novel RING_COUNT Mean: 2.199, Median: 2.000
+  last ESS: ESS=398 | 160s
+=============== s1024_ours_marginal_N500_lam30_win0.0-1.0 ===============
+	Valid: 951 / 1,024 (92.87%)  Unique (of valid): 948 / 951 (99.68%)  Novel (of valid): 279 / 951 (29.34%)
+	RING_COUNT Mean: 2.160, Median: 2.000
+	Novel RING_COUNT Mean: 2.211, Median: 2.000
+  last ESS: ESS=400 | 164s
+=============== s1024_ours_edlm_N500_lam30_win0.0-1.0 ===============
+	Valid: 980 / 1,024 (95.70%)  Unique (of valid): 974 / 980 (99.39%)  Novel (of valid): 295 / 980 (30.10%)
+	RING_COUNT Mean: 2.144, Median: 2.000
+	Novel RING_COUNT Mean: 2.180, Median: 2.000
+  last ESS: ESS=391 | 154s
+######## Done: udlm x ring_count ########
+70
+######## udlm x ring_count: 7 N x 9 lambda x 2 modes ########
+lambda grid: 0 0.5 1 2 5 10 30 100 1000
+N grid     : 10 30 100 300 500 1000 2000
+[skip] s1024_ours_marginal_N10_lam0_win0.0-1.0
+[skip] s1024_ours_edlm_N10_lam0_win0.0-1.0
+[skip] s1024_ours_marginal_N10_lam0.5_win0.0-1.0
+[skip] s1024_ours_edlm_N10_lam0.5_win0.0-1.0
+[skip] s1024_ours_marginal_N10_lam1_win0.0-1.0
+[skip] s1024_ours_edlm_N10_lam1_win0.0-1.0
+[skip] s1024_ours_marginal_N10_lam2_win0.0-1.0
+[skip] s1024_ours_edlm_N10_lam2_win0.0-1.0
+[skip] s1024_ours_marginal_N10_lam5_win0.0-1.0
+[skip] s1024_ours_edlm_N10_lam5_win0.0-1.0
+[skip] s1024_ours_marginal_N10_lam10_win0.0-1.0
+[skip] s1024_ours_edlm_N10_lam10_win0.0-1.0
+[skip] s1024_ours_marginal_N10_lam30_win0.0-1.0
+[skip] s1024_ours_edlm_N10_lam30_win0.0-1.0
+=============== s1024_ours_marginal_N10_lam100_win0.0-1.0 ===============
+	Valid: 867 / 1,024 (84.67%)  Unique (of valid): 866 / 867 (99.88%)  Novel (of valid): 241 / 867 (27.80%)
+	RING_COUNT Mean: 1.805, Median: 2.000
+	Novel RING_COUNT Mean: 1.884, Median: 2.000
+  last ESS: ESS=8.27 | 42s
+=============== s1024_ours_edlm_N10_lam100_win0.0-1.0 ===============
+	Valid: 890 / 1,024 (86.91%)  Unique (of valid): 886 / 890 (99.55%)  Novel (of valid): 257 / 890 (28.88%)
+	RING_COUNT Mean: 1.728, Median: 1.000
+	Novel RING_COUNT Mean: 1.732, Median: 1.000
+  last ESS: ESS=8.98 | 42s
+=============== s1024_ours_marginal_N10_lam1000_win0.0-1.0 ===============
+	Valid: 867 / 1,024 (84.67%)  Unique (of valid): 866 / 867 (99.88%)  Novel (of valid): 241 / 867 (27.80%)
+	RING_COUNT Mean: 1.805, Median: 2.000
+	Novel RING_COUNT Mean: 1.884, Median: 2.000
+  last ESS: ESS=8.27 | 41s
+=============== s1024_ours_edlm_N10_lam1000_win0.0-1.0 ===============
+	Valid: 890 / 1,024 (86.91%)  Unique (of valid): 886 / 890 (99.55%)  Novel (of valid): 257 / 890 (28.88%)
+	RING_COUNT Mean: 1.728, Median: 1.000
+	Novel RING_COUNT Mean: 1.732, Median: 1.000
+  last ESS: ESS=8.98 | 42s
+[skip] s1024_ours_marginal_N30_lam0_win0.0-1.0
+[skip] s1024_ours_edlm_N30_lam0_win0.0-1.0
+[skip] s1024_ours_marginal_N30_lam0.5_win0.0-1.0
+[skip] s1024_ours_edlm_N30_lam0.5_win0.0-1.0
+[skip] s1024_ours_marginal_N30_lam1_win0.0-1.0
+[skip] s1024_ours_edlm_N30_lam1_win0.0-1.0
+[skip] s1024_ours_marginal_N30_lam2_win0.0-1.0
+[skip] s1024_ours_edlm_N30_lam2_win0.0-1.0
+[skip] s1024_ours_marginal_N30_lam5_win0.0-1.0
+[skip] s1024_ours_edlm_N30_lam5_win0.0-1.0
+[skip] s1024_ours_marginal_N30_lam10_win0.0-1.0
+[skip] s1024_ours_edlm_N30_lam10_win0.0-1.0
+[skip] s1024_ours_marginal_N30_lam30_win0.0-1.0
+[skip] s1024_ours_edlm_N30_lam30_win0.0-1.0
+=============== s1024_ours_marginal_N30_lam100_win0.0-1.0 ===============
+	Valid: 922 / 1,024 (90.04%)  Unique (of valid): 918 / 922 (99.57%)  Novel (of valid): 265 / 922 (28.74%)
+	RING_COUNT Mean: 1.786, Median: 1.000
+	Novel RING_COUNT Mean: 1.804, Median: 1.000
+  last ESS: ESS=24.9 | 46s
+=============== s1024_ours_edlm_N30_lam100_win0.0-1.0 ===============
+	Valid: 919 / 1,024 (89.75%)  Unique (of valid): 919 / 919 (100.00%)  Novel (of valid): 276 / 919 (30.03%)
+	RING_COUNT Mean: 1.769, Median: 1.000
+	Novel RING_COUNT Mean: 1.717, Median: 1.000
+  last ESS: ESS=26.2 | 45s
+=============== s1024_ours_marginal_N30_lam1000_win0.0-1.0 ===============
+	Valid: 922 / 1,024 (90.04%)  Unique (of valid): 918 / 922 (99.57%)  Novel (of valid): 265 / 922 (28.74%)
+	RING_COUNT Mean: 1.786, Median: 1.000
+	Novel RING_COUNT Mean: 1.804, Median: 1.000
+  last ESS: ESS=24.9 | 45s
+=============== s1024_ours_edlm_N30_lam1000_win0.0-1.0 ===============
+	Valid: 919 / 1,024 (89.75%)  Unique (of valid): 919 / 919 (100.00%)  Novel (of valid): 276 / 919 (30.03%)
+	RING_COUNT Mean: 1.769, Median: 1.000
+	Novel RING_COUNT Mean: 1.717, Median: 1.000
+  last ESS: ESS=26.2 | 44s
+[skip] s1024_ours_marginal_N100_lam0_win0.0-1.0
+[skip] s1024_ours_edlm_N100_lam0_win0.0-1.0
+[skip] s1024_ours_marginal_N100_lam0.5_win0.0-1.0
+[skip] s1024_ours_edlm_N100_lam0.5_win0.0-1.0
+[skip] s1024_ours_marginal_N100_lam1_win0.0-1.0
+[skip] s1024_ours_edlm_N100_lam1_win0.0-1.0
+[skip] s1024_ours_marginal_N100_lam2_win0.0-1.0
+[skip] s1024_ours_edlm_N100_lam2_win0.0-1.0
+[skip] s1024_ours_marginal_N100_lam5_win0.0-1.0
+[skip] s1024_ours_edlm_N100_lam5_win0.0-1.0
+[skip] s1024_ours_marginal_N100_lam10_win0.0-1.0
+[skip] s1024_ours_edlm_N100_lam10_win0.0-1.0
+[skip] s1024_ours_marginal_N100_lam30_win0.0-1.0
+[skip] s1024_ours_edlm_N100_lam30_win0.0-1.0
+=============== s1024_ours_marginal_N100_lam100_win0.0-1.0 ===============
+	Valid: 921 / 1,024 (89.94%)  Unique (of valid): 915 / 921 (99.35%)  Novel (of valid): 265 / 921 (28.77%)
+	RING_COUNT Mean: 1.877, Median: 2.000
+	Novel RING_COUNT Mean: 1.932, Median: 2.000
+  last ESS: ESS=87.1 | 61s
+=============== s1024_ours_edlm_N100_lam100_win0.0-1.0 ===============
+	Valid: 953 / 1,024 (93.07%)  Unique (of valid): 947 / 953 (99.37%)  Novel (of valid): 295 / 953 (30.95%)
+	RING_COUNT Mean: 1.818, Median: 2.000
+	Novel RING_COUNT Mean: 1.793, Median: 2.000
+  last ESS: ESS=89 | 63s
+=============== s1024_ours_marginal_N100_lam1000_win0.0-1.0 ===============
+	Valid: 921 / 1,024 (89.94%)  Unique (of valid): 915 / 921 (99.35%)  Novel (of valid): 265 / 921 (28.77%)
+	RING_COUNT Mean: 1.877, Median: 2.000
+	Novel RING_COUNT Mean: 1.932, Median: 2.000
+  last ESS: ESS=87.1 | 63s
+=============== s1024_ours_edlm_N100_lam1000_win0.0-1.0 ===============
+	Valid: 953 / 1,024 (93.07%)  Unique (of valid): 947 / 953 (99.37%)  Novel (of valid): 295 / 953 (30.95%)
+	RING_COUNT Mean: 1.818, Median: 2.000
+	Novel RING_COUNT Mean: 1.793, Median: 2.000
+  last ESS: ESS=89 | 62s
+[skip] s1024_ours_marginal_N300_lam0_win0.0-1.0
+[skip] s1024_ours_edlm_N300_lam0_win0.0-1.0
+[skip] s1024_ours_marginal_N300_lam0.5_win0.0-1.0
+[skip] s1024_ours_edlm_N300_lam0.5_win0.0-1.0
+[skip] s1024_ours_marginal_N300_lam1_win0.0-1.0
+[skip] s1024_ours_edlm_N300_lam1_win0.0-1.0
+[skip] s1024_ours_marginal_N300_lam2_win0.0-1.0
+[skip] s1024_ours_edlm_N300_lam2_win0.0-1.0
+[skip] s1024_ours_marginal_N300_lam5_win0.0-1.0
+[skip] s1024_ours_edlm_N300_lam5_win0.0-1.0
+[skip] s1024_ours_marginal_N300_lam10_win0.0-1.0
+[skip] s1024_ours_edlm_N300_lam10_win0.0-1.0
+[skip] s1024_ours_marginal_N300_lam30_win0.0-1.0
+[skip] s1024_ours_edlm_N300_lam30_win0.0-1.0
+=============== s1024_ours_marginal_N300_lam100_win0.0-1.0 ===============
+	Valid: 961 / 1,024 (93.85%)  Unique (of valid): 957 / 961 (99.58%)  Novel (of valid): 288 / 961 (29.97%)
+	RING_COUNT Mean: 2.057, Median: 2.000
+	Novel RING_COUNT Mean: 2.125, Median: 2.000
+  last ESS: ESS=238 | 116s
+=============== s1024_ours_edlm_N300_lam100_win0.0-1.0 ===============
+	Valid: 979 / 1,024 (95.61%)  Unique (of valid): 978 / 979 (99.90%)  Novel (of valid): 301 / 979 (30.75%)
+	RING_COUNT Mean: 2.065, Median: 2.000
+	Novel RING_COUNT Mean: 2.027, Median: 2.000
+  last ESS: ESS=244 | 116s
+=============== s1024_ours_marginal_N300_lam1000_win0.0-1.0 ===============
+	Valid: 961 / 1,024 (93.85%)  Unique (of valid): 957 / 961 (99.58%)  Novel (of valid): 288 / 961 (29.97%)
+	RING_COUNT Mean: 2.057, Median: 2.000
+	Novel RING_COUNT Mean: 2.125, Median: 2.000
+  last ESS: ESS=238 | 116s
+=============== s1024_ours_edlm_N300_lam1000_win0.0-1.0 ===============
+	Valid: 979 / 1,024 (95.61%)  Unique (of valid): 978 / 979 (99.90%)  Novel (of valid): 301 / 979 (30.75%)
+	RING_COUNT Mean: 2.065, Median: 2.000
+	Novel RING_COUNT Mean: 2.027, Median: 2.000
+  last ESS: ESS=244 | 113s
+[skip] s1024_ours_marginal_N500_lam0_win0.0-1.0
+[skip] s1024_ours_edlm_N500_lam0_win0.0-1.0
+[skip] s1024_ours_marginal_N500_lam0.5_win0.0-1.0
+[skip] s1024_ours_edlm_N500_lam0.5_win0.0-1.0
+[skip] s1024_ours_marginal_N500_lam1_win0.0-1.0
+[skip] s1024_ours_edlm_N500_lam1_win0.0-1.0
+[skip] s1024_ours_marginal_N500_lam2_win0.0-1.0
+[skip] s1024_ours_edlm_N500_lam2_win0.0-1.0
+[skip] s1024_ours_marginal_N500_lam5_win0.0-1.0
+[skip] s1024_ours_edlm_N500_lam5_win0.0-1.0
+[skip] s1024_ours_marginal_N500_lam10_win0.0-1.0
+[skip] s1024_ours_edlm_N500_lam10_win0.0-1.0
+[skip] s1024_ours_marginal_N500_lam30_win0.0-1.0
+[skip] s1024_ours_edlm_N500_lam30_win0.0-1.0
+=============== s1024_ours_marginal_N500_lam100_win0.0-1.0 ===============
+	Valid: 951 / 1,024 (92.87%)  Unique (of valid): 948 / 951 (99.68%)  Novel (of valid): 279 / 951 (29.34%)
+	RING_COUNT Mean: 2.160, Median: 2.000
+	Novel RING_COUNT Mean: 2.211, Median: 2.000
+  last ESS: ESS=400 | 168s
+=============== s1024_ours_edlm_N500_lam100_win0.0-1.0 ===============
+	Valid: 980 / 1,024 (95.70%)  Unique (of valid): 974 / 980 (99.39%)  Novel (of valid): 295 / 980 (30.10%)
+	RING_COUNT Mean: 2.144, Median: 2.000
+	Novel RING_COUNT Mean: 2.180, Median: 2.000
+  last ESS: ESS=391 | 167s
+=============== s1024_ours_marginal_N500_lam1000_win0.0-1.0 ===============
+	Valid: 951 / 1,024 (92.87%)  Unique (of valid): 948 / 951 (99.68%)  Novel (of valid): 279 / 951 (29.34%)
+	RING_COUNT Mean: 2.160, Median: 2.000
+	Novel RING_COUNT Mean: 2.211, Median: 2.000
+  last ESS: ESS=400 | 168s
+=============== s1024_ours_edlm_N500_lam1000_win0.0-1.0 ===============
+	Valid: 980 / 1,024 (95.70%)  Unique (of valid): 974 / 980 (99.39%)  Novel (of valid): 295 / 980 (30.10%)
+	RING_COUNT Mean: 2.144, Median: 2.000
+	Novel RING_COUNT Mean: 2.180, Median: 2.000
+  last ESS: ESS=391 | 165s
+=============== s1024_ours_marginal_N1000_lam0_win0.0-1.0 ===============
+	Valid: 695 / 1,024 (67.87%)  Unique (of valid): 692 / 695 (99.57%)  Novel (of valid): 186 / 695 (26.76%)
+	RING_COUNT Mean: 1.636, Median: 1.000
+	Novel RING_COUNT Mean: 1.543, Median: 1.000
+  last ESS: ESS=1 | 308s
+=============== s1024_ours_edlm_N1000_lam0_win0.0-1.0 ===============
+	Valid: 685 / 1,024 (66.89%)  Unique (of valid): 684 / 685 (99.85%)  Novel (of valid): 164 / 685 (23.94%)
+	RING_COUNT Mean: 1.731, Median: 1.000
+	Novel RING_COUNT Mean: 1.799, Median: 1.000
+  last ESS: ESS=1 | 299s
+=============== s1024_ours_marginal_N1000_lam0.5_win0.0-1.0 ===============
+	Valid: 748 / 1,024 (73.05%)  Unique (of valid): 745 / 748 (99.60%)  Novel (of valid): 206 / 748 (27.54%)
+	RING_COUNT Mean: 1.733, Median: 1.000
+	Novel RING_COUNT Mean: 1.646, Median: 1.000
+  last ESS: ESS=965 | 307s
+=============== s1024_ours_edlm_N1000_lam0.5_win0.0-1.0 ===============
+	Valid: 748 / 1,024 (73.05%)  Unique (of valid): 746 / 748 (99.73%)  Novel (of valid): 215 / 748 (28.74%)
+	RING_COUNT Mean: 1.860, Median: 2.000
+	Novel RING_COUNT Mean: 1.888, Median: 2.000
+  last ESS: ESS=958 | 298s
+=============== s1024_ours_marginal_N1000_lam1_win0.0-1.0 ===============
+	Valid: 792 / 1,024 (77.34%)  Unique (of valid): 789 / 792 (99.62%)  Novel (of valid): 228 / 792 (28.79%)
+	RING_COUNT Mean: 1.804, Median: 1.000
+	Novel RING_COUNT Mean: 1.842, Median: 1.000
+  last ESS: ESS=940 | 301s
+=============== s1024_ours_edlm_N1000_lam1_win0.0-1.0 ===============
+	Valid: 808 / 1,024 (78.91%)  Unique (of valid): 805 / 808 (99.63%)  Novel (of valid): 235 / 808 (29.08%)
+	RING_COUNT Mean: 1.908, Median: 2.000
+	Novel RING_COUNT Mean: 1.966, Median: 2.000
+  last ESS: ESS=907 | 302s
+=============== s1024_ours_marginal_N1000_lam2_win0.0-1.0 ===============
+	Valid: 880 / 1,024 (85.94%)  Unique (of valid): 877 / 880 (99.66%)  Novel (of valid): 241 / 880 (27.39%)
+	RING_COUNT Mean: 1.980, Median: 2.000
+	Novel RING_COUNT Mean: 2.129, Median: 2.000
+  last ESS: ESS=885 | 304s
+=============== s1024_ours_edlm_N1000_lam2_win0.0-1.0 ===============
+	Valid: 901 / 1,024 (87.99%)  Unique (of valid): 897 / 901 (99.56%)  Novel (of valid): 271 / 901 (30.08%)
+	RING_COUNT Mean: 2.093, Median: 2.000
+	Novel RING_COUNT Mean: 2.328, Median: 2.000
+  last ESS: ESS=820 | 297s
+=============== s1024_ours_marginal_N1000_lam5_win0.0-1.0 ===============
+	Valid: 938 / 1,024 (91.60%)  Unique (of valid): 937 / 938 (99.89%)  Novel (of valid): 288 / 938 (30.70%)
+	RING_COUNT Mean: 2.233, Median: 2.000
+	Novel RING_COUNT Mean: 2.302, Median: 2.000
+  last ESS: ESS=721 | 300s
+=============== s1024_ours_edlm_N1000_lam5_win0.0-1.0 ===============
+	Valid: 978 / 1,024 (95.51%)  Unique (of valid): 977 / 978 (99.90%)  Novel (of valid): 301 / 978 (30.78%)
+	RING_COUNT Mean: 2.285, Median: 2.000
+	Novel RING_COUNT Mean: 2.492, Median: 2.000
+  last ESS: ESS=843 | 294s
+=============== s1024_ours_marginal_N1000_lam10_win0.0-1.0 ===============
+	Valid: 954 / 1,024 (93.16%)  Unique (of valid): 948 / 954 (99.37%)  Novel (of valid): 294 / 954 (30.82%)
+	RING_COUNT Mean: 2.318, Median: 2.000
+	Novel RING_COUNT Mean: 2.364, Median: 2.000
+  last ESS: ESS=803 | 310s
+=============== s1024_ours_edlm_N1000_lam10_win0.0-1.0 ===============
+	Valid: 984 / 1,024 (96.09%)  Unique (of valid): 976 / 984 (99.19%)  Novel (of valid): 309 / 984 (31.40%)
+	RING_COUNT Mean: 2.302, Median: 2.000
+	Novel RING_COUNT Mean: 2.401, Median: 2.000
+  last ESS: ESS=835 | 294s
+=============== s1024_ours_marginal_N1000_lam30_win0.0-1.0 ===============
+	Valid: 961 / 1,024 (93.85%)  Unique (of valid): 955 / 961 (99.38%)  Novel (of valid): 308 / 961 (32.05%)
+	RING_COUNT Mean: 2.323, Median: 2.000
+	Novel RING_COUNT Mean: 2.351, Median: 2.000
+  last ESS: ESS=836 | 304s
+=============== s1024_ours_edlm_N1000_lam30_win0.0-1.0 ===============
+	Valid: 986 / 1,024 (96.29%)  Unique (of valid): 978 / 986 (99.19%)  Novel (of valid): 309 / 986 (31.34%)
+	RING_COUNT Mean: 2.316, Median: 2.000
+	Novel RING_COUNT Mean: 2.392, Median: 2.000
+  last ESS: ESS=852 | 302s
+=============== s1024_ours_marginal_N1000_lam100_win0.0-1.0 ===============
+	Valid: 961 / 1,024 (93.85%)  Unique (of valid): 955 / 961 (99.38%)  Novel (of valid): 308 / 961 (32.05%)
+	RING_COUNT Mean: 2.323, Median: 2.000
+	Novel RING_COUNT Mean: 2.351, Median: 2.000
+  last ESS: ESS=836 | 309s
+=============== s1024_ours_edlm_N1000_lam100_win0.0-1.0 ===============
+	Valid: 986 / 1,024 (96.29%)  Unique (of valid): 978 / 986 (99.19%)  Novel (of valid): 309 / 986 (31.34%)
+	RING_COUNT Mean: 2.316, Median: 2.000
+	Novel RING_COUNT Mean: 2.392, Median: 2.000
+  last ESS: ESS=852 | 302s
+=============== s1024_ours_marginal_N1000_lam1000_win0.0-1.0 ===============
+	Valid: 961 / 1,024 (93.85%)  Unique (of valid): 955 / 961 (99.38%)  Novel (of valid): 308 / 961 (32.05%)
+	RING_COUNT Mean: 2.323, Median: 2.000
+	Novel RING_COUNT Mean: 2.351, Median: 2.000
+  last ESS: ESS=836 | 302s
+=============== s1024_ours_edlm_N1000_lam1000_win0.0-1.0 ===============
+	Valid: 986 / 1,024 (96.29%)  Unique (of valid): 978 / 986 (99.19%)  Novel (of valid): 309 / 986 (31.34%)
+	RING_COUNT Mean: 2.316, Median: 2.000
+	Novel RING_COUNT Mean: 2.392, Median: 2.000
+  last ESS: ESS=852 | 303s
+=============== s1024_ours_marginal_N2000_lam0_win0.0-1.0 ===============
+	Valid: 694 / 1,024 (67.77%)  Unique (of valid): 693 / 694 (99.86%)  Novel (of valid): 207 / 694 (29.83%)
+	RING_COUNT Mean: 1.597, Median: 1.000
+	Novel RING_COUNT Mean: 1.469, Median: 1.000
+  last ESS: ESS=2 | 590s
+=============== s1024_ours_edlm_N2000_lam0_win0.0-1.0 ===============
+	Valid: 685 / 1,024 (66.89%)  Unique (of valid): 683 / 685 (99.71%)  Novel (of valid): 212 / 685 (30.95%)
+	RING_COUNT Mean: 1.707, Median: 1.000
+	Novel RING_COUNT Mean: 1.797, Median: 1.000
+  last ESS: ESS=2 | 560s
+=============== s1024_ours_marginal_N2000_lam0.5_win0.0-1.0 ===============
+	Valid: 763 / 1,024 (74.51%)  Unique (of valid): 759 / 763 (99.48%)  Novel (of valid): 234 / 763 (30.67%)
+	RING_COUNT Mean: 1.755, Median: 1.000
+	Novel RING_COUNT Mean: 1.654, Median: 1.000
+  last ESS: ESS=1921.99 | 581s
+=============== s1024_ours_edlm_N2000_lam0.5_win0.0-1.0 ===============
+	Valid: 766 / 1,024 (74.80%)  Unique (of valid): 765 / 766 (99.87%)  Novel (of valid): 239 / 766 (31.20%)
+	RING_COUNT Mean: 1.803, Median: 2.000
+	Novel RING_COUNT Mean: 2.013, Median: 2.000
+  last ESS: ESS=1923.28 | 565s
+=============== s1024_ours_marginal_N2000_lam1_win0.0-1.0 ===============
+	Valid: 817 / 1,024 (79.79%)  Unique (of valid): 812 / 817 (99.39%)  Novel (of valid): 243 / 817 (29.74%)
+	RING_COUNT Mean: 1.807, Median: 2.000
+	Novel RING_COUNT Mean: 1.733, Median: 1.000
+  last ESS: ESS=1757.68 | 571s
+=============== s1024_ours_edlm_N2000_lam1_win0.0-1.0 ===============
+	Valid: 824 / 1,024 (80.47%)  Unique (of valid): 823 / 824 (99.88%)  Novel (of valid): 253 / 824 (30.70%)
+	RING_COUNT Mean: 1.834, Median: 2.000
+	Novel RING_COUNT Mean: 1.945, Median: 2.000
+  last ESS: ESS=1822.61 | 565s
+=============== s1024_ours_marginal_N2000_lam2_win0.0-1.0 ===============
+	Valid: 873 / 1,024 (85.25%)  Unique (of valid): 866 / 873 (99.20%)  Novel (of valid): 256 / 873 (29.32%)
+	RING_COUNT Mean: 1.985, Median: 2.000
+	Novel RING_COUNT Mean: 1.953, Median: 2.000
+  last ESS: ESS=1667.92 | 565s
+=============== s1024_ours_edlm_N2000_lam2_win0.0-1.0 ===============
+	Valid: 902 / 1,024 (88.09%)  Unique (of valid): 899 / 902 (99.67%)  Novel (of valid): 271 / 902 (30.04%)
+	RING_COUNT Mean: 2.032, Median: 2.000
+	Novel RING_COUNT Mean: 2.077, Median: 2.000
+  last ESS: ESS=1758.82 | 526s
+=============== s1024_ours_marginal_N2000_lam5_win0.0-1.0 ===============
+	Valid: 954 / 1,024 (93.16%)  Unique (of valid): 948 / 954 (99.37%)  Novel (of valid): 275 / 954 (28.83%)
+	RING_COUNT Mean: 2.426, Median: 2.000
+	Novel RING_COUNT Mean: 2.524, Median: 2.000
+  last ESS: ESS=1.6 | 541s
+=============== s1024_ours_edlm_N2000_lam5_win0.0-1.0 ===============
+	Valid: 981 / 1,024 (95.80%)  Unique (of valid): 980 / 981 (99.90%)  Novel (of valid): 313 / 981 (31.91%)
+	RING_COUNT Mean: 2.409, Median: 2.000
+	Novel RING_COUNT Mean: 2.540, Median: 2.000
+  last ESS: ESS=1672.15 | 520s
+=============== s1024_ours_marginal_N2000_lam10_win0.0-1.0 ===============
+	Valid: 972 / 1,024 (94.92%)  Unique (of valid): 967 / 972 (99.49%)  Novel (of valid): 278 / 972 (28.60%)
+	RING_COUNT Mean: 2.470, Median: 2.000
+	Novel RING_COUNT Mean: 2.572, Median: 2.000
+  last ESS: ESS=1677.37 | 518s
+=============== s1024_ours_edlm_N2000_lam10_win0.0-1.0 ===============
+	Valid: 979 / 1,024 (95.61%)  Unique (of valid): 972 / 979 (99.28%)  Novel (of valid): 311 / 979 (31.77%)
+	RING_COUNT Mean: 2.484, Median: 2.000
+	Novel RING_COUNT Mean: 2.717, Median: 2.000
+  last ESS: ESS=1747.78 | 506s
+=============== s1024_ours_marginal_N2000_lam30_win0.0-1.0 ===============
+	Valid: 974 / 1,024 (95.12%)  Unique (of valid): 969 / 974 (99.49%)  Novel (of valid): 277 / 974 (28.44%)
+	RING_COUNT Mean: 2.472, Median: 2.000
+	Novel RING_COUNT Mean: 2.581, Median: 2.000
+  last ESS: ESS=1664.13 | 513s
+=============== s1024_ours_edlm_N2000_lam30_win0.0-1.0 ===============
+	Valid: 982 / 1,024 (95.90%)  Unique (of valid): 975 / 982 (99.29%)  Novel (of valid): 319 / 982 (32.48%)
+	RING_COUNT Mean: 2.486, Median: 2.000
+	Novel RING_COUNT Mean: 2.727, Median: 2.000
+  last ESS: ESS=1753.03 | 499s
+=============== s1024_ours_marginal_N2000_lam100_win0.0-1.0 ===============
+	Valid: 974 / 1,024 (95.12%)  Unique (of valid): 969 / 974 (99.49%)  Novel (of valid): 277 / 974 (28.44%)
+	RING_COUNT Mean: 2.472, Median: 2.000
+	Novel RING_COUNT Mean: 2.581, Median: 2.000
+  last ESS: ESS=1664.13 | 505s
+=============== s1024_ours_edlm_N2000_lam100_win0.0-1.0 ===============
+	Valid: 982 / 1,024 (95.90%)  Unique (of valid): 975 / 982 (99.29%)  Novel (of valid): 319 / 982 (32.48%)
+	RING_COUNT Mean: 2.486, Median: 2.000
+	Novel RING_COUNT Mean: 2.727, Median: 2.000
+  last ESS: ESS=1753.03 | 482s
+=============== s1024_ours_marginal_N2000_lam1000_win0.0-1.0 ===============
+	Valid: 974 / 1,024 (95.12%)  Unique (of valid): 969 / 974 (99.49%)  Novel (of valid): 277 / 974 (28.44%)
+	RING_COUNT Mean: 2.472, Median: 2.000
+	Novel RING_COUNT Mean: 2.581, Median: 2.000
+  last ESS: ESS=1664.13 | 493s
+=============== s1024_ours_edlm_N2000_lam1000_win0.0-1.0 ===============
+	Valid: 982 / 1,024 (95.90%)  Unique (of valid): 975 / 982 (99.29%)  Novel (of valid): 319 / 982 (32.48%)
+	RING_COUNT Mean: 2.486, Median: 2.000
+	Novel RING_COUNT Mean: 2.727, Median: 2.000
+  last ESS: ESS=1753.03 | 482s
+######## Done: udlm x ring_count ########
+126

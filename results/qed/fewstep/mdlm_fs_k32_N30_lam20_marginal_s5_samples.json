@@ -1,0 +1,38 @@
+{
+    "valid": [
+        "OOOC21CC2CC1N=COC",
+        "C(CNCc1C(C)COCC2)2C1C",
+        "n2cOC1C2CCCNCCCCOC1",
+        "CCCC3NcCC1CCC1CCCCCC3",
+        "Cc2C1CNCCC1CCCCCCCCCO2",
+        "C1cC2CC2CC1C(CC)CC",
+        "N1CC2CCnCCC1C21C=C1NCCO"
+    ],
+    "novel": [
+        "C(CNCc1C(C)COCC2)2C1C",
+        "Cc2C1CNCCC1CCCCCCCCCO2",
+        "n2cOC1C2CCCNCCCCOC1",
+        "CCCC3NcCC1CCC1CCCCCC3",
+        "OOOC21CC2CC1N=COC",
+        "C1cC2CC2CC1C(CC)CC",
+        "N1CC2CCnCCC1C21C=C1NCCO"
+    ],
+    "qed_valid": [
+        0.29270269207889177,
+        0.6144971856353528,
+        0.6501792698817997,
+        0.744575111282066,
+        0.7096607196690942,
+        0.596974213554537,
+        0.517186701812747
+    ],
+    "qed_novel": [
+        0.6144971856353528,
+        0.7096607196690942,
+        0.6501792698817997,
+        0.744575111282066,
+        0.29270269207889177,
+        0.596974213554537,
+        0.517186701812747
+    ]
+}

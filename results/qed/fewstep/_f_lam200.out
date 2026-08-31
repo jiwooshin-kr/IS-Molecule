@@ -1,0 +1,108 @@
+######## fewstep: mdlm x qed | k=[16 32] N=[300 100 30 10 1000]
+######## lambda=[200] seeds=[1 2 3 4 5] on GPU 2 at 2026. 08. 26. (수) 10:11:52 KST
+=============== N=300 ===============
+  mdlm_fs_k16_N300_lam200_marginal_s1                35s  ESS=281
+  mdlm_fs_k16_N300_lam200_edlm_s1                    33s  ESS=295
+  mdlm_fs_k16_N300_lam200_marginal_s2                33s  ESS=295
+  mdlm_fs_k16_N300_lam200_edlm_s2                    35s  ESS=281
+  mdlm_fs_k16_N300_lam200_marginal_s3                32s  ESS=281
+  mdlm_fs_k16_N300_lam200_edlm_s3                    34s  ESS=295
+  mdlm_fs_k16_N300_lam200_marginal_s4                33s  ESS=277
+  mdlm_fs_k16_N300_lam200_edlm_s4                    34s  ESS=281
+  mdlm_fs_k16_N300_lam200_marginal_s5                33s  ESS=286
+  mdlm_fs_k16_N300_lam200_edlm_s5                    32s  ESS=300
+  mdlm_fs_k32_N300_lam200_marginal_s1                27s  ESS=286
+  mdlm_fs_k32_N300_lam200_edlm_s1                    26s  ESS=291
+  mdlm_fs_k32_N300_lam200_marginal_s2                25s  ESS=277
+  mdlm_fs_k32_N300_lam200_edlm_s2                    26s  ESS=295
+  mdlm_fs_k32_N300_lam200_marginal_s3                26s  ESS=295
+  mdlm_fs_k32_N300_lam200_edlm_s3                    25s  ESS=291
+  mdlm_fs_k32_N300_lam200_marginal_s4                26s  ESS=295
+  mdlm_fs_k32_N300_lam200_edlm_s4                    26s  ESS=295
+  mdlm_fs_k32_N300_lam200_marginal_s5                26s  ESS=291
+  mdlm_fs_k32_N300_lam200_edlm_s5                    27s  ESS=281
+=============== N=100 ===============
+  mdlm_fs_k16_N100_lam200_marginal_s1                26s  ESS=96.9
+  mdlm_fs_k16_N100_lam200_edlm_s1                    25s  ESS=95.4
+  mdlm_fs_k16_N100_lam200_marginal_s2                25s  ESS=92.3
+  mdlm_fs_k16_N100_lam200_edlm_s2                    25s  ESS=96.9
+  mdlm_fs_k16_N100_lam200_marginal_s3                25s  ESS=98.5
+  mdlm_fs_k16_N100_lam200_edlm_s3                    25s  ESS=96.9
+  mdlm_fs_k16_N100_lam200_marginal_s4                26s  ESS=96.9
+  mdlm_fs_k16_N100_lam200_edlm_s4                    25s  ESS=96.9
+  mdlm_fs_k16_N100_lam200_marginal_s5                26s  ESS=98.5
+  mdlm_fs_k16_N100_lam200_edlm_s5                    26s  ESS=95.4
+  mdlm_fs_k32_N100_lam200_marginal_s1                22s  ESS=98.5
+  mdlm_fs_k32_N100_lam200_edlm_s1                    22s  ESS=98.5
+  mdlm_fs_k32_N100_lam200_marginal_s2                21s  ESS=100
+  mdlm_fs_k32_N100_lam200_edlm_s2                    21s  ESS=96.9
+  mdlm_fs_k32_N100_lam200_marginal_s3                21s  ESS=100
+  mdlm_fs_k32_N100_lam200_edlm_s3                    23s  ESS=98.5
+  mdlm_fs_k32_N100_lam200_marginal_s4                21s  ESS=100
+  mdlm_fs_k32_N100_lam200_edlm_s4                    21s  ESS=96.9
+  mdlm_fs_k32_N100_lam200_marginal_s5                21s  ESS=100
+  mdlm_fs_k32_N100_lam200_edlm_s5                    22s  ESS=98.5
+=============== N=30 ===============
+  mdlm_fs_k16_N30_lam200_marginal_s1                 22s  ESS=29.6
+  mdlm_fs_k16_N30_lam200_edlm_s1                     24s  ESS=29.1
+  mdlm_fs_k16_N30_lam200_marginal_s2                 21s  ESS=29.1
+  mdlm_fs_k16_N30_lam200_edlm_s2                     20s  ESS=29.6
+  mdlm_fs_k16_N30_lam200_marginal_s3                 23s  ESS=29.1
+  mdlm_fs_k16_N30_lam200_edlm_s3                     23s  ESS=29.6
+  mdlm_fs_k16_N30_lam200_marginal_s4                 23s  ESS=29.6
+  mdlm_fs_k16_N30_lam200_edlm_s4                     22s  ESS=30
+  mdlm_fs_k16_N30_lam200_marginal_s5                 23s  ESS=29.6
+  mdlm_fs_k16_N30_lam200_edlm_s5                     24s  ESS=30
+  mdlm_fs_k32_N30_lam200_marginal_s1                 21s  ESS=30
+  mdlm_fs_k32_N30_lam200_edlm_s1                     21s  ESS=30
+  mdlm_fs_k32_N30_lam200_marginal_s2                 21s  ESS=29.6
+  mdlm_fs_k32_N30_lam200_edlm_s2                     20s  ESS=30
+  mdlm_fs_k32_N30_lam200_marginal_s3                 21s  ESS=30
+  mdlm_fs_k32_N30_lam200_edlm_s3                     21s  ESS=30
+  mdlm_fs_k32_N30_lam200_marginal_s4                 20s  ESS=30
+  mdlm_fs_k32_N30_lam200_edlm_s4                     17s  ESS=30
+  mdlm_fs_k32_N30_lam200_marginal_s5                 21s  ESS=30
+  mdlm_fs_k32_N30_lam200_edlm_s5                     20s  ESS=30
+=============== N=10 ===============
+  mdlm_fs_k16_N10_lam200_marginal_s1                 22s  ESS=9.86
+  mdlm_fs_k16_N10_lam200_edlm_s1                     22s  ESS=9.86
+  mdlm_fs_k16_N10_lam200_marginal_s2                 22s  ESS=10
+  mdlm_fs_k16_N10_lam200_edlm_s2                     23s  ESS=9.86
+  mdlm_fs_k16_N10_lam200_marginal_s3                 23s  ESS=9.72
+  mdlm_fs_k16_N10_lam200_edlm_s3                     22s  ESS=9.86
+  mdlm_fs_k16_N10_lam200_marginal_s4                 23s  ESS=9.86
+  mdlm_fs_k16_N10_lam200_edlm_s4                     24s  ESS=9.86
+  mdlm_fs_k16_N10_lam200_marginal_s5                 22s  ESS=9.86
+  mdlm_fs_k16_N10_lam200_edlm_s5                     22s  ESS=9.72
+  mdlm_fs_k32_N10_lam200_marginal_s1                 19s  ESS=10
+  mdlm_fs_k32_N10_lam200_edlm_s1                     17s  ESS=10
+  mdlm_fs_k32_N10_lam200_marginal_s2                 20s  ESS=10
+  mdlm_fs_k32_N10_lam200_edlm_s2                     21s  ESS=10
+  mdlm_fs_k32_N10_lam200_marginal_s3                 19s  ESS=10
+  mdlm_fs_k32_N10_lam200_edlm_s3                     20s  ESS=10
+  mdlm_fs_k32_N10_lam200_marginal_s4                 20s  ESS=10
+  mdlm_fs_k32_N10_lam200_edlm_s4                     20s  ESS=10
+  mdlm_fs_k32_N10_lam200_marginal_s5                 20s  ESS=10
+  mdlm_fs_k32_N10_lam200_edlm_s5                     19s  ESS=10
+=============== N=1000 ===============
+[skip] mdlm_fs_k16_N1000_lam200_marginal_s1
+[skip] mdlm_fs_k16_N1000_lam200_edlm_s1
+[skip] mdlm_fs_k16_N1000_lam200_marginal_s2
+[skip] mdlm_fs_k16_N1000_lam200_edlm_s2
+[skip] mdlm_fs_k16_N1000_lam200_marginal_s3
+[skip] mdlm_fs_k16_N1000_lam200_edlm_s3
+[skip] mdlm_fs_k16_N1000_lam200_marginal_s4
+[skip] mdlm_fs_k16_N1000_lam200_edlm_s4
+[skip] mdlm_fs_k16_N1000_lam200_marginal_s5
+[skip] mdlm_fs_k16_N1000_lam200_edlm_s5
+[skip] mdlm_fs_k32_N1000_lam200_marginal_s1
+[skip] mdlm_fs_k32_N1000_lam200_edlm_s1
+[skip] mdlm_fs_k32_N1000_lam200_marginal_s2
+[skip] mdlm_fs_k32_N1000_lam200_edlm_s2
+[skip] mdlm_fs_k32_N1000_lam200_marginal_s3
+[skip] mdlm_fs_k32_N1000_lam200_edlm_s3
+[skip] mdlm_fs_k32_N1000_lam200_marginal_s4
+[skip] mdlm_fs_k32_N1000_lam200_edlm_s4
+[skip] mdlm_fs_k32_N1000_lam200_marginal_s5
+[skip] mdlm_fs_k32_N1000_lam200_edlm_s5
+######## Done at 2026. 08. 26. (수) 10:43:44 KST: 1200 csv

@@ -1,0 +1,3 @@
+,Seed,T,Num Samples,Valid,Unique,Novel,QED Mean,QED 25%ile,QED Median,QED 75%ile,Novel QED Mean,Novel QED 25%ile,Novel QED Median,Novel QED 75%ile,Method,Reward,Lambda_,Oversample,Num_x0_samples,T_min,T_max,Mixture_sampling,Position_selection,Position_t_min,Position_t_max,Conf_blend,Cv_coeff,Exclude_invalid,Exact_uniform_step,Invalid_reward,Normalize_reward,Num_reward_workers,Condition
+0,-1,-1,133885,1.0,1.0,1.0,0.4652669356225954,0.42732485598733244,0.4726292218618887,0.5153048468173811,0.4652669356225954,0.42732485598733244,0.4726292218618887,0.5153048468173811,-1,-1,-1,-1,-1,-1.0,-1.0,-1,-1,-1.0,-1.0,-1.0,-1.0,-1,-1,-1.0,-1,-1,-1
+1,2,1,2048,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,ours,qed,0,1,300,0.0,1.0,edlm,random_k,0.0,1.0,0.5,1.0,False,False,0.0,False,32,-1

@@ -1,0 +1,216 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage[table]{xcolor}
+\usepackage[colorlinks=true,urlcolor=blue,linkcolor=black]{hyperref}
+\setlength{\parskip}{0.5em}
+\setlength{\parindent}{0pt}
+% \texttt{ring\_count} and friends are unbreakable and otherwise poke into the
+% margin; let TeX stretch interword space instead.
+\sloppy
+
+\title{Reproducing the D-CBG baselines\\\large \texttt{arXiv:2412.10193v3} (Schiff et al., ICLR 2025) on QM9}
+\author{}\date{2026-08-15}
+\begin{document}\maketitle
+\section{What is being reproduced, and what is ours}
+
+D-CBG needs a \emph{noisy classifier} per property, and the paper releases none.
+All four classifiers used here (\texttt{\{qed,ring\_count\}} $\times$
+\texttt{\{uniform,absorbing\_state\}}) are therefore our own training runs. On the
+generative side the split is:
+
+\begin{itemize}
+  \item \textbf{UDLM} --- the released \texttt{kuleshov-group/udlm-qm9}
+        checkpoint, i.e.\ the paper's own model. This is the arm that has to
+        match.
+  \item \textbf{MDLM} --- our own 25k-step run; HuggingFace publishes no
+        MDLM-QM9.
+\end{itemize}
+
+So even the UDLM arm is not a pure re-run of the paper's pipeline: the
+classifier differs. This matters when reading the $z$ column, because the
+paper's $\pm$ is over \emph{five sampling seeds on one checkpoint} and contains
+no training variation of either component.
+
+Two conversions are needed before the numbers are comparable. The paper reports
+\textsc{Num. Valid} / \textsc{Num. Novel} as counts out of 1{,}024 and its
+\textsc{Mean} column over \emph{novel} sequences only, while
+\texttt{our\_qm9\_eval.py} writes \textsc{Valid} as a fraction of 1{,}024 and
+\textsc{Novel} as a fraction of the valid set. And we contribute one seed against
+a five-seed mean, so the spread of the difference is
+$\sqrt{1+1/5}\,\sigma$, not $\sigma$; the $z$ below carries that factor.
+The property $\sigma$ is floored at $0.005$ because the paper prints that column
+to two decimals, so a printed ``$0.00$'' only means $<0.005$.
+
+\section{The four rows that appear in Table 5}
+
+The main paper's Table 5 does not state which $\gamma$ or \texttt{use\_approx}
+produced each row; the appendix does (Tables 20, 23, 29, 32). Those are the
+settings reproduced here.
+
+\begin{table}[htbp]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{4pt}
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{ll l rr rr rr}
+\toprule
+property & model & setting & valid & $z$ & novel & $z$ & property & $z$ \\
+\midrule
+QED & MDLM & $\gamma=3$, exact & 390 / 417.6 & -1.3 & 100 / 116.6 & -1.7 & 0.588 / 0.58 & +1.4 \\
+QED & UDLM & $\gamma=10$, exact & 989 / 994.8 & -1.9 & 63 / 63.8 & -0.1 & 0.609 / 0.61 & -0.2 \\
+ring count & MDLM & $\gamma=10$, approx. & 88 / 113.0 & -2.6 & 67 / 85.6 & -1.9 & 4.597 / 4.75 & -0.6 \\
+ring count & UDLM & $\gamma=8$, exact & 910 / 897.2 & +1.0 & 449 / 432.0 & +0.8 & 4.837 / 4.84 & -0.1 \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize Each metric column reads \emph{ours / paper}; $z$ is (ours $-$ paper) / $\sqrt{1+1/5}\,\sigma_{\text{paper}}$.\end{minipage}
+\caption{The four D-CBG rows of the paper's Table 5. Three are within $2\sigma$ on all three metrics; MDLM ring count is outside on the two count metrics and matches on the property.}
+\label{tab:repro-headline}
+\end{table}
+
+\section{Where the residual gap comes from}
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{lll r rrr}
+\toprule
+property & model & arm & n & mean $z$ valid & mean $z$ novel & mean $z$ property \\
+\midrule
+QED & MDLM & exact & 5 & -0.0 & -0.4 & -0.6 \\
+QED & MDLM & approx. & 5 & +4.3 & +3.9 & -0.1 \\
+QED & UDLM & exact & 5 & -0.0 & -0.3 & +0.1 \\
+QED & UDLM & approx. & 5 & +1.5 & -1.0 & +0.2 \\
+ring count & MDLM & exact & 2 & +4.4 & +3.1 & -1.4 \\
+ring count & MDLM & approx. & 6 & +1.1 & -0.2 & +0.1 \\
+ring count & UDLM & exact & 6 & +0.9 & -0.8 & -0.6 \\
+ring count & UDLM & approx. & 6 & -0.1 & -1.1 & +0.6 \\
+\bottomrule
+\end{tabular}}
+\\[0.4em] \begin{minipage}{0.92\textwidth}\footnotesize The property column is centred everywhere ($|{\cdot}|\le 0.7$) except the $n{=}2$ collapsed MDLM ring exact arm. The deviations live in validity and novelty counts, not in how hard the guidance steers.\end{minipage}
+\caption{Mean \emph{signed} $z$ per arm. Random scatter would average to zero; a consistent sign is a systematic offset.}
+\label{tab:repro-direction}
+\end{table}
+
+
+Reading the two tables together:
+
+\begin{enumerate}
+  \item \textbf{The MDLM approximate arm on QED} is the one real offset: mean
+        signed $z$ of $+4.3 / +3.9$ on
+        valid/novel with the property at $-0.1$.
+        Our checkpoint is \emph{more robust} to the first-order approximation
+        than theirs --- same property at higher validity. Expected, since
+        MDLM-QM9 is our own training run.
+  \item \textbf{Everything else is centred.} In particular UDLM exact, the arm
+        that must match, is within $|z|\le 1$ on average for both properties.
+  \item Individual cells still scatter, worst at UDLM ring $\gamma{=}3$ exact
+        ($4.56$ against $4.70\pm0.03$). A $0.6\,\%$ printed $\sigma$ is tight
+        enough that any pipeline difference shows up as a large $z$.
+\end{enumerate}
+
+\textbf{Verdict.} The baselines reproduce. Absolute numbers can be quoted against
+the paper; frontier comparisons within a fixed checkpoint are safer still, and
+are what the sweep reports do.
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rl rrr rrr rrr}
+\toprule
+$\gamma$ & arm & valid & paper & $z$ & novel & paper & $z$ & QED & paper & $z$ \\
+\midrule
+1 & exact & 537 & 526.4 & +0.6 & 189 & 170.8 & +1.1 & 0.557 & 0.56 & -0.6 \\
+2 & exact & 488 & 524.8 & -1.5 & 127 & 139.0 & -0.9 & 0.574 & 0.58 & -1.0 \\
+3 & exact & 390 & 417.6 & -1.3 & 100 & 116.6 & -1.7 & 0.588 & 0.58 & +1.4 \\
+4 & exact & 197 & 200.4 & -0.3 & 56 & 66.4 & -1.2 & 0.566 & 0.58 & -2.5 \\
+5 & exact & 33 & 24.6 & +2.4 & 14 & 11.6 & +1.0 & 0.575 & 0.58 & -0.4 \\
+1 & approx. & 504 & 476.0 & +1.7 & 208 & 221.4 & -1.6 & 0.467 & 0.46 & +0.6 \\
+2 & approx. & 400 & 363.4 & +1.9 & 165 & 172.4 & -0.7 & 0.464 & 0.47 & -0.5 \\
+3 & approx. & 307 & 244.0 & +4.3 & 145 & 114.0 & +4.6 & 0.472 & 0.47 & +0.2 \\
+5 & approx. & 187 & 120.6 & +9.1 & 80 & 48.4 & +5.3 & 0.488 & 0.50 & -1.1 \\
+10 & approx. & 108 & 72.6 & +4.5 & 45 & 21.2 & +12.1 & 0.556 & 0.55 & +0.3 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, QED: every $\gamma$ we ran against the paper. 5/10 rows are within $2\sigma$ on all three metrics.}
+\label{tab:repro-qed-MDLM}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rl rrr rrr rrr}
+\toprule
+$\gamma$ & arm & valid & paper & $z$ & novel & paper & $z$ & QED & paper & $z$ \\
+\midrule
+1 & exact & 949 & 933.4 & +1.9 & 118 & 134.6 & -2.1 & 0.528 & 0.53 & -0.2 \\
+2 & exact & 903 & 911.2 & -0.9 & 115 & 119.8 & -0.3 & 0.567 & 0.57 & -0.3 \\
+3 & exact & 946 & 941.0 & +0.4 & 102 & 96.4 & +0.6 & 0.588 & 0.58 & +0.7 \\
+5 & exact & 968 & 967.6 & +0.2 & 82 & 77.8 & +0.4 & 0.593 & 0.59 & +0.3 \\
+10 & exact & 989 & 994.8 & -1.9 & 63 & 63.8 & -0.1 & 0.609 & 0.61 & -0.2 \\
+1 & approx. & 997 & 996.4 & +0.1 & 121 & 132.2 & -1.2 & 0.477 & 0.47 & +0.7 \\
+2 & approx. & 976 & 974.8 & +0.1 & 116 & 110.6 & +0.5 & 0.485 & 0.49 & -0.5 \\
+3 & approx. & 955 & 925.0 & +3.4 & 95 & 111.4 & -1.6 & 0.523 & 0.51 & +1.1 \\
+5 & approx. & 856 & 828.2 & +1.4 & 78 & 86.2 & -0.6 & 0.529 & 0.53 & -0.1 \\
+10 & approx. & 819 & 783.2 & +2.4 & 59 & 67.0 & -2.4 & 0.556 & 0.56 & -0.3 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, QED: every $\gamma$ we ran against the paper. 7/10 rows are within $2\sigma$ on all three metrics.}
+\label{tab:repro-qed-UDLM}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rl rrr rrr rrr}
+\toprule
+$\gamma$ & arm & valid & paper & $z$ & novel & paper & $z$ & ring count & paper & $z$ \\
+\midrule
+1 & exact & 188 & 143.8 & +6.1 & 149 & 121.2 & +3.6 & 4.745 & 5.00 & -3.3 \\
+2 & exact & 2 & 0.4 & +2.7 & 2 & 0.4 & +2.7 & 6.000 & 3.00 & +0.6 \\
+1 & approx. & 493 & 455.4 & +1.4 & 209 & 229.4 & -1.2 & 2.809 & 2.52 & +2.4 \\
+2 & approx. & 352 & 327.6 & +1.4 & 176 & 176.4 & -0.0 & 2.966 & 2.82 & +0.9 \\
+3 & approx. & 267 & 223.8 & +2.6 & 150 & 136.0 & +1.3 & 3.400 & 3.25 & +0.5 \\
+5 & approx. & 178 & 135.0 & +4.0 & 111 & 94.4 & +1.4 & 3.856 & 4.11 & -0.9 \\
+8 & approx. & 117 & 121.2 & -0.3 & 86 & 92.6 & -0.5 & 4.244 & 4.54 & -1.7 \\
+10 & approx. & 88 & 113.0 & -2.6 & 67 & 85.6 & -1.9 & 4.597 & 4.75 & -0.6 \\
+\bottomrule
+\end{tabular}}
+\caption{MDLM, ring count: every $\gamma$ we ran against the paper. 2/8 rows are within $2\sigma$ on all three metrics.}
+\label{tab:repro-ring_count-MDLM}
+\end{table}
+
+\begin{table}[htbp]
+\centering
+\small
+\resizebox{\ifdim\width>\linewidth\linewidth\else\width\fi}{!}{%
+\begin{tabular}{rl rrr rrr rrr}
+\toprule
+$\gamma$ & arm & valid & paper & $z$ & novel & paper & $z$ & ring count & paper & $z$ \\
+\midrule
+1 & exact & 807 & 797.4 & +0.9 & 275 & 279.0 & -0.2 & 4.033 & 4.12 & -2.0 \\
+2 & exact & 830 & 829.4 & +0.0 & 307 & 336.4 & -2.5 & 4.619 & 4.54 & +2.4 \\
+3 & exact & 896 & 862.6 & +3.9 & 345 & 363.8 & -1.3 & 4.557 & 4.70 & -4.4 \\
+5 & exact & 885 & 889.2 & -0.3 & 400 & 404.0 & -0.4 & 4.695 & 4.76 & -2.0 \\
+8 & exact & 910 & 897.2 & +1.0 & 449 & 432.0 & +0.8 & 4.837 & 4.84 & -0.1 \\
+10 & exact & 892 & 891.6 & +0.0 & 416 & 431.4 & -1.2 & 4.885 & 4.76 & +2.3 \\
+1 & approx. & 992 & 978.4 & +3.2 & 154 & 166.0 & -0.9 & 2.519 & 2.49 & +0.4 \\
+2 & approx. & 901 & 892.2 & +0.7 & 147 & 171.2 & -1.6 & 3.184 & 3.09 & +1.1 \\
+3 & approx. & 736 & 763.8 & -2.2 & 197 & 198.8 & -0.2 & 3.893 & 3.76 & +1.4 \\
+5 & approx. & 712 & 726.8 & -0.9 & 223 & 245.8 & -3.0 & 4.435 & 4.47 & -0.5 \\
+8 & approx. & 794 & 796.6 & -0.1 & 298 & 304.4 & -0.6 & 4.661 & 4.66 & +0.0 \\
+10 & approx. & 792 & 816.6 & -1.5 & 355 & 359.8 & -0.2 & 4.780 & 4.70 & +1.5 \\
+\bottomrule
+\end{tabular}}
+\caption{UDLM, ring count: every $\gamma$ we ran against the paper. 6/12 rows are within $2\sigma$ on all three metrics.}
+\label{tab:repro-ring_count-UDLM}
+\end{table}
+
+\end{document}

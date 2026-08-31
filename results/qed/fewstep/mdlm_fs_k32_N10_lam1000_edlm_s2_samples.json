@@ -1,0 +1,22 @@
+{
+    "valid": [
+        "C1CNC2cOCC1cC22C(NN2CC)",
+        "NCNC3c(CCC3)CCOCCCCC",
+        "C2CCCCc1CCCCCCC1CC=C2"
+    ],
+    "novel": [
+        "C1CNC2cOCC1cC22C(NN2CC)",
+        "C2CCCCc1CCCCCCC1CC=C2",
+        "NCNC3c(CCC3)CCOCCCCC"
+    ],
+    "qed_valid": [
+        0.6381631675609902,
+        0.4699019015510497,
+        0.47390754944617186
+    ],
+    "qed_novel": [
+        0.6381631675609902,
+        0.47390754944617186,
+        0.4699019015510497
+    ]
+}

@@ -1,0 +1,24 @@
+{
+    "valid": [
+        "CCCC1COC1(C)C",
+        "CCCCCOCCCCCC",
+        "CNCC1(CC)CNCCC1",
+        "CC(CC1CN)CC1COCO"
+    ],
+    "novel": [
+        "CC(CC1CN)CC1COCO",
+        "CNCC1(CC)CNCCC1",
+        "CCCCCOCCCCCC"
+    ],
+    "qed_valid": [
+        0.5537179613932961,
+        0.48094816377247085,
+        0.6364135621632298,
+        0.6111668370559784
+    ],
+    "qed_novel": [
+        0.6111668370559784,
+        0.6364135621632298,
+        0.48094816377247085
+    ]
+}

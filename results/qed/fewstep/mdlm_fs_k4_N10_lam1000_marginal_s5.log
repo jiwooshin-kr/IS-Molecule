@@ -1,0 +1,424 @@
+Seed set to 5
+Gen. batches:   0%|          | 0/32 [00:00<?, ?it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:01<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):  12%|█▎        | 1/8 [00:01<00:13,  1.90s/it, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):  12%|█▎        | 1/8 [00:01<00:13,  1.90s/it, ESS=8.31, NFEs=2, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.059][A
+Sampling (ours):  12%|█▎        | 1/8 [00:02<00:13,  1.90s/it, ESS=8.27, NFEs=3, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.087][A
+Sampling (ours):  38%|███▊      | 3/8 [00:02<00:02,  1.85it/s, ESS=8.27, NFEs=3, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.087][A
+Sampling (ours):  38%|███▊      | 3/8 [00:02<00:02,  1.85it/s, ESS=8.29, NFEs=4, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.133][A
+Sampling (ours):  50%|█████     | 4/8 [00:02<00:01,  2.03it/s, ESS=8.29, NFEs=4, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.133][A
+Sampling (ours):  50%|█████     | 4/8 [00:02<00:01,  2.03it/s, ESS=8.77, NFEs=5, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.178][A
+Sampling (ours):  50%|█████     | 4/8 [00:02<00:01,  2.03it/s, ESS=8.4, NFEs=6, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.22]  [A
+Sampling (ours):  75%|███████▌  | 6/8 [00:02<00:00,  3.55it/s, ESS=8.4, NFEs=6, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.22][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:02<00:00,  3.55it/s, ESS=8.86, NFEs=7, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.237][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:02<00:00,  3.55it/s, ESS=9.3, NFEs=8, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.241] [A
+                                                                                                                                                                    [AGen. batches:   3%|▎         | 1/32 [00:02<01:22,  2.67s/it]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=7.81, NFEs=2, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.083][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.51it/s, ESS=7.81, NFEs=2, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.083][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.51it/s, ESS=7.65, NFEs=3, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.078][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.51it/s, ESS=7.66, NFEs=4, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.113][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.17it/s, ESS=7.66, NFEs=4, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.113][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.17it/s, ESS=8.25, NFEs=5, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.125][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.17it/s, ESS=8.62, NFEs=6, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.141][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 15.07it/s, ESS=8.62, NFEs=6, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.141][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 15.07it/s, ESS=8.82, NFEs=7, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.2]   [A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 15.07it/s, ESS=9.27, NFEs=8, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.219][A
+                                                                                                                                                                    [AGen. batches:   6%|▋         | 2/32 [00:03<00:41,  1.40s/it]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=9.86, NFEs=1, allbad=0.984, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.002][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.41, NFEs=2, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.075][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.16, NFEs=3, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.114][A
+Sampling (ours):  38%|███▊      | 3/8 [00:00<00:00, 20.86it/s, ESS=8.16, NFEs=3, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.114][A
+Sampling (ours):  38%|███▊      | 3/8 [00:00<00:00, 20.86it/s, ESS=8.3, NFEs=4, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.155]  [A
+Sampling (ours):  38%|███▊      | 3/8 [00:00<00:00, 20.86it/s, ESS=8.4, NFEs=5, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.183][A
+Sampling (ours):  38%|███▊      | 3/8 [00:00<00:00, 20.86it/s, ESS=8.64, NFEs=6, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.197][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 19.11it/s, ESS=8.64, NFEs=6, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.197][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 19.11it/s, ESS=9.06, NFEs=7, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.227][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 19.11it/s, ESS=9.41, NFEs=8, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.266][A
+                                                                                                                                                                     [AGen. batches:   9%|▉         | 3/32 [00:03<00:27,  1.06it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.05, NFEs=2, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.045][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.24it/s, ESS=8.05, NFEs=2, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.045][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.24it/s, ESS=8.63, NFEs=3, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.061][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.24it/s, ESS=7.89, NFEs=4, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.078] [A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.31it/s, ESS=7.89, NFEs=4, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.078][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.31it/s, ESS=8.36, NFEs=5, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.158][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.31it/s, ESS=8.9, NFEs=6, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.198] [A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.19it/s, ESS=8.9, NFEs=6, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.198][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.19it/s, ESS=9.01, NFEs=7, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.222][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.19it/s, ESS=9.73, NFEs=8, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.253][A
+                                                                                                                                                                     [AGen. batches:  12%|█▎        | 4/32 [00:04<00:20,  1.34it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.37, NFEs=2, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.062][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 15.40it/s, ESS=8.37, NFEs=2, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.062][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 15.40it/s, ESS=8.16, NFEs=3, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.077][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 15.40it/s, ESS=8.05, NFEs=4, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.083][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.52it/s, ESS=8.05, NFEs=4, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.083][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.52it/s, ESS=8.64, NFEs=5, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.069][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.52it/s, ESS=8.78, NFEs=6, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.105][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 15.54it/s, ESS=8.78, NFEs=6, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.105][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 15.54it/s, ESS=9.16, NFEs=7, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.134][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 15.54it/s, ESS=9.62, NFEs=8, allbad=0.844, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.153][A
+                                                                                                                                                                     [AGen. batches:  16%|█▌        | 5/32 [00:04<00:17,  1.54it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.19, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.05][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.45it/s, ESS=8.19, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.05][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.45it/s, ESS=7.9, NFEs=3, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.086] [A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.45it/s, ESS=7.53, NFEs=4, allbad=0.672, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.161][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.96it/s, ESS=7.53, NFEs=4, allbad=0.672, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.161][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.96it/s, ESS=7.73, NFEs=5, allbad=0.656, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.186][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.96it/s, ESS=8.69, NFEs=6, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.247][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 17.06it/s, ESS=8.69, NFEs=6, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.247][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 17.06it/s, ESS=9.06, NFEs=7, allbad=0.672, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.273][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 17.06it/s, ESS=9.28, NFEs=8, allbad=0.672, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.291][A
+                                                                                                                                                                     [AGen. batches:  19%|█▉        | 6/32 [00:04<00:14,  1.74it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=9.86, NFEs=1, allbad=0.984, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.002][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.17, NFEs=2, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.081][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 19.15it/s, ESS=8.17, NFEs=2, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.081][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 19.15it/s, ESS=8.17, NFEs=3, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.12]  [A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 19.15it/s, ESS=8.3, NFEs=4, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.172][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 17.70it/s, ESS=8.3, NFEs=4, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.172][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 17.70it/s, ESS=8.45, NFEs=5, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.148][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 17.70it/s, ESS=8.6, NFEs=6, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.153][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 18.56it/s, ESS=8.6, NFEs=6, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.153][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 18.56it/s, ESS=8.8, NFEs=7, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.184][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 18.56it/s, ESS=9.55, NFEs=8, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.205][A
+                                                                                                                                                                    [AGen. batches:  22%|██▏       | 7/32 [00:05<00:13,  1.91it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.33, NFEs=2, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.061][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.37it/s, ESS=8.33, NFEs=2, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.061][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.37it/s, ESS=8.02, NFEs=3, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.086][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.37it/s, ESS=7.65, NFEs=4, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.155][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 17.23it/s, ESS=7.65, NFEs=4, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.155][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 17.23it/s, ESS=8.1, NFEs=5, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.161] [A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 17.23it/s, ESS=8.12, NFEs=6, allbad=0.672, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.233][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.36it/s, ESS=8.12, NFEs=6, allbad=0.672, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.233][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.36it/s, ESS=8.31, NFEs=7, allbad=0.641, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.272][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.36it/s, ESS=9.59, NFEs=8, allbad=0.656, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.334][A
+                                                                                                                                                                     [AGen. batches:  25%|██▌       | 8/32 [00:05<00:12,  2.00it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=9.16, NFEs=2, allbad=0.906, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.047][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 18.01it/s, ESS=9.16, NFEs=2, allbad=0.906, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.047][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 18.01it/s, ESS=8.32, NFEs=3, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.053][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 18.01it/s, ESS=8.27, NFEs=4, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.078][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.85it/s, ESS=8.27, NFEs=4, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.078][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.85it/s, ESS=8.82, NFEs=5, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.123][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.85it/s, ESS=9.03, NFEs=6, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.167][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.01it/s, ESS=9.03, NFEs=6, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.167][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.01it/s, ESS=9.71, NFEs=7, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.161][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.01it/s, ESS=9.73, NFEs=8, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.184][A
+                                                                                                                                                                     [AGen. batches:  28%|██▊       | 9/32 [00:06<00:11,  2.07it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.2, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.07][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 15.96it/s, ESS=8.2, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.07][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 15.96it/s, ESS=7.54, NFEs=3, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.125][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 15.96it/s, ESS=7.97, NFEs=4, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.153][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 13.91it/s, ESS=7.97, NFEs=4, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.153][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 13.91it/s, ESS=8.67, NFEs=5, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.211][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 13.91it/s, ESS=8.64, NFEs=6, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.239][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.62it/s, ESS=8.64, NFEs=6, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.239][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.62it/s, ESS=8.89, NFEs=7, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.27] [A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.62it/s, ESS=9.26, NFEs=8, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.284][A
+                                                                                                                                                                     [AGen. batches:  31%|███▏      | 10/32 [00:06<00:10,  2.03it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.76, NFEs=2, allbad=0.859, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.053][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 18.10it/s, ESS=8.76, NFEs=2, allbad=0.859, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.053][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 18.10it/s, ESS=7.67, NFEs=3, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.078][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 18.10it/s, ESS=7.29, NFEs=4, allbad=0.641, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.178][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.82it/s, ESS=7.29, NFEs=4, allbad=0.641, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.178][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.82it/s, ESS=7.16, NFEs=5, allbad=0.609, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.186][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.82it/s, ESS=7.64, NFEs=6, allbad=0.609, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.256][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.82it/s, ESS=7.64, NFEs=6, allbad=0.609, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.256][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.82it/s, ESS=8.84, NFEs=7, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.281][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.82it/s, ESS=9.56, NFEs=8, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.297][A
+                                                                                                                                                                     [AGen. batches:  34%|███▍      | 11/32 [00:07<00:10,  2.05it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.09, NFEs=2, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.091][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 19.46it/s, ESS=8.09, NFEs=2, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.091][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 19.46it/s, ESS=8.65, NFEs=3, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.083][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 19.46it/s, ESS=8.11, NFEs=4, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.136] [A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 18.10it/s, ESS=8.11, NFEs=4, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.136][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 18.10it/s, ESS=7.74, NFEs=5, allbad=0.672, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.194][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 18.10it/s, ESS=8.35, NFEs=6, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.189][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.92it/s, ESS=8.35, NFEs=6, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.189][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.92it/s, ESS=9.1, NFEs=7, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.237] [A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.92it/s, ESS=9.28, NFEs=8, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.237][A
+                                                                                                                                                                     [AGen. batches:  38%|███▊      | 12/32 [00:07<00:09,  2.13it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.45, NFEs=2, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.086][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 18.02it/s, ESS=8.45, NFEs=2, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.086][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 18.02it/s, ESS=8.19, NFEs=3, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.106][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 18.02it/s, ESS=8.24, NFEs=4, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.122][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.39it/s, ESS=8.24, NFEs=4, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.122][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.39it/s, ESS=8.61, NFEs=5, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.155][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.39it/s, ESS=8.71, NFEs=6, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.181][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.82it/s, ESS=8.71, NFEs=6, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.181][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.82it/s, ESS=9.09, NFEs=7, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.214][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.82it/s, ESS=9.6, NFEs=8, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.242]  [A
+                                                                                                                                                                   [AGen. batches:  41%|████      | 13/32 [00:08<00:08,  2.11it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.83, NFEs=2, allbad=0.859, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.061][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.18it/s, ESS=8.83, NFEs=2, allbad=0.859, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.061][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.18it/s, ESS=8.49, NFEs=3, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.097][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.18it/s, ESS=8.62, NFEs=4, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.116][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.49it/s, ESS=8.62, NFEs=4, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.116][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.49it/s, ESS=8.4, NFEs=5, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.152] [A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.49it/s, ESS=9.2, NFEs=6, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.156][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.48it/s, ESS=9.2, NFEs=6, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.156][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.48it/s, ESS=9.16, NFEs=7, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.155][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.48it/s, ESS=9.8, NFEs=8, allbad=0.844, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.155] [A
+                                                                                                                                                                    [AGen. batches:  44%|████▍     | 14/32 [00:08<00:08,  2.15it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.52, NFEs=2, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.078][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.38it/s, ESS=8.52, NFEs=2, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.078][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.38it/s, ESS=8.24, NFEs=3, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.077][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.38it/s, ESS=7.36, NFEs=4, allbad=0.656, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.156][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.71it/s, ESS=7.36, NFEs=4, allbad=0.656, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.156][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.71it/s, ESS=7.9, NFEs=5, allbad=0.672, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.244] [A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.71it/s, ESS=8.83, NFEs=6, allbad=0.672, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.269][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 15.44it/s, ESS=8.83, NFEs=6, allbad=0.672, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.269][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 15.44it/s, ESS=9.45, NFEs=7, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.264][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 15.44it/s, ESS=9.47, NFEs=8, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.28] [A
+                                                                                                                                                                    [AGen. batches:  47%|████▋     | 15/32 [00:09<00:07,  2.14it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=7.81, NFEs=2, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.114][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 16.78it/s, ESS=7.81, NFEs=2, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.114][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 16.78it/s, ESS=7.49, NFEs=3, allbad=0.672, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.178][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 16.78it/s, ESS=7.29, NFEs=4, allbad=0.656, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.183][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.53it/s, ESS=7.29, NFEs=4, allbad=0.656, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.183][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.53it/s, ESS=7.23, NFEs=5, allbad=0.562, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.317][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.53it/s, ESS=7.2, NFEs=6, allbad=0.547, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.323] [A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 15.68it/s, ESS=7.2, NFEs=6, allbad=0.547, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.323][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 15.68it/s, ESS=7.68, NFEs=7, allbad=0.531, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.383][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 15.68it/s, ESS=8.89, NFEs=8, allbad=0.547, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.422][A
+                                                                                                                                                                     [AGen. batches:  50%|█████     | 16/32 [00:09<00:07,  2.15it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.37, NFEs=2, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.05][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.39it/s, ESS=8.37, NFEs=2, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.05][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.39it/s, ESS=8.32, NFEs=3, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.069][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.39it/s, ESS=8.08, NFEs=4, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.087][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.77it/s, ESS=8.08, NFEs=4, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.087][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.77it/s, ESS=8.47, NFEs=5, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.142][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.77it/s, ESS=8.19, NFEs=6, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.173][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.38it/s, ESS=8.19, NFEs=6, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.173][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.38it/s, ESS=9.09, NFEs=7, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.228][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.38it/s, ESS=9.37, NFEs=8, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.252][A
+                                                                                                                                                                     [AGen. batches:  53%|█████▎    | 17/32 [00:09<00:06,  2.15it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.21, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.055][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 16.12it/s, ESS=8.21, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.055][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 16.12it/s, ESS=8.34, NFEs=3, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.066][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 16.12it/s, ESS=8.02, NFEs=4, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.134][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.32it/s, ESS=8.02, NFEs=4, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.134][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.32it/s, ESS=7.9, NFEs=5, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.159] [A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.32it/s, ESS=8.73, NFEs=6, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.195][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.36it/s, ESS=8.73, NFEs=6, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.195][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.36it/s, ESS=9.11, NFEs=7, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.209][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.36it/s, ESS=9.59, NFEs=8, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.231][A
+                                                                                                                                                                     [AGen. batches:  56%|█████▋    | 18/32 [00:10<00:06,  2.15it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=7.93, NFEs=2, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.073][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.80it/s, ESS=7.93, NFEs=2, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.073][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.80it/s, ESS=8.14, NFEs=3, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.094][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.80it/s, ESS=7.49, NFEs=4, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.148][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.14it/s, ESS=7.49, NFEs=4, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.148][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.14it/s, ESS=7.43, NFEs=5, allbad=0.656, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.181][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.14it/s, ESS=8.02, NFEs=6, allbad=0.672, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.233][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.35it/s, ESS=8.02, NFEs=6, allbad=0.672, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.233][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.35it/s, ESS=8.58, NFEs=7, allbad=0.656, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.247][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.35it/s, ESS=9.68, NFEs=8, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.292][A
+                                                                                                                                                                     [AGen. batches:  59%|█████▉    | 19/32 [00:10<00:06,  2.10it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.31, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.052][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.68it/s, ESS=8.31, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.052][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.68it/s, ESS=8.61, NFEs=3, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.073][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.68it/s, ESS=8.86, NFEs=4, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.083][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.41it/s, ESS=8.86, NFEs=4, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.083][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.41it/s, ESS=8.76, NFEs=5, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.133][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.41it/s, ESS=8.5, NFEs=6, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.202] [A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.62it/s, ESS=8.5, NFEs=6, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.202][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.62it/s, ESS=9.01, NFEs=7, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.23][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.62it/s, ESS=9.49, NFEs=8, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.222][A
+                                                                                                                                                                    [AGen. batches:  62%|██████▎   | 20/32 [00:11<00:05,  2.07it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.32, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.106][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.98it/s, ESS=8.32, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.106][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.98it/s, ESS=8.03, NFEs=3, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.159][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.98it/s, ESS=8.14, NFEs=4, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.18] [A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 18.01it/s, ESS=8.14, NFEs=4, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.18][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 18.01it/s, ESS=8.45, NFEs=5, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.245][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 18.01it/s, ESS=8.79, NFEs=6, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.239][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 18.15it/s, ESS=8.79, NFEs=6, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.239][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 18.15it/s, ESS=9.25, NFEs=7, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.248][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 18.15it/s, ESS=9.42, NFEs=8, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.261][A
+Sampling (ours): 100%|██████████| 8/8 [00:00<00:00, 18.82it/s, ESS=9.42, NFEs=8, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.261][A
+                                                                                                                                                                     [AGen. batches:  66%|██████▌   | 21/32 [00:11<00:05,  2.12it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.22, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.052][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 16.73it/s, ESS=8.22, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.052][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 16.73it/s, ESS=8.25, NFEs=3, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.08] [A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 16.73it/s, ESS=7.73, NFEs=4, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.144][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.90it/s, ESS=7.73, NFEs=4, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.144][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.90it/s, ESS=7.95, NFEs=5, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.202][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.90it/s, ESS=8.16, NFEs=6, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.261][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.01it/s, ESS=8.16, NFEs=6, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.261][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.01it/s, ESS=8.59, NFEs=7, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.25] [A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.01it/s, ESS=9.28, NFEs=8, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.289][A
+Sampling (ours): 100%|██████████| 8/8 [00:00<00:00, 15.15it/s, ESS=9.28, NFEs=8, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.289][A
+                                                                                                                                                                     [AGen. batches:  69%|██████▉   | 22/32 [00:12<00:04,  2.02it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.87, NFEs=2, allbad=0.859, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.034][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 13.38it/s, ESS=8.87, NFEs=2, allbad=0.859, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.034][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 13.38it/s, ESS=8.22, NFEs=3, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.097][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 13.38it/s, ESS=9.12, NFEs=4, allbad=0.875, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.084][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 12.12it/s, ESS=9.12, NFEs=4, allbad=0.875, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.084][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 12.12it/s, ESS=9.25, NFEs=5, allbad=0.844, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.109][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 12.12it/s, ESS=9.3, NFEs=6, allbad=0.844, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.128] [A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 13.31it/s, ESS=9.3, NFEs=6, allbad=0.844, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.128][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 13.31it/s, ESS=9.47, NFEs=7, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.152][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 13.31it/s, ESS=9.88, NFEs=8, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.177][A
+                                                                                                                                                                     [AGen. batches:  72%|███████▏  | 23/32 [00:13<00:04,  1.94it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.24, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.087][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 13.75it/s, ESS=8.24, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.087][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 13.75it/s, ESS=8.17, NFEs=3, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.105][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 13.75it/s, ESS=7.98, NFEs=4, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.134][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.25it/s, ESS=7.98, NFEs=4, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.134][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.25it/s, ESS=7.59, NFEs=5, allbad=0.641, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.213][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.25it/s, ESS=8.42, NFEs=6, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.231][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 15.14it/s, ESS=8.42, NFEs=6, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.231][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 15.14it/s, ESS=8.99, NFEs=7, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.237][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 15.14it/s, ESS=9.59, NFEs=8, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.267][A
+                                                                                                                                                                     [AGen. batches:  75%|███████▌  | 24/32 [00:13<00:04,  1.96it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.05, NFEs=2, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.069][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 16.46it/s, ESS=8.05, NFEs=2, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.069][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 16.46it/s, ESS=7.92, NFEs=3, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.084][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 16.46it/s, ESS=7.55, NFEs=4, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.13] [A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.08it/s, ESS=7.55, NFEs=4, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.13][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.08it/s, ESS=7.64, NFEs=5, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.148][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.08it/s, ESS=8.1, NFEs=6, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.211] [A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 13.72it/s, ESS=8.1, NFEs=6, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.211][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 13.72it/s, ESS=8.47, NFEs=7, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.245][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 13.72it/s, ESS=8.71, NFEs=8, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.247][A
+Sampling (ours): 100%|██████████| 8/8 [00:00<00:00, 15.22it/s, ESS=8.71, NFEs=8, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.247][A
+                                                                                                                                                                     [AGen. batches:  78%|███████▊  | 25/32 [00:14<00:03,  1.91it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.19, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.067][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 16.23it/s, ESS=8.19, NFEs=2, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.067][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 16.23it/s, ESS=7.69, NFEs=3, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.108][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 16.23it/s, ESS=7.63, NFEs=4, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.133][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.14it/s, ESS=7.63, NFEs=4, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.133][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.14it/s, ESS=7.69, NFEs=5, allbad=0.656, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.195][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.14it/s, ESS=8.47, NFEs=6, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.239][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 13.92it/s, ESS=8.47, NFEs=6, allbad=0.688, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.239][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 13.92it/s, ESS=9.2, NFEs=7, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.286] [A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 13.92it/s, ESS=9.84, NFEs=8, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.297][A
+                                                                                                                                                                     [AGen. batches:  81%|████████▏ | 26/32 [00:14<00:03,  1.91it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=7.47, NFEs=2, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.059][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.36it/s, ESS=7.47, NFEs=2, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.059][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.36it/s, ESS=7.46, NFEs=3, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.087][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.36it/s, ESS=8.31, NFEs=4, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.102][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.67it/s, ESS=8.31, NFEs=4, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.102][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.67it/s, ESS=8.41, NFEs=5, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.128] [A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.67it/s, ESS=9.25, NFEs=6, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.155][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 13.77it/s, ESS=9.25, NFEs=6, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.155][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 13.77it/s, ESS=9.36, NFEs=7, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.155][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 13.77it/s, ESS=9.66, NFEs=8, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.173][A
+                                                                                                                                                                     [AGen. batches:  84%|████████▍ | 27/32 [00:15<00:02,  1.89it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.08, NFEs=2, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.091][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.59it/s, ESS=8.08, NFEs=2, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.091][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.59it/s, ESS=8.1, NFEs=3, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.13]  [A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 14.59it/s, ESS=7.92, NFEs=4, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.131][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.58it/s, ESS=7.92, NFEs=4, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.131][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.58it/s, ESS=7.91, NFEs=5, allbad=0.672, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.158][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 14.58it/s, ESS=8.61, NFEs=6, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.2]  [A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.53it/s, ESS=8.61, NFEs=6, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.2][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.53it/s, ESS=9.35, NFEs=7, allbad=0.719, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.255][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 14.53it/s, ESS=9.61, NFEs=8, allbad=0.703, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.287][A
+                                                                                                                                                                     [AGen. batches:  88%|████████▊ | 28/32 [00:15<00:02,  1.92it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.98, NFEs=2, allbad=0.875, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.041][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.49it/s, ESS=8.98, NFEs=2, allbad=0.875, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.041][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.49it/s, ESS=8.09, NFEs=3, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.117] [A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.49it/s, ESS=8.14, NFEs=4, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.13][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 17.60it/s, ESS=8.14, NFEs=4, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.13][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 17.60it/s, ESS=8.65, NFEs=5, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.127][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 17.60it/s, ESS=9.01, NFEs=6, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.148][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.86it/s, ESS=9.01, NFEs=6, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.148][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.86it/s, ESS=9.04, NFEs=7, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.15] [A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.86it/s, ESS=9.91, NFEs=8, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.194][A
+                                                                                                                                                                     [AGen. batches:  91%|█████████ | 29/32 [00:16<00:01,  2.03it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.61, NFEs=2, allbad=0.844, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.062][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.82it/s, ESS=8.61, NFEs=2, allbad=0.844, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.062][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.82it/s, ESS=8.08, NFEs=3, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.117][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 17.82it/s, ESS=8.26, NFEs=4, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.119][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.20it/s, ESS=8.26, NFEs=4, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.119][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.20it/s, ESS=8.79, NFEs=5, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.109][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 16.20it/s, ESS=8.48, NFEs=6, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.144][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.29it/s, ESS=8.48, NFEs=6, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.144][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.29it/s, ESS=9.01, NFEs=7, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.155][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.29it/s, ESS=9.44, NFEs=8, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.152][A
+                                                                                                                                                                     [AGen. batches:  94%|█████████▍| 30/32 [00:16<00:00,  2.08it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=8.45, NFEs=2, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.062][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 18.00it/s, ESS=8.45, NFEs=2, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.062][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 18.00it/s, ESS=8.22, NFEs=3, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.07] [A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 18.00it/s, ESS=8.76, NFEs=4, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.084][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.57it/s, ESS=8.76, NFEs=4, allbad=0.828, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.084][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.57it/s, ESS=8.56, NFEs=5, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.098][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 15.57it/s, ESS=9.14, NFEs=6, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.141][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 17.32it/s, ESS=9.14, NFEs=6, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.141][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 17.32it/s, ESS=9.63, NFEs=7, allbad=0.797, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.183][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 17.32it/s, ESS=10, NFEs=8, allbad=0.812, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.188]  [A
+                                                                                                                                                                   [AGen. batches:  97%|█████████▋| 31/32 [00:16<00:00,  2.15it/s]
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=10, NFEs=1, allbad=1, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0][A
+Sampling (ours):   0%|          | 0/8 [00:00<?, ?it/s, ESS=7.78, NFEs=2, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.113][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 18.43it/s, ESS=7.78, NFEs=2, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.113][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 18.43it/s, ESS=7.97, NFEs=3, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.159][A
+Sampling (ours):  25%|██▌       | 2/8 [00:00<00:00, 18.43it/s, ESS=8.45, NFEs=4, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.134][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 17.74it/s, ESS=8.45, NFEs=4, allbad=0.781, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.134][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 17.74it/s, ESS=8.33, NFEs=5, allbad=0.766, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.134][A
+Sampling (ours):  50%|█████     | 4/8 [00:00<00:00, 17.74it/s, ESS=8.6, NFEs=6, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.177] [A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.77it/s, ESS=8.6, NFEs=6, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.177][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.77it/s, ESS=9.18, NFEs=7, allbad=0.734, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.222][A
+Sampling (ours):  75%|███████▌  | 6/8 [00:00<00:00, 16.77it/s, ESS=9.61, NFEs=8, allbad=0.75, nan_check=0, pool=nan, prob_check=1, short=nan, unif=nan, vfrac=0.245] [A
+                                                                                                                                                                    [AGen. batches: 100%|██████████| 32/32 [00:17<00:00,  2.19it/s]                                                             Guidance: Method - ours, Reward - qed, Lambda_ - 1000, Oversample - 1, Num_x0_samples - 10, T_min - 0.0, T_max - 1.0, Mixture_sampling - marginal, Position_selection - random_k, Position_t_min - 0.0, Position_t_max - 1.0, Conf_blend - 0.5, Cv_coeff - 1.0, Exclude_invalid - False, Exact_uniform_step - False, Invalid_reward - 0.0, Normalize_reward - False, Num_reward_workers - 32, Condition - -1
+	Valid: 539 / 2,048 (26.32%)  Unique (of valid): 477 / 539 (88.50%)  Novel (of valid): 362 / 539 (67.16%)
+	QED Mean: 0.472, Median: 0.474
+	Novel QED Mean: 0.476, Median: 0.477
